@@ -17,7 +17,7 @@ int main(){
 
 	if(pipe(pB)){
 		perror("pipe");
-		return -1;;
+		return -1;
 	}
 
 	res = fork();

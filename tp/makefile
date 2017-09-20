@@ -1,4 +1,4 @@
-TARGETS = hello filesManager essai pipes
+TARGETS = hello filesManager essai pipes threadP mutexP
 CC = gcc
 
 all : $(TARGETS)
@@ -16,6 +16,12 @@ filesManager : filesManager.c
 essai : essai.c
 
 pipes : pipes.c
+
+threadP : threadP.c
+	$(CC) $< -o $@ -lpthread
+
+mutexP : mutexP.c
+	$(CC) $< -o $@ -lpthread
 
 clean : 
 	rm -f $(TARGETS)
