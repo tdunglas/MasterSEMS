@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<unistd.h>
 
 int main(){
 
@@ -11,15 +12,16 @@ int main(){
 		return -1;
 	}
 
-	if(pid == 0){
-		for(;;){
-			printf("SON\n");
-		}
+	if(pid == 0){ // son
+		execl("/bin/ls","ls","-l", NULL);
+		printf("son : pid father %d\n", getppid());
+		printf("son : pid son %d\n", getpid());
 	}
-	else{
-		for(;;){
-			printf("FATHER\n");
-		}
+	else{ // father
+		printf("father : pid father %d\n", getpid());
+		printf("father : pid son %d\n", pid);
+
+		wait();
 	}
 
 	return 0;
