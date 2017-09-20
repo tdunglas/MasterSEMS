@@ -1,4 +1,4 @@
-TARGETS = hello filesManager essai
+TARGETS = hello filesManager essai pipes
 CC = gcc
 
 all : $(TARGETS)
@@ -14,6 +14,8 @@ filesManager : filesManager.c
 	$(CC) $< -o $@
 
 essai : essai.c
+
+pipes : pipes.c
 
 clean : 
 	rm -f $(TARGETS)
