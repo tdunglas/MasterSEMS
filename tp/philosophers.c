@@ -8,6 +8,7 @@ pthread_mutex_t* forks;
 int* tab;
 int* tab2;
 int n;
+int nf;
 int bread = 100;
 
 
@@ -26,21 +27,32 @@ void* eat(void* arg){
     int* tmp = (int*)arg;
     int id = *tmp;
     
-    int idf = (id+1)%n;
+    int idf = (id+1)%nf;
     int qty;
     
     while(bread >= 0){
         
         printf("philo %d is thinking\n", id);
         waitRan();
-            
-        pthread_mutex_lock(&forks[id]);
-        printf("philo %d use fork %d\n", id, id);
-        waitRan();
         
-        pthread_mutex_lock(&forks[idf]);
-        printf("philo %d use fork %d\n", id, idf);
-        waitRan();
+        if(id%2 == 0){
+            pthread_mutex_lock(&forks[id]);
+            printf("philo %d use fork %d\n", id, id);
+            waitRan();
+            
+            pthread_mutex_lock(&forks[idf]);
+            printf("philo %d use fork %d\n", id, idf);
+            waitRan();
+        }
+        else{
+            pthread_mutex_lock(&forks[idf]);
+            printf("philo %d use fork %d\n", id, idf);
+            waitRan();
+            
+            pthread_mutex_lock(&forks[id]);
+            printf("philo %d use fork %d\n", id, id);
+            waitRan();
+        }
            
         if(bread >= 0){
             qty = consumeBread();
@@ -85,18 +97,21 @@ int main(int argc, char** argv){
         }
     }
     
+    nf = n;
 	philosophers = (pthread_t*)malloc(n*sizeof(pthread_t));
     
-    //pthread_t philosophers[n];
-    forks = (pthread_mutex_t*)malloc(n*sizeof(pthread_mutex_t));
+    if(n==1){
+        nf = 2;
+    }
+    forks = (pthread_mutex_t*)malloc(nf*sizeof(pthread_mutex_t));
     int i = 0;
     tab = (int*)malloc(n*sizeof(int));
-    tab2 = (int*)malloc(n*sizeof(int));
+    tab2 = (int*)malloc(nf*sizeof(int));
     
     printf("there is %d philosophers and %d forks\n", n, n);
     
     i = 0;
-    while(i<n){
+    while(i<nf){
         tab2[i] = i;
 		pthread_mutex_init(&forks[i], NULL);
 		i++;
