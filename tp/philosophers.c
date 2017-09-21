@@ -8,6 +8,13 @@ pthread_mutex_t* forks;
 int* tab;
 int* tab2;
 int n;
+int bread = 100;
+
+
+int consumeBread(){
+        int r = rand()%15;
+        return r;
+}
 
 int waitRan(){
         int t = rand()%3;
@@ -20,8 +27,9 @@ void* eat(void* arg){
     int id = *tmp;
     
     int idf = (id+1)%n;
+    int qty;
     
-    while(1){
+    while(bread >= 0){
         
         printf("philo %d is thinking\n", id);
         waitRan();
@@ -33,9 +41,16 @@ void* eat(void* arg){
         pthread_mutex_lock(&forks[idf]);
         printf("philo %d use fork %d\n", id, idf);
         waitRan();
-        
-        printf("philo %d eat...\n", id);
-        waitRan();
+           
+        if(bread >= 0){
+            qty = consumeBread();
+            bread -= qty;
+            printf("philo %d eat %d bread... remain %d for dinner\n", id, qty, bread);
+            waitRan();
+        }
+        else{
+            printf("philo %d want to eat but no bread remain\n", id);
+        }
         
         printf("philo %d release fork %d\n", id, id);
         pthread_mutex_unlock(&forks[id]);
@@ -44,7 +59,10 @@ void* eat(void* arg){
         printf("philo %d release fork %d\n", id, idf);
         pthread_mutex_unlock(&forks[idf]);
         waitRan();
+        
     }
+    
+    printf("philo %d leave the room !\n", id);
 }
 
 
@@ -55,7 +73,18 @@ int main(int argc, char** argv){
 		return -1;
 	}
 
-	n = atoi(argv[1]);
+    if(argc != 2){
+        printf("too much args, default 5 philos");
+        n = 5;
+    }
+    else{
+        n = atoi(argv[1]);
+        if(n<=0){
+                printf("number <= 0, default 5 philos\n");
+                n = 5;
+        }
+    }
+    
 	philosophers = (pthread_t*)malloc(n*sizeof(pthread_t));
     
     //pthread_t philosophers[n];
@@ -66,6 +95,14 @@ int main(int argc, char** argv){
     
     printf("there is %d philosophers and %d forks\n", n, n);
     
+    i = 0;
+    while(i<n){
+        tab2[i] = i;
+		pthread_mutex_init(&forks[i], NULL);
+		i++;
+	}
+	
+	i=0;
     while(i<n){
         tab[i] = i;
         if(pthread_create(&philosophers[i], NULL, (void*(*)())eat, &tab[i]) == -1){
@@ -73,13 +110,6 @@ int main(int argc, char** argv){
 		}
         i++;
     }
-    
-    i = 0;
-    while(i<n){
-        tab2[i] = i;
-		pthread_mutex_init(&forks[i], NULL);
-		i++;
-	}
     
     i = 0;
     while(i<n){
