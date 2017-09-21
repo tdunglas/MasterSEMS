@@ -1,4 +1,4 @@
-TARGETS = hello filesManager essai pipes threadP mutexP
+TARGETS = hello filesManager essai pipes threadP mutexP philosophers
 CC = gcc
 
 all : $(TARGETS)
@@ -21,6 +21,9 @@ threadP : threadP.c
 	$(CC) $< -o $@ -lpthread
 
 mutexP : mutexP.c
+	$(CC) $< -o $@ -lpthread
+
+philosophers : philosophers.c
 	$(CC) $< -o $@ -lpthread
 
 clean : 

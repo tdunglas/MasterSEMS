@@ -1,54 +1,89 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <pthread.h>
 
-int bread;
-pthread_mutex_t mutex;
+pthread_t* philosophers;
+pthread_mutex_t* forks;
+int* tab;
+int* tab2;
+int n;
 
-void eat(){
-	pthread_mutex_lock(&mutex);
-	bread -= 1;
-	pthread_mutex_unlock(&mutex);
-	printf("hello (thread),%d eating some bread, remain %d\n", getpid(),bread);
-
-	pthread_mutex_lock(&mutex);
-	bread -= 1;
-	pthread_mutex_unlock(&mutex);
-	printf("hello (thread),%d eating some bread, remain %d\n", getpid(), bread);
+int waitRan(){
+        int t = rand()%3;
+        sleep(t);
+        return EXIT_SUCCESS;
 }
+
+void* eat(void* arg){
+    int* tmp = (int*)arg;
+    int id = *tmp;
+    
+    int idf = (id+1)%n;
+    
+    while(1){
+        
+        printf("philo %d is thinking\n", id);
+        waitRan();
+            
+        pthread_mutex_lock(&forks[id]);
+        printf("philo %d use fork %d\n", id, id);
+        waitRan();
+        
+        pthread_mutex_lock(&forks[idf]);
+        printf("philo %d use fork %d\n", id, idf);
+        waitRan();
+        
+        printf("philo %d eat...\n", id);
+        waitRan();
+        
+        printf("philo %d release fork %d\n", id, id);
+        pthread_mutex_unlock(&forks[id]);
+        waitRan();
+        
+        printf("philo %d release fork %d\n", id, idf);
+        pthread_mutex_unlock(&forks[idf]);
+        waitRan();
+    }
+}
+
 
 int main(int argc, char** argv){
 
 	if(argv[1] == NULL){
-		perror("arg must be a number\n");
+		perror("arg[1] null\n");
 		return -1;
 	}
 
-	int n = (int)argv[1];
-	pthread_t* p = (pthread_t*)malloc(n*sizeof(pthread_t));
-
-	pthread_mutex_init(&mutex, NULL);
-
-	bread = 50;
-	int i = 0;
-
-	while(i<n){
-		
-		if(pthread_create(&p[i], NULL, (void*(*)())eat, NULL) == -1){
+	n = atoi(argv[1]);
+	philosophers = (pthread_t*)malloc(n*sizeof(pthread_t));
+    
+    //pthread_t philosophers[n];
+    forks = (pthread_mutex_t*)malloc(n*sizeof(pthread_mutex_t));
+    int i = 0;
+    tab = (int*)malloc(n*sizeof(int));
+    tab2 = (int*)malloc(n*sizeof(int));
+    
+    printf("there is %d philosophers and %d forks\n", n, n);
+    
+    while(i<n){
+        tab[i] = i;
+        if(pthread_create(&philosophers[i], NULL, (void*(*)())eat, &tab[i]) == -1){
 			perror("pb pthread_create\n");
 		}
-		
+        i++;
+    }
+    
+    i = 0;
+    while(i<n){
+        tab2[i] = i;
+		pthread_mutex_init(&forks[i], NULL);
 		i++;
 	}
-
-	pthread_mutex_lock(&mutex);
-	bread -= 5;
-	pthread_mutex_unlock(&mutex);
-
-	printf("hello, thread principal remaining bread : %d\n", bread);
-
-	i = 0;
-	while(i<n){
-		pthread_join(p[i],NULL);
+    
+    i = 0;
+    while(i<n){
+		pthread_join(philosophers[i],NULL);
 		i++;
 	}
 
