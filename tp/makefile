@@ -1,6 +1,6 @@
-TARGETS = hello filesManager essai pipes threadP mutexP philosophers producteurs 
+TARGETS = hello filesManager essai pipes threadP mutexP philosophers producteurs
 CC = gcc
-
+CFLAGS = -lpthread
 all : $(TARGETS)
 
 # special bahaviour for make variables
@@ -8,26 +8,26 @@ all : $(TARGETS)
 # $@ take rule name
 
 hello : hello.c
-	$(CC) $< -o $@
+	$(CC) $(CFLAGS) $< -o $@
 
 filesManager : filesManager.c
-	$(CC) $< -o $@
+	$(CC) $(CFLAGS) $< -o $@
 
 essai : essai.c
 
 pipes : pipes.c
 
 threadP : threadP.c
-	$(CC) $< -o $@ -lpthread
+	$(CC) $(CFLAGS) $< -o $@ 
 
 mutexP : mutexP.c
-	$(CC) $< -o $@ -lpthread
+	$(CC) $(CFLAGS) $< -o $@
 
 philosophers : philosophers.c
-	$(CC) $< -o $@ -lpthread
+	$(CC) $(CFLAGS) $< -o $@ 
 
-producteurs : producteurs.c buff.h
-	$(CC) $< -o $@ -lpthread
+producteurs : producteurs.c buff.c buff.h
+	$(CC) $(CFLAGS) $^ -o $@
 
 clean : 
 	rm -f $(TARGETS)
