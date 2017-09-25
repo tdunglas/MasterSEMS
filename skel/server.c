@@ -43,7 +43,6 @@
             printf("no getaddrinfo\n");
             return -1;
         }
-       
         
         rp = result;
         
@@ -110,31 +109,30 @@
         
         DFLAG = 1;
         char* srv_port = "4444"; // find in client code
-
-        //printf("%d\n", srv_sock);
         
         /* create a listening socket */
         int listeningsocket = create_a_listening_socket(srv_port,MAX_CONN);
-        printf("%d\n", listeningsocket);
+        
         /* initialize the chat room with no client */
-        
-        //printf("%d\n", srv_sock);
-        
-        //accept_clt_conn(srv_sock,NULL);
         
         struct sockaddr_in clt_s;
             
         int i = -1;
         char **body;
+        unsigned char code = MESG;
         char* msg = (char*)malloc(128*sizeof(char));
        while (1){
             
             /* wait for new incoming connection */
             //accept_clt_conn(srv_sock,NULL);
             i = accept_clt_conn(listeningsocket,NULL);
-            sleep(2);
             printf("sock %d\n",i);
             if(i != -1){
+                unsigned char *size;
+                char **body;
+                recv_msg(i, &code, size, body);
+                
+                /*
                 int j = recv(i, msg, 128, MSG_EOR);
                 
                 printf("res %d\n", j);
@@ -144,6 +142,7 @@
                 
                 char* tmpmsg = "hello from server";
                 send(i, tmpmsg, strlen(tmpmsg),MSG_EOR);
+                */
                 //recv_msg(i,msg, 128,body);
             }
             

@@ -67,14 +67,9 @@
             
             close(sfd);
             
-            //printf("clt_sock value : %d\n", clt_sock);
             rp = rp->ai_next;
             i++;
         }
-        
-        //printf("i value : %d\n", i);
-       // printf("clt_sock value : %d\n", clt_sock);
-       // printf("sfd value : %d\n", sfd);
         
         clt_sock = sfd;
         
@@ -180,10 +175,11 @@
             printf("sock < 0");
             return -1;
         }
+  /*      
         unsigned char code;
         unsigned char size;
         char *body;
-        
+  /*      
         char* tmpmsg = "hello from client";
         send(clt_sock, tmpmsg, strlen(tmpmsg),MSG_EOR);
         
@@ -191,8 +187,11 @@
         int j = recv(clt_sock, msg, 128, MSG_EOR);
                 
                 printf("res %s\n", msg);
+  */
   
-  //      send_msg(clt_sock,code,size,body);
+        unsigned char code = MESG;
+        char* body = "hello from client";
+        send_msg(clt_sock, code, strlen(body), body);
         
         
         
