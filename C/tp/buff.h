@@ -10,8 +10,8 @@ typedef struct{
     int w; // indice writer
     sem_t s1; // free space 
     sem_t s2; // used space 
-    pthread_mutex_t* mr; // lock for r
-    pthread_mutex_t* mw; // lock for w
+    pthread_mutex_t mr; // lock for r
+    pthread_mutex_t mw; // lock for w
 }buff;
 
 int buffInit(buff* sb);
