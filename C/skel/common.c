@@ -55,7 +55,6 @@
         *body = malloc((*size)*sizeof(char));
         
         int tmp = recv(sock, *body, *size, 0);
-        printf("tmp : %d\n", tmp);
         
         if(tmp <= 0){
             perror("rev err\n");

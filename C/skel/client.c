@@ -41,8 +41,6 @@
         
         int s, sfd;
         
-        int i = 0;
-        
         s = getaddrinfo(NULL, srv_port, &hints, &result);
         
         if (s != 0) {
@@ -68,7 +66,6 @@
             close(sfd);
             
             rp = rp->ai_next;
-            i++;
         }
         
         clt_sock = sfd;
@@ -103,6 +100,19 @@
 
         */
 
+        unsigned char size;
+        char *b;
+        //while(1){
+            unsigned char code = code = AUTH_REQ;
+            recv_msg(clt_sock, &code, &size, &b); // wait AUTH_REQ
+            
+        
+            code = AUTH_RESP;
+            char* login = "logClient";
+            send_msg(clt_sock, code, strlen(login), login); // send AUTH_RESP
+            
+        //}
+            
         return -1;
     }
 
@@ -175,28 +185,14 @@
             printf("sock < 0");
             return -1;
         }
-  /*      
-        unsigned char code;
-        unsigned char size;
-        char *body;
-  /*      
-        char* tmpmsg = "hello from client";
-        send(clt_sock, tmpmsg, strlen(tmpmsg),MSG_EOR);
-        
-        char* msg = (char*)malloc(128*sizeof(char));
-        int j = recv(clt_sock, msg, 128, MSG_EOR);
-                
-                printf("res %s\n", msg);
-  */
   
+        /*testing*/
         unsigned char code = MESG;
         char* body = "hello from client";
         send_msg(clt_sock, code, strlen(body), body);
         
-        
-        
         // authenticate
-        //authenticate(clt_sock);
+        authenticate(clt_sock);
         
         // start instant messaging app
         

@@ -9,7 +9,6 @@
     int srv_sock;   
 
     int create_a_listening_socket(char* srv_port, int maxconn){
-        int srv_sock = -1;
 
         /* Code nécessaires à la création d'une socket en
             écoute : 
@@ -35,7 +34,6 @@
         hints.ai_socktype = SOCK_STREAM; // datagram socket 
         hints.ai_flags = AI_PASSIVE | AI_ALL; // wild card ip addr
         int s, sfd;
-        
         
         s = getaddrinfo("localhost", srv_port, &hints, &result);
         
@@ -69,7 +67,6 @@
         
         listen(sfd, 10);
         
-        //return srv_sock; 
         return sfd;
     }
 
@@ -114,39 +111,26 @@
         int listeningsocket = create_a_listening_socket(srv_port,MAX_CONN);
         
         /* initialize the chat room with no client */
-        
-        struct sockaddr_in clt_s;
+        initialize_chat_room();
             
         int sock = -1;
-        char **body;
         unsigned char code = MESG;
-        char* msg;
-       while (1){
+        while (1){
             
             /* wait for new incoming connection */
-            //accept_clt_conn(srv_sock,NULL);
             sock = accept_clt_conn(listeningsocket,NULL);
+            
             printf("sock %d\n",sock);
+            
             if(sock != -1){
                 unsigned char size;
                 char *body;
                 recv_msg(sock, &code, &size, &body);
                 
-                /*
-                int j = recv(i, msg, 128, MSG_EOR);
-                
-                printf("res %d\n", j);
-                printf("res %s\n", msg);
-                
-                
-                
-                char* tmpmsg = "hello from server";
-                send(i, tmpmsg, strlen(tmpmsg),MSG_EOR);
-                */
-                //recv_msg(i,msg, 128,body);
             }
             
             /* register new buddies in the chat room */
+            clt_authentication(sock);
             
         } /* while */
 

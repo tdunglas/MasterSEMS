@@ -8,6 +8,10 @@
 
 typedef struct 
 {
+    int sock;
+    char login[BUFFSIZE];
+    char ip[IP_LENGTH];
+    int port;
 } buddy_t;
   
 pthread_t chatroom_id;
@@ -109,7 +113,14 @@ int broadcast_text(char *login, char *data)
    return a pointer to newly allocated string containing the login
  */
 char* clt_authentication(int clt_sock){
+    
   int attemp;
+  
+  unsigned char code;
+  unsigned char size;
+  char *body;
+  int res;
+  
   for(attemp=0; attemp < MAX_AUTH_ATTEMPS; attemp++){
     
     /* 
@@ -126,6 +137,29 @@ char* clt_authentication(int clt_sock){
 
      */
     
+    code = AUTH_REQ;
+    printf("send AUTH_REQ\n");
+    send_msg(clt_sock, code, NULL, NULL);
+    
+    code = AUTH_RESP;
+    printf("wait AUTH_RESP\n");
+    res = recv_msg(clt_sock, &code, &size, &body);
+    
+    if(res == 0){
+        printf("login : %s\n", body);
+        
+        code = ACCESS_OK;
+        printf("send ACCESS_OK\n");
+        send_msg(clt_sock, code, NULL, NULL);
+        
+        return body;
+    }
+    else{
+        code = ACCESS_DENIED;
+        printf("send ACCESS_DENIED\n");
+        send_msg(clt_sock, code, NULL, NULL);
+    }
+    
   } /* for */
   
   return NULL;
@@ -134,6 +168,8 @@ char* clt_authentication(int clt_sock){
 int login_chatroom(int clt_sock, char *ip, int port)
 {
   char *login;
+  
+  /* test if chatroom is full : busy */
   
   /* authenticate the connected client */
 
