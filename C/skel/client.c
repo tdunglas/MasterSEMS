@@ -99,24 +99,39 @@
             - agir en conséquence ...
 
         */
-
-        unsigned char size;
-        char *b;
-        //while(1){
-            unsigned char code = code = AUTH_REQ;
-            recv_msg(clt_sock, &code, &size, &b); // wait AUTH_REQ
-            
         
-            code = AUTH_RESP;
-            char* login = "logClient";
-            send_msg(clt_sock, code, strlen(login)+1, login); // send AUTH_RESP
+        while(1){
             
+            unsigned char size;
+            char *b;
+            unsigned char code;
+        
+            recv_msg(clt_sock, &code, &size, &b); 
             
-            char *msg;
-            unsigned char size2;
-            recv_msg(clt_sock, &code, &size2, &msg);
-            printf("%s\n", msg);
-        //}
+            switch(code){
+                case AUTH_REQ: printf("authentication...\n");
+                
+                    printf("enter a login : ");
+                    char* input = (char*)malloc(sizeof(char)*126);
+                    scanf("%s", input);
+                
+                    code = AUTH_RESP;
+                    send_msg(clt_sock, code, strlen(input)+1, input); // send AUTH_RESP
+            
+                break;
+                
+                case ACCESS_OK: printf("authentication... success\n");
+                
+                    printf("log recv %s\n", b);
+                    
+                    return 0;
+                break;
+                
+                default: printf("no auth\n");
+                    return -1;
+            }
+            
+        }
             
         return -1;
     }
@@ -124,7 +139,7 @@
     int instant_messaging(int clt_sock){
     
         while(1){
-            /*    fd_set rset;
+            fd_set rset;
             unsigned char code;
             unsigned char size;
             char *data;
@@ -132,45 +147,57 @@
             FD_ZERO(&rset);
             FD_SET(clt_sock, &rset);
             FD_SET(STDIN_FILENO, &rset);
-            */
+            
             
             /* pour les étapes 2 à 4 se contenter de recevoir les messages
             envoyés par le serveur et les afficher à l'utilisateur
             */
 
-            // if (select(clt_sock+1, &rset, NULL, NULL, NULL) < 0){
-            //   PERROR("select");
-            //   exit(EXIT_FAILURE);
-            // }
+             if (select(clt_sock+1, &rset, NULL, NULL, NULL) < 0){
+               PERROR("select");
+               exit(EXIT_FAILURE);
+             }
             
-            // if (FD_ISSET(STDIN_FILENO, &rset)){
+             if (FD_ISSET(STDIN_FILENO, &rset)){
+                 
             /* l'utilisateur a tapé un nouveau message */
-            //   DEBUG("STDIN_FILENO isset");
-            //   data = malloc(BUFFSIZE);
-            //   if (fgets(data, BUFFSIZE, stdin) == NULL){
+              DEBUG("STDIN_FILENO isset");
+               data = malloc(BUFFSIZE);
+               
+               if (fgets(data, BUFFSIZE, stdin) == NULL){
                 /* gérer feof et ferror */
-
-        //   <COMPLÉTER>
+                
+                    //   <COMPLÉTER>
+                    if(send_msg(clt_sock , END_OK, 0, NULL) == -1){
+                        perror("sending END_OK failed");
+                    }
             
-            // 	return 0;
-            //   }
-            //   size = strlen(data)+1;
+             	return 0;
+               }
+               
+               size = strlen(data)+1;
             
-            //   DEBUG("sending MESG %s(%d)", data, size);
+               DEBUG("sending MESG %s(%d)", data, size);
 
-            //  <COMPLÉTER>
-
-            //   free(data);
+               
+                if(send_msg(clt_sock, MESG, size, data) == -1){
+                    perror("sending MESG failed");
+                }
+                
+               free(data);
             
-            // }
+             }
 
-            //  if (FD_ISSET(clt_sock, &rset)){
+              if (FD_ISSET(clt_sock, &rset)){
             /* réception d'un message du serveur */
             /* expected: <code><datalen>[<data>] */
 
             //  <COMPLÉTER>
-            
-            //}
+                char *msg;
+                unsigned char size2;
+                recv_msg(clt_sock, &code, &size2, &msg);
+                printf("msg %s\n", msg);
+            }
             
         } /* while (1) */
 
@@ -199,7 +226,15 @@
         // authenticate
         authenticate(clt_sock);
         
+        printf("654");
         // start instant messaging app
-        
+        if (instant_messaging(clt_sock) < 0){
+            close(clt_sock);
+            eprintf("connexion closed\n");
+            exit(EXIT_FAILURE);
+        }
+
+        close(clt_sock);
+        eprintf("connexion closed\n");
         exit(EXIT_SUCCESS);
     }

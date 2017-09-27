@@ -62,7 +62,7 @@
             return -1;
         }
         
-        printf("msg : %s\n", *body);
+        //printf("msg : %s\n", *body);
         //free(*body);
         
         return 0;

@@ -129,20 +129,22 @@
                 
             }
             
+            
+            char *clt_ip;
+            int clt_port;
+            struct sockaddr_in clt_sockaddr;
+            
+            clt_ip = inet_ntoa(clt_sockaddr.sin_addr);
+            clt_port = ntohs(clt_sockaddr.sin_port);
+            
             /* register new buddies in the chat room */
-            clt_authentication(sock);
-            
-            struct sockaddr_in sin;
-            socklen_t len = sizeof(sin);
-            if (getsockname(sock, (struct sockaddr *)&sin, &len) == -1)
-                perror("getsockname");
-            else{
-                printf("port number %d\n", ntohs(sin.sin_port));
-                printf("port addr %d\n", ntohs(sin.sin_addr.s_addr));
-            
+            if ( login_chatroom(sock, clt_ip, clt_port) != 0 ) 
+            {
+                DEBUG("client %s:%d not accepted", clt_ip, clt_port);	
+                close(sock);
+                DEBUG("close clt_sock %s:%d", clt_ip, clt_port);
             }
             
-            //login_chatroom(sock, char *ip, srv_port);
             
         } /* while */
 
