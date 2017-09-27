@@ -117,20 +117,20 @@
         
         struct sockaddr_in clt_s;
             
-        int i = -1;
+        int sock = -1;
         char **body;
         unsigned char code = MESG;
-        char* msg = (char*)malloc(128*sizeof(char));
+        char* msg;
        while (1){
             
             /* wait for new incoming connection */
             //accept_clt_conn(srv_sock,NULL);
-            i = accept_clt_conn(listeningsocket,NULL);
-            printf("sock %d\n",i);
-            if(i != -1){
-                unsigned char *size;
-                char **body;
-                recv_msg(i, &code, size, body);
+            sock = accept_clt_conn(listeningsocket,NULL);
+            printf("sock %d\n",sock);
+            if(sock != -1){
+                unsigned char size;
+                char *body;
+                recv_msg(sock, &code, &size, &body);
                 
                 /*
                 int j = recv(i, msg, 128, MSG_EOR);

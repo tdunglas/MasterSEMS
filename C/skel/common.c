@@ -16,23 +16,20 @@
         /* Code nécessaire à envoyer le message correspondant au protocle
             sur la socket
         */
-        
         if(send(sock, &msg, HEADSIZE, 0) == -1){
             perror("head err");
             return -1;
         }
         
-        
-        if((size) != 0){
+        if((size) <= 0){
                 return HEADSIZE;
         }
-        
 
         if(send(sock, body, size, 0) == -1){
                 perror("send err");
             return -1;
         }
-
+        
         return HEADSIZE + size;
     }
 
@@ -47,33 +44,27 @@
         msg_t msg;
         
         int i = recv(sock, &msg, HEADSIZE, 0);
-        printf("succes1\n");
         
         *code = msg.code;
-        
-        printf("msg %d\n", msg);
-        
-        printf("*size %d\n", *size);
-        printf("msg.size %d\n", msg.size);
-        printf("succes2\n");
-        
         *size = msg.size;
-        printf(" 654 \n");
         
         if( *size == 0){
             return HEADSIZE;
         }
         
-        printf("succes3\n");
         *body = malloc((*size)*sizeof(char));
-    
-        if(recv(sock, *body, *size, 0) <= 0){
+        
+        int tmp = recv(sock, *body, *size, 0);
+        printf("tmp : %d\n", tmp);
+        
+        if(tmp <= 0){
             perror("rev err\n");
             free(*body);
             return -1;
         }
         
         printf("msg : %s\n", *body);
+        free(*body);
         
         return 0;
     }
