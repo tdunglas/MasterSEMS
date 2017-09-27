@@ -72,7 +72,8 @@
 
     int accept_clt_conn(int srv_sock, struct sockaddr_in *clt_sockaddr){
         int clt_sock =-1;
-
+        socklen_t addrlen;
+        
         /* Code nécessaire à l'acception d'une connexion sur
             la socket en écoute (passée en argument via le paramètre srv_sock :
             
@@ -85,13 +86,12 @@
             
         */
         
-        /*clt_sock = accept(srv_sock, 
-                          (struct sockaddr *)clt_sockaddr, 
-                          (socklen_t *)clt_sockaddr->ai_addrlen);
-       
-       */
-        clt_sock = accept(srv_sock, NULL, NULL);
-
+        //clt_sock = accept(srv_sock, NULL, NULL);
+        
+        clt_sock = accept(srv_sock, 
+		    (struct sockaddr *)clt_sockaddr,
+		    (socklen_t *)&addrlen);
+        
         if(clt_sock == -1){
             printf("no accept\n");
             return -1;
@@ -131,6 +131,18 @@
             
             /* register new buddies in the chat room */
             clt_authentication(sock);
+            
+            struct sockaddr_in sin;
+            socklen_t len = sizeof(sin);
+            if (getsockname(sock, (struct sockaddr *)&sin, &len) == -1)
+                perror("getsockname");
+            else{
+                printf("port number %d\n", ntohs(sin.sin_port));
+                printf("port addr %d\n", ntohs(sin.sin_addr.s_addr));
+            
+            }
+            
+            //login_chatroom(sock, char *ip, srv_port);
             
         } /* while */
 

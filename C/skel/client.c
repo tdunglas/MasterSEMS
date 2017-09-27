@@ -109,8 +109,13 @@
         
             code = AUTH_RESP;
             char* login = "logClient";
-            send_msg(clt_sock, code, strlen(login), login); // send AUTH_RESP
+            send_msg(clt_sock, code, strlen(login)+1, login); // send AUTH_RESP
             
+            
+            char *msg;
+            unsigned char size2;
+            recv_msg(clt_sock, &code, &size2, &msg);
+            printf("%s\n", msg);
         //}
             
         return -1;

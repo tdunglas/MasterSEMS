@@ -139,7 +139,7 @@ char* clt_authentication(int clt_sock){
     
     code = AUTH_REQ;
     printf("send AUTH_REQ\n");
-    send_msg(clt_sock, code, NULL, NULL);
+    send_msg(clt_sock, code, 0, NULL);
     
     code = AUTH_RESP;
     printf("wait AUTH_RESP\n");
@@ -150,7 +150,7 @@ char* clt_authentication(int clt_sock){
         
         code = ACCESS_OK;
         printf("send ACCESS_OK\n");
-        send_msg(clt_sock, code, NULL, NULL);
+        send_msg(clt_sock, code, strlen(body)+1, body);
         
         return body;
     }
