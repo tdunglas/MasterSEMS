@@ -32,5 +32,11 @@ public class Military extends Personne{
 			System.out.println("from " + o.getOrderSender() + " : " + o.getOrderContent() + " -  status " + o.getOrderStatus());
 		}
 	}
+	
+	public String toString(){
+		if(regiment != null)
+			return super.toString() + " regiment : " + regiment.getId();
+		return super.toString();
+	}
 
 }

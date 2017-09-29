@@ -16,7 +16,12 @@ public class Governement {
 		String res = "";
 		
 		for(Personne p : personnes){
-			res += "personne " + p.toString() + "\n";
+			if(!p.isAlive()){
+				personnes.remove(p);
+			}
+			else{
+				res += "personne " + p.toString() + "\n";
+			}
 		}
 		
 		res += "details military :\n";

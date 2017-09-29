@@ -8,12 +8,18 @@ import java.util.ArrayList;
  */
 public class Regiment {
 	
-	private static int id;
+	private static int compteur;
+	private int id;
 	private Officier officer = null;
 	private ArrayList<Soldier> soldiers = new ArrayList<Soldier>();
 	
-	static {
-		id++;
+	public Regiment() {
+		id = compteur;
+		compteur++;
+	}
+	
+	public int getId(){
+		return id;
 	}
 	
 	public void addOfficier(Officier o){ // replace current officier
@@ -35,8 +41,11 @@ public class Regiment {
 	}
 	
 	public void removeOfficier(){
-		officer.setRegiment(null);
-		officer = null;
+		
+		if(officer != null){
+			officer.setRegiment(null);
+			officer = null;
+		}
 	}
 	
 	public void removeSoldier(Soldier s){

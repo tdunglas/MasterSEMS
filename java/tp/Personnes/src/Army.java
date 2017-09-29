@@ -51,7 +51,13 @@ public class Army {
     	String res = "";
     	
     	for(Military m : military){
-			res += "Military " + m.toString() + "\n";
+    		
+    		if(!m.isAlive()){
+    			military.remove(m);
+    		}
+    		else{
+    			res += "Military " + m.toString() + "\n";
+    		}
 		}
     	
     	return res;
@@ -61,7 +67,13 @@ public class Army {
     	String res = "";
     	
     	for(Officier o : officier){
-			res += "Officier " + o.toString() + "\n";
+    		
+    		if(!o.isAlive()){
+    			officier.remove(o);
+    		}
+    		else{
+    			res += "Officier " + o.toString() + "\n";
+    		}
 		}
     	
     	return res;
@@ -70,8 +82,25 @@ public class Army {
     public String showAllSoldier(){
     	String res = "";
     	
-    	for(Soldier s : soldier){
-			res += "Soldier " + s.toString() + "\n";
+//    	for(Soldier s : soldier){
+//    		
+//    		if(!s.isAlive()){
+//    			soldier.remove(s);
+//    		}
+//    		else{
+//    			res += "Soldier " + s.toString() + "\n";
+//    		}
+//		}
+    	
+    	for(int i=0; i<soldier.size(); i++){
+    		Soldier s = soldier.get(i);
+    		
+    		if(!s.isAlive()){
+    			soldier.remove(s);
+    		}
+    		else{
+    			res += "Soldier " + s.toString() + "\n";
+    		}
 		}
     	
     	return res;
