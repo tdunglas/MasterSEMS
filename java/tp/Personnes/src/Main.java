@@ -9,7 +9,7 @@ public class Main {
 		Soldier paul = new BadSoldier("leuck","paul");
 		Officier gustave = new Officier("rodolf","gustave");
 		
-		/*
+		
 		Regiment r1 = new Regiment();
 		Regiment r2 = new Regiment();
 		
@@ -26,18 +26,21 @@ public class Main {
 
 		r1.transferOfficier(gustave, r2);
 		r1.transferSoldier(paul, r2);
-		System.out.println(r2);
+		//System.out.println(r2);
 
 		r1.removeSoldier(ryan);
-		System.out.println(r1);
+		//System.out.println(r1);
 		
-		System.out.println(ryan);
-		*/
+		//System.out.println(ryan);
+
+		System.out.println(r1);
+		System.out.println(r2);
 
 		jenny.marriedTo(ryan, true);
 		ryan.deivorced();
 		paul.died();
-		
+		System.out.println(r1);
+		System.out.println(r2);
 		//ryan.showOrder();
 		
 

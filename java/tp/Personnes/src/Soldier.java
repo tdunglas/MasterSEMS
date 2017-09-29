@@ -15,4 +15,11 @@ public class Soldier extends Military{
 		o.executeOrder();
 		super.orders.add(o);
 	}
+	
+	public void died(){
+		super.died();
+		super.getRegiment().removeSoldier(this);
+		Regiment tmp = getRegiment();
+		tmp = null;
+	}
 }

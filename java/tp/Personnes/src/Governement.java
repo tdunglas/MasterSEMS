@@ -12,6 +12,10 @@ public class Governement {
 		personnes.add(p);
 	}
 	
+	public static void removeDead(Personne p){
+		personnes.remove(p);
+	}
+	
 	public static String showAllPersonnes(){
 		String res = "";
 		

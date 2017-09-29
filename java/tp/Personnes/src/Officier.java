@@ -15,4 +15,11 @@ public class Officier extends Military{
 		o.giveOrderStatus();
 		super.orders.add(o);
 	}
+	
+	public void died(){
+		super.died();
+		getRegiment().removeOfficier();
+		Regiment tmp = getRegiment();
+		tmp = null;
+	}
 }

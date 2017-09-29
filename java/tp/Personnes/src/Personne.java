@@ -33,11 +33,13 @@ public class Personne {
 	}
 	
 	public void died(){
+		Governement.removeDead(this);
 		alive = false;
 	}
 
 	public void resurection(){
 		alive = true;
+		System.out.println("I'm alive npw");
 	}
 	
 	public CoupleStatus getCoupleStatus(){

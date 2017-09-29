@@ -71,7 +71,13 @@ public class Regiment {
 		res += "officier : " + officer + "\n"; 
 		
 		for(int i=0; i< soldiers.size(); i++){
-			res += "soldier : " + soldiers.get(i) + "\n"; 
+			
+			if(!soldiers.get(i).isAlive()){
+				soldiers.remove(soldiers.get(i));
+			}
+			else{
+				res += "soldier : " + soldiers.get(i) + "\n";
+			}
 		}
 		
 		res += "]"; 
