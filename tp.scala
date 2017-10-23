@@ -1,3 +1,5 @@
+import sun.security.util.Length
+
 
 object tp {
 
@@ -38,14 +40,20 @@ object tp {
 
 	def clip(s: String) = s.substring(0, s.length - 1);
 
-	def middle(s: String) = s.substring(s.length/2, s.length/2+1);
+	def middle(s: String) = {
+	     if(s.length() == 0)
+	          s
+	     else
+	          s.substring(s.length/2, s.length/2+1);
+	}
 
 	def dtrunc(s:String) = s.substring(1, s.length - 1);
 
 	def switch(s:String) = s.substring((s.length)/2, s.length) ++ s.substring(0, (s.length)/2);
 
-	def dubmid(s:String) = s.substring(0, (s.length)/2) ++ 
-			               s.charAt(s.length()/2).toString()++
-			               s.substring((s.length)/2, s.length) ;
-
+	def dubmid(s:String) = {
+          s.substring(0, s.length/2) ++ 
+          middle(s)++
+          s.substring(s.length/2, s.length) ;
+     }
 }
