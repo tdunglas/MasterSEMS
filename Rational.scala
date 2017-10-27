@@ -21,6 +21,7 @@ class Rational(val _num:Int,val _den:Int) {
                pgcd(b, a%b);
           };
           
+     implicit def intToRational(x:Int) = new Rational(x, 1)
      
      // opposite
      def unary_-():Rational = new Rational(-num, den);
@@ -31,22 +32,20 @@ class Rational(val _num:Int,val _den:Int) {
      // Operations 
      def +(that: Rational): Rational = new Rational(num * that.den + den * that.num, den * that.den);
      
-     def +(that: Int): Rational = if(that == 0) this else new Rational(num + that * den, den * that);
-     
+     def +(that: Int): Rational = this.+(intToRational(that));
      
      def -(that: Rational): Rational = new Rational(num * that.den - den * that.num, den * that.den);
      
-     def -(that: Int): Rational = if(that == 0) this else new Rational(num - that * den, den * that);
+     def -(that: Int): Rational = this.-(intToRational(that));
      
      def *(that: Rational): Rational = new Rational(num * that.num, den * that.den);
      
-     def *(that: Int) = if(that == 0) 0 else new Rational(num * that, den);
+     def *(that: Int): Rational = this.*(intToRational(that));
      
      def /(that: Rational): Rational = this.*(reverse(that));
      
-     def /(that: Int): Rational = this./(new Rational(that, 1));
+     def /(that: Int): Rational = this./(intToRational(that));
      
-     implicit def intToRational(x:Int) = new Rational(x, 1)
      
 }
 
