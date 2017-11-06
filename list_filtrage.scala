@@ -45,12 +45,12 @@ class list_filtrage {
      
      // take (l,i)renvoie la liste composée des i premiers éléments de l
      def take[A](l: List[A], i: Int): List[A] = l match {
-          case (h::t) => if(i==0) List(h) else h :: take(t ,i-1)
+          case (h::t) => if(i==0) Nil else h :: take(t ,i-1)
      }
      
      // drop (l,i) renvoie la liste obtenue en enlevant les i premiers éléments de l
      def drop[A](l: List[A], i: Int): List[A] = l match {
-          case (h::t) => rev(take(rev(l),l.length -1 - i))
+          case (h::t) => rev(take(rev(l),l.length - i))
      }
      
      // renvoie un couple de listes obtenues en séparant chaque coup le de la liste donnée en argument.
