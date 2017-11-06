@@ -45,11 +45,13 @@ class list_filtrage {
      
      // take (l,i)renvoie la liste composée des i premiers éléments de l
      def take[A](l: List[A], i: Int): List[A] = l match {
+          case Nil => throw new NullPointerException
           case (h::t) => if(i==0) Nil else h :: take(t ,i-1)
      }
      
      // drop (l,i) renvoie la liste obtenue en enlevant les i premiers éléments de l
      def drop[A](l: List[A], i: Int): List[A] = l match {
+          case Nil => throw new NullPointerException
           case (h::t) => rev(take(rev(l),l.length - i))
      }
      
@@ -86,6 +88,10 @@ object o{
      // test take
      val v3 = lf.take(List(1,2,3,4,5,6),3)
      
+     val t0 = System.nanoTime()
      // test drop
      val v4 = lf.drop(List('a','z','e','r','t','y'),4)
+     val t1 = System.nanoTime()
+     val t2 = (t1 - t0)/1000 // millisecond
+     
 }
