@@ -25,7 +25,9 @@ object obj {
   def filter [A](p: A => Boolean, z: List[Future[A]]): List[Future[Option[A]]] = 
     map((a:A) => if(p(a)) Some(a) else None, z)
   
-  def collect [A](z : List[Future[A]]): Future[List[A]] = 
-    Future(z.map(x => getResult(x)))
+  def collect [A](z : List[Future[A]]): Future[List[A]] = z match {
+    case Nil => Future(Nil)
+    case (h::t) => h.flatMap( x => collect(t).map(y => x :: y))
+  }
   
 }
