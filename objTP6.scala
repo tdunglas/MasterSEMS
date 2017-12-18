@@ -16,24 +16,16 @@ object obj {
   
   
   // allow using filter,map,flatMap
-  def map [A,B](f: A => B, z: List[Future[A]]): List[Future[B]] = z match {
-    case Nil => Nil
-    case (h::t) => Future(f(getResult(h))) :: map(f,t)
-  }
+  def map [A,B](f: A => B, z: List[Future[A]]): List[Future[B]] = 
+    z.map(x => x.map(f))
   
-  def flatMap [A,B](f: A => Future[B], z: List[Future[A]]): List[Future[B]] = z match {
-    case Nil => Nil
-    case (h::t) => f(getResult(h)) :: flatMap(f,t)
-  }
+  def flatMap [A,B](f: A => Future[B], z: List[Future[A]]): List[Future[B]] = 
+    z.map(x => x.flatMap(f))
     
-  def filter [A](p: A => Boolean, z: List[Future[A]]): List[Future[Option[A]]] = z match {
-    case Nil => Nil
-    case (h::t) => if(p(getResult(h))) Future(Option(getResult(h))) :: filter(p,t)  else filter(p,t)
-  }
+  def filter [A](p: A => Boolean, z: List[Future[A]]): List[Future[Option[A]]] = 
+    map((a:A) => if(p(a)) Some(a) else None, z)
   
-  def collect [A](z : List[Future[A]]): Future[List[A]] = z match {
-    case Nil => Future(Nil) 
-    case (h::t) => Future(getResult(h) :: getResult(collect(t)))
-  }
+  def collect [A](z : List[Future[A]]): Future[List[A]] = 
+    Future(z.map(x => getResult(x)))
   
 }
