@@ -1,59 +1,77 @@
-import sun.security.util.Length
 
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits._
+import scala.concurrent.Await
+import scala.concurrent.duration.Duration
 
-object tp {
+/**
+ * tri fusion parallele
+ */
+class tp {
 
-	val x = 12;
+  def split[A](l: List[A], n: Int): (List[A], List[A]) = (l.take(n), l.drop(n))
 
-	def sort_imp(xs: Array[Int]) {
-		def swap(i: Int, j: Int) {
-			val t = xs(i); xs(i) = xs(j); xs(j) = t
-		}
-		def sort1(l: Int, r: Int) {
-			val pivot = xs((l + r) / 2)
-					var i = l; var j = r
-					while (i <= j) {
-						while (xs(i) < pivot) i += 1
-								while (xs(j) > pivot) j -= 1
-								if (i <= j) {
-									swap(i, j)
-									i += 1
-									j -= 1
-								}
-					}
-					if (l < j) sort1(l, j)
-					if (j < r) sort1(i, r)
-		}
-		sort1(0, xs.length - 1)
-	}
+  def merge(l1: List[Int], l2: List[Int]): List[Int] = {
 
-	def sort(xs: Vector[Int]): Vector[Int] = {
-			if (xs.length <= 1) xs
-			else {
-				val pivot = xs(xs.length / 2)
-						Vector.concat(
-								sort(xs.filter(x => pivot > x)),
-								xs.filter(x => pivot == x),
-								sort(xs.filter(x => pivot < x)))
-			}
-	}
+    if (l1 == Nil) return l2
+    if (l2 == Nil) return l1
 
-	def clip(s: String) = s.substring(0, s.length - 1);
+    var (h1 :: t1) = l1
+    var (h2 :: t2) = l2
 
-	def middle(s: String) = {
-	     if(s.length() == 0)
-	          s
-	     else
-	          s.substring(s.length/2, s.length/2+1);
-	}
+    if (h1 < h2) h1 :: merge(t1, l2) else h2 :: merge(l1, t2)
+  }
 
-	def dtrunc(s:String) = s.substring(1, s.length - 1);
+  def sortRec(l: List[Int]): List[Int] = {
+    if (l.size <= 1) {
+      return l
+    }
 
-	def switch(s:String) = s.substring((s.length)/2, s.length) ++ s.substring(0, (s.length)/2);
+    val (l1, l2) = l.splitAt(l.size / 2)
 
-	def dubmid(s:String) = {
-          s.substring(0, s.length/2) ++ 
-          middle(s)++
-          s.substring(s.length/2, s.length) ;
-     }
+    val r1 = sortRec(l1);
+    val r2 = sortRec(l2);
+
+    merge(r1, r2)
+
+  }
+
+  def sortPara(l: List[Int]): Future[List[Int]] = {
+
+    if (l.size <= 1) {
+      return Future(l)
+    }
+
+    val (l1, l2) = l.splitAt(l.size / 2)
+
+    val f1 = Future(sortRec(l1))
+    val f2 = Future(sortRec(l2))
+
+    for (sl1 <- f1; sl2 <- f2) yield (merge(sl1, sl2))
+
+  }
+
+  def reduce[A](l: List[A], z: A, f: (A, A) => A): A = l match {
+    case Nil      => z
+    case (h :: t) => reduce(t, f(z, h), f)
+  }
+
+  def mergeSort(l: List[Int]): List[Int] = l match {
+    case Nil => Nil
+    case (h :: t) => reduce(helper(t), List(h),
+      (x: List[Int], y: List[Int]) => {
+        var (hx :: tx) = x
+        var (hy :: ty) = y
+
+        if (hx < hy) x ++ y else y ++ x
+      })
+  }
+  
+  def helper[A](l: List[A]): List[List[A]] = l match {
+    case Nil      => List(Nil)
+    case (h :: t) => List(List(h)) ++ helper(t)
+  }
+  
+  def reducePara[A](l : List[A], z : A, f : (A, A) => A): Future[A]
+
 }
