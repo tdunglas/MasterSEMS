@@ -38,7 +38,7 @@ object main {
         var r4 = v.mergeSort(l2)
         timeEnd = System.nanoTime()
         println("r4 (merge), time : " + (timeEnd-timeStart) + " result : " + r4)
-        
+         
         timeStart = System.nanoTime()
         var r6 = v.mergeSortPara(l2) andThen {
          case Success(listInt) => { 
