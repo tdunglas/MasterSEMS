@@ -61,6 +61,8 @@ class tp {
         reduce(right, z, f)
       }
       
+      fib(20) // to add time for better comparaison
+      
       f(h, reduce(t,z,f)) 
       
     }    
@@ -91,6 +93,8 @@ class tp {
       val f1 = reducePara(left, z, f)
       val f2 = reducePara(right, z, f)
       
+      fib(20) // to add time for better comparaison
+      
       for(x <- f1; y <- f2) yield( f(x, y))
           
     }
@@ -104,5 +108,11 @@ class tp {
     }
   }
   
+    def fib(n : Int) : Int = {
+    if (n == 1 || n == 2)
+        return n
+
+    return fib(n-1) + fib(n-2)
+  }
 
 }
