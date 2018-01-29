@@ -36,7 +36,7 @@ class tp {
 
   }
 
-  def sortPara(l: List[Int]): Future[List[Int]] = { 
+  def sortPara(l: List[Int]): Future[List[Int]] = {  
 
     if (l.size <= 1) {
       return Future(l)
