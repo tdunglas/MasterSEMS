@@ -53,18 +53,26 @@ class tp {
 
   def reduce[A](l: List[A], z: A, f: (A, A) => A): A = l match {
     case Nil      => z
-    case (h :: t) => reduce(t, f(z, h), f)
+    case (h :: t) => {
+      
+      if(l.size > 2){
+        var (left, right) = split(l, l.size/2)
+        reduce(left, z, f)
+        reduce(right, z, f)
+      }
+      
+      f(h, reduce(t,z,f)) 
+      
+    }    
   }
 
   def mergeSort(l: List[Int]): List[Int] = l match {
     case Nil => Nil
-    case (h :: t) => reduce(helper(t), List(h),
-      (x: List[Int], y: List[Int]) => {
-        var (hx :: tx) = x
-        var (hy :: ty) = y
-
-        if (hx < hy) x ++ y else y ++ x
-      })
+    case (h :: t) => {
+        reduce(helper(l), Nil, (x: List[Int], y: List[Int]) => {
+          sortRec(x ++ y)
+        })
+    }
   }
   
   def helper[A](l: List[A]): List[List[A]] = l match {
@@ -72,6 +80,29 @@ class tp {
     case (h :: t) => List(List(h)) ++ helper(t)
   }
   
-  def reducePara[A](l : List[A], z : A, f : (A, A) => A): Future[A]
+  def reducePara[A](l : List[A], z : A, f : (A, A) => A): Future[A] = {
+      
+      if (l.size <= 1) {
+        var (h :: t) = l 
+        return Future(h)
+      }
+
+      var (left, right) = split(l, l.length/2)
+      val f1 = reducePara(left, z, f)
+      val f2 = reducePara(right, z, f)
+      
+      for(x <- f1; y <- f2) yield( f(x, y))
+          
+    }
+  
+  def mergeSortPara(l : List[Int]): Future[List[Int]] = l match {
+    case Nil => Future(Nil)
+    case (h :: t) => {
+        reducePara(helper(l), Nil, (x: List[Int], y: List[Int]) => {
+          sortRec(x ++ y)
+        })
+    }
+  }
+  
 
 }
