@@ -1,0 +1,27 @@
+export alphabet = LoadFst['sygma_google'];
+
+export href = ("h".utf8 : "h".utf8)("r".utf8 : "r".utf8)("e".utf8 : "e".utf8)("f".utf8 : "f".utf8)("=".utf8 : "=".utf8);
+
+export pas_href = alphabet - href;
+
+export quote = "\"".utf8;
+
+export pas_quote = alphabet - quote;
+
+export hrefFull = (pas_href : "".utf8)* (href : "".utf8) (quote : "".utf8) (pas_quote)* (quote : "".utf8) (alphabet : "".utf8)*;	
+
+export chaine_test_1 = LoadFst['google'];
+
+chaine_test_2 = "zeae href=\"666\" lol tmp href=\"mtf\" ...";
+
+export composition = Optimize[chaine_test_1 @ hrefFull];
+
+export composition2 = Optimize[chaine_test_2 @ hrefFull];
+
+export projection = Project[composition,'output'];
+
+export projection2 = Project[composition2,'output'];
+
+export result = Optimize[projection];
+
+export result2 = Optimize[projection2];
