@@ -1,0 +1,1382 @@
+{
+  "spark": [
+    {
+      "name": "Sorted",
+      "sloc": [
+        {
+          "file": "sorted.ads",
+          "line": 2
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Sorted.Init",
+      "sloc": [
+        {
+          "file": "sorted.ads",
+          "line": 8
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Sorted.Is_Sorted",
+      "sloc": [
+        {
+          "file": "sorted.ads",
+          "line": 13
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Sorted.Min",
+      "sloc": [
+        {
+          "file": "sorted.ads",
+          "line": 18
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "sorted.ads",
+      "line": 8,
+      "col": 20,
+      "rule": "UNINITIALIZED",
+      "severity": "medium",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "sorted__flow__56.trace",
+      "msg_id": 0,
+      "how_proved": "flow"
+    },
+    {
+      "file": "sorted.ads",
+      "line": 11,
+      "col": 42,
+      "rule": "UNINITIALIZED",
+      "severity": "medium",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "sorted__flow__56.trace",
+      "msg_id": 1,
+      "how_proved": "flow"
+    },
+    {
+      "file": "sorted.adb",
+      "line": 10,
+      "col": 63,
+      "rule": "UNINITIALIZED",
+      "severity": "medium",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "sorted__flow__56.trace",
+      "msg_id": 2,
+      "how_proved": "flow"
+    },
+    {
+      "file": "sorted.adb",
+      "line": 10,
+      "col": 63,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "sorted__flow__56.trace",
+      "msg_id": 3,
+      "how_proved": "flow"
+    },
+    {
+      "file": "sorted.adb",
+      "line": 12,
+      "col": 57,
+      "rule": "UNINITIALIZED",
+      "severity": "medium",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "sorted__flow__56.trace",
+      "msg_id": 4,
+      "how_proved": "flow"
+    },
+    {
+      "file": "sorted.adb",
+      "line": 32,
+      "col": 20,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Min",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "sorted__flow__80.trace",
+      "msg_id": 5,
+      "how_proved": "flow"
+    },
+    {
+      "file": "sorted.adb",
+      "line": 37,
+      "col": 14,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Min",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "sorted__flow__80.trace",
+      "msg_id": 6,
+      "how_proved": "flow"
+    }
+  ],
+  "proof": [
+    {
+      "file": "sorted.ads",
+      "line": 21,
+      "col": 58,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Min",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1204,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1204,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 7,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 19,
+      "col": 24,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Is_Sorted",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2461,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 8,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 12,
+      "col": 59,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1146,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1146,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 9,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "sorted.ads",
+      "line": 16,
+      "col": 88,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Is_Sorted",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2782,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 10,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 18,
+      "col": 34,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Is_Sorted",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2400,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 11,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 19,
+      "col": 24,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Is_Sorted",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2417,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2418,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 12,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.ads",
+      "line": 16,
+      "col": 58,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Is_Sorted",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2723,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 13,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.ads",
+      "line": 16,
+      "col": 88,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Is_Sorted",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2737,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2736,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 14,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 10,
+      "col": 33,
+      "rule": "VC_LOOP_INVARIANT_PRESERV",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2649,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 15,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.ads",
+      "line": 16,
+      "col": 78,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Is_Sorted",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1435,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2756,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 16,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 10,
+      "col": 65,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2427,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1074,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 17,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 10,
+      "col": 33,
+      "rule": "VC_LOOP_INVARIANT_INIT",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2473,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 18,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.ads",
+      "line": 16,
+      "col": 16,
+      "rule": "VC_POSTCONDITION",
+      "severity": "medium",
+      "entity": {
+        "name": "Sorted.Is_Sorted",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 3258,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "CVC4_CE": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Unknown (other)",
+              "steps": 14410,
+              "time": 3.00000000000000E-02
+            },
+            "altergo": {
+              "result": "Unknown (other)",
+              "steps": -1,
+              "time": 3.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 19,
+      "how_proved": "prover"
+    },
+    {
+      "file": "sorted.adb",
+      "line": 12,
+      "col": 22,
+      "rule": "VC_ASSERT",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2677,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 20,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 33,
+      "col": 21,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Min",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1093,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1093,
+              "time": 0.00000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 21,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 19,
+      "col": 15,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Is_Sorted",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2433,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1075,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 22,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "sorted.ads",
+      "line": 11,
+      "col": 16,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2617,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 23,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 32,
+      "col": 15,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Min",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1072,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2418,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 24,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "sorted.adb",
+      "line": 31,
+      "col": 24,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Min",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2410,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 25,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "sorted.ads",
+      "line": 11,
+      "col": 44,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Sorted.Init",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1183,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1183,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 26,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "sorted.ads",
+      "line": 21,
+      "col": 41,
+      "rule": "VC_POSTCONDITION",
+      "severity": "medium",
+      "entity": {
+        "name": "Sorted.Min",
+        "sloc": [
+          {
+            "file": "sorted.ads",
+            "line": 18
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "CVC4_CE": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Unknown (other)",
+              "steps": 11637,
+              "time": 4.00000000000000E-02
+            },
+            "altergo": {
+              "result": "Unknown (other)",
+              "steps": -1,
+              "time": 4.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 27,
+      "how_proved": "prover"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Sorted.Is_Sorted",
+          "sloc": [
+            {
+              "file": "sorted.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Sorted.Init",
+          "sloc": [
+            {
+              "file": "sorted.ads",
+              "line": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Sorted.Init",
+          "sloc": [
+            {
+              "file": "sorted.ads",
+              "line": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Sorted",
+          "sloc": [
+            {
+              "file": "sorted.ads",
+              "line": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 2.96999991405755E-04,
+    "globals (basic)": 1.42000004416332E-04,
+    "globals/properties (advanced)": 3.48000001395121E-04,
+    "flow analysis": 5.16600022092462E-03,
+    "codepeer results": 1.99999999495049E-06,
+    "init_why_sections": 1.65000004926696E-04,
+    "translation of standard": 3.03300004452467E-03,
+    "translation of compilation unit": 7.15399999171495E-03,
+    "gnatwhy3.transformations.eliminate_algebraic_if_poly": 1.60000007599592E-02,
+    "gnatwhy3.transformations.eliminate_definition_if_poly": 4.00000018998981E-03,
+    "gnatwhy3.transformations.detect_polymorphism": 8.00000037997961E-03,
+    "gnatwhy3.run_vcs": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
+    "gnatwhy3.register_vcs": 5.20000010728836E-02,
+    "gnatwhy3.transformations.eliminate_if": 8.00000037997961E-03,
+    "gnatwhy3.transformations.discriminate_if_poly": 0.00000000000000E+00,
+    "gnatwhy3.transformations.explode_record_param": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eval_match": 8.00000037997961E-03,
+    "gnatwhy3.schedule_vcs": 8.00000037997961E-03,
+    "gnatwhy3.transformations.introduce_premises": 1.60000007599592E-02,
+    "gnatwhy3.init": 2.28000000119209E-01,
+    "gnatwhy3.transformations.inline_trivial": 3.63999992609024E-01,
+    "gnatwhy3.transformations.inline_tagged": 8.00000037997961E-03,
+    "gnatwhy3.transformations.simplify_formula": 1.99999995529652E-02,
+    "gnatwhy3.transformations.eliminate_epsilon": 3.99999991059303E-02,
+    "gnatwhy3.transformations.eliminate_let": 8.00000037997961E-03,
+    "gnatwhy3.save_session": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_builtin": 1.99999995529652E-02,
+    "gnatwhy3.transformations.eliminate_algebraic": 1.20000001043081E-02,
+    "gnatwhy3.transformations.eliminate_literal": 0.00000000000000E+00,
+    "gnatwhy3.transformations.prepare_for_counterexmp": 0.00000000000000E+00,
+    "gnatwhy3.transformations.encoding_smt_if_poly": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_recursion": 0.00000000000000E+00,
+    "proof": 1.00157594680786E+00
+  }
+}

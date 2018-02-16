@@ -1,0 +1,32 @@
+V "GNAT Lib v2017"
+A -gnatA
+A -gnata
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U p%b			p.adb			b985524f NE OO PK IL
+W system.assertions%s	s-assert.adb		s-assert.ali
+
+U p%s			p.ads			8188cb74 EE NE OO PK IL
+
+D ada.ads		20170516105951 76789da1 ada%s
+D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
+D p.ads			20180216100537 8188cb74 p%s
+D p.adb			20180216100517 380d993b p%b
+D system.ads		20170516105953 6326c08a system%s
+D s-assert.ads		20170516105954 cd8d2c94 system.assertions%s
+D s-exctab.ads		20170516105954 54135002 system.exception_table%s
+D s-stalib.ads		20170516105955 09bd3940 system.standard_library%s
+X 3 p.ads
+2K9*p 9l5 9e6 4|2b14 14l5 14t6
+4U14*Simple 4>22 4<37 4|4b14 12l8 12t14
+4i22 X{natural} 7r19 4|4b22 7r21
+4i37 Y{natural} 7r15 4|4b37 6m7 8r36 9m10 9r15
+X 4 p.adb
+7i11 I{integer} 8r32
+

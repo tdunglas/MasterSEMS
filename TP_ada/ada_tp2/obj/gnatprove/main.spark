@@ -1,0 +1,342 @@
+{
+  "spark": [
+    {
+      "name": "Main",
+      "sloc": [
+        {
+          "file": "main.adb",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "main.adb",
+      "line": 13,
+      "col": 11,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "main__flow__0.trace",
+      "msg_id": 0,
+      "how_proved": "flow"
+    },
+    {
+      "file": "main.adb",
+      "line": 14,
+      "col": 13,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "main__flow__0.trace",
+      "msg_id": 1,
+      "how_proved": "flow"
+    }
+  ],
+  "proof": [
+    {
+      "file": "main.adb",
+      "line": 15,
+      "col": 4,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2685,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 2,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 13,
+      "col": 4,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1132,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 3,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "main.adb",
+      "line": 14,
+      "col": 9,
+      "rule": "VC_PRECONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Main",
+        "sloc": [
+          {
+            "file": "main.adb",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2788,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 4,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Sorted.Init",
+            "sloc": [
+              {
+                "file": "sorted.ads",
+                "line": 8
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "Sorted.Min",
+            "sloc": [
+              {
+                "file": "sorted.ads",
+                "line": 18
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_POST",
+          "arg": {
+            "name": "p.Simple",
+            "sloc": [
+              {
+                "file": "p.ads",
+                "line": 4
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Sorted.Init",
+            "sloc": [
+              {
+                "file": "sorted.ads",
+                "line": 8
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Sorted.Min",
+            "sloc": [
+              {
+                "file": "sorted.ads",
+                "line": 18
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "p.Simple",
+            "sloc": [
+              {
+                "file": "p.ads",
+                "line": 4
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Sorted.Init",
+            "sloc": [
+              {
+                "file": "sorted.ads",
+                "line": 8
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Sorted.Min",
+            "sloc": [
+              {
+                "file": "sorted.ads",
+                "line": 18
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "p.Simple",
+            "sloc": [
+              {
+                "file": "p.ads",
+                "line": 4
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Main",
+          "sloc": [
+            {
+              "file": "main.adb",
+              "line": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 3.99000011384487E-04,
+    "globals (basic)": 3.14000004436821E-04,
+    "globals/properties (advanced)": 7.13000015821308E-04,
+    "flow analysis": 1.49599998258054E-03,
+    "codepeer results": 3.00000010611257E-06,
+    "init_why_sections": 1.71000006957911E-04,
+    "translation of standard": 3.09100002050400E-03,
+    "translation of compilation unit": 5.06100011989474E-03,
+    "gnatwhy3.transformations.eliminate_algebraic_if_poly": 0.00000000000000E+00,
+    "gnatwhy3.transformations.detect_polymorphism": 0.00000000000000E+00,
+    "gnatwhy3.run_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_inductive": 4.00000018998981E-03,
+    "gnatwhy3.register_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.discriminate_if_poly": 0.00000000000000E+00,
+    "gnatwhy3.schedule_vcs": 8.00000037997961E-03,
+    "gnatwhy3.transformations.introduce_premises": 0.00000000000000E+00,
+    "gnatwhy3.init": 2.24000006914139E-01,
+    "gnatwhy3.transformations.inline_trivial": 1.60000007599592E-02,
+    "gnatwhy3.transformations.simplify_formula": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
+    "gnatwhy3.save_session": 4.00000018998981E-03,
+    "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_literal": 4.00000018998981E-03,
+    "gnatwhy3.transformations.encoding_smt_if_poly": 0.00000000000000E+00,
+    "proof": 4.10887002944946E-01
+  }
+}

@@ -1,0 +1,4302 @@
+(* Module for axiomatizing type "short_short_integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__short_short_integer
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type short_short_integer #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  ( -128 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  127
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = short_short_integer, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type short_short_integer__ref #"system.ads" 1 0 0# =
+  { mutable short_short_integer__content "model_trace:" : short_short_integer }
+ 
+ function short_short_integer__ref___projection #"system.ads" 1 0 0# 
+   (a : short_short_integer__ref) : short_short_integer =
+  a.short_short_integer__content
+ 
+ meta "model_projection" function short_short_integer__ref___projection
+ 
+ meta "inline : no" function short_short_integer__ref___projection
+ 
+ val short_short_integer__havoc #"system.ads" 1 0 0# 
+   (x : short_short_integer__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "short_short_integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__short_short_integer__rep
+ use        Standard__short_short_integer
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__short_short_integer.short_short_integer, 
+ predicate in_range = Standard__short_short_integer.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "short_integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__short_integer
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type short_integer #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  ( -32768 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  32767
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = short_integer, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type short_integer__ref #"system.ads" 1 0 0# =
+  { mutable short_integer__content "model_trace:" : short_integer }
+ 
+ function short_integer__ref___projection #"system.ads" 1 0 0# 
+   (a : short_integer__ref) : short_integer =
+  a.short_integer__content
+ 
+ meta "model_projection" function short_integer__ref___projection
+ 
+ meta "inline : no" function short_integer__ref___projection
+ 
+ val short_integer__havoc #"system.ads" 1 0 0# 
+   (x : short_integer__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "short_integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__short_integer__rep
+ use        Standard__short_integer
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__short_integer.short_integer, 
+ predicate in_range = Standard__short_integer.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type integer #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  ( -2147483648 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  2147483647
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = integer, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type integer__ref #"system.ads" 1 0 0# =
+  { mutable integer__content "model_trace:" : integer }
+ 
+ function integer__ref___projection #"system.ads" 1 0 0# 
+   (a : integer__ref) : integer =
+  a.integer__content
+ 
+ meta "model_projection" function integer__ref___projection
+ 
+ meta "inline : no" function integer__ref___projection
+ 
+ val integer__havoc #"system.ads" 1 0 0# 
+   (x : integer__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer__rep
+ use        Standard__integer
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__integer.integer, 
+ predicate in_range = Standard__integer.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "long_integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__long_integer
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type long_integer #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  ( -9223372036854775808 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  9223372036854775807
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = long_integer, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type long_integer__ref #"system.ads" 1 0 0# =
+  { mutable long_integer__content "model_trace:" : long_integer }
+ 
+ function long_integer__ref___projection #"system.ads" 1 0 0# 
+   (a : long_integer__ref) : long_integer =
+  a.long_integer__content
+ 
+ meta "model_projection" function long_integer__ref___projection
+ 
+ meta "inline : no" function long_integer__ref___projection
+ 
+ val long_integer__havoc #"system.ads" 1 0 0# 
+   (x : long_integer__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "long_integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__long_integer__rep
+ use        Standard__long_integer
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__long_integer.long_integer, 
+ predicate in_range = Standard__long_integer.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "long_long_integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__long_long_integer
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type long_long_integer #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  ( -9223372036854775808 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  9223372036854775807
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = long_long_integer, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type long_long_integer__ref #"system.ads" 1 0 0# =
+  { mutable long_long_integer__content "model_trace:" : long_long_integer }
+ 
+ function long_long_integer__ref___projection #"system.ads" 1 0 0# 
+   (a : long_long_integer__ref) : long_long_integer =
+  a.long_long_integer__content
+ 
+ meta "model_projection" function long_long_integer__ref___projection
+ 
+ meta "inline : no" function long_long_integer__ref___projection
+ 
+ val long_long_integer__havoc #"system.ads" 1 0 0# 
+   (x : long_long_integer__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "long_long_integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__long_long_integer__rep
+ use        Standard__long_long_integer
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__long_long_integer.long_long_integer, 
+ predicate in_range = Standard__long_long_integer.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "natural", created in Gnat2Why.Types.Translate_Type *)
+module Standard__natural
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type natural #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  0
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  2147483647
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = natural, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type natural__ref #"system.ads" 1 0 0# =
+  { mutable natural__content "model_trace:" : natural }
+ 
+ function natural__ref___projection #"system.ads" 1 0 0# 
+   (a : natural__ref) : natural =
+  a.natural__content
+ 
+ meta "model_projection" function natural__ref___projection
+ 
+ meta "inline : no" function natural__ref___projection
+ 
+ val natural__havoc #"system.ads" 1 0 0# 
+   (x : natural__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "natural", created in Gnat2Why.Types.Translate_Type *)
+module Standard__natural__rep
+ use        Standard__natural
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__natural.natural, 
+ predicate in_range = Standard__natural.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "positive", created in Gnat2Why.Types.Translate_Type *)
+module Standard__positive
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type positive #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  1
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  2147483647
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = positive, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type positive__ref #"system.ads" 1 0 0# =
+  { mutable positive__content "model_trace:" : positive }
+ 
+ function positive__ref___projection #"system.ads" 1 0 0# 
+   (a : positive__ref) : positive =
+  a.positive__content
+ 
+ meta "model_projection" function positive__ref___projection
+ 
+ meta "inline : no" function positive__ref___projection
+ 
+ val positive__havoc #"system.ads" 1 0 0# 
+   (x : positive__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "positive", created in Gnat2Why.Types.Translate_Type *)
+module Standard__positive__rep
+ use        Standard__positive
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__positive.positive, 
+ predicate in_range = Standard__positive.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "short_float", created in Gnat2Why.Types.Translate_Type *)
+module Standard__short_float
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".Float32
+
+ type short_float #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : Float32.t =
+  (Float32.neg (340282346638528859811704183484516925440.0:Float32.t))
+ 
+ function last #"system.ads" 1 0 0# 
+   : Float32.t =
+  (340282346638528859811704183484516925440.0:Float32.t)
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : Float32.t)  =
+  #"system.ads" 1 0 0# (Float32.t'isFinite x)
+ 
+ clone export "ada__model".Static_Float32 with
+ type t = short_float, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type short_float__ref #"system.ads" 1 0 0# =
+  { mutable short_float__content "model_trace:" : short_float }
+ 
+ function short_float__ref___projection #"system.ads" 1 0 0# 
+   (a : short_float__ref) : short_float =
+  a.short_float__content
+ 
+ meta "model_projection" function short_float__ref___projection
+ 
+ meta "inline : no" function short_float__ref___projection
+ 
+ val short_float__havoc #"system.ads" 1 0 0# 
+   (x : short_float__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "short_float", created in Gnat2Why.Types.Translate_Type *)
+module Standard__short_float__rep
+ use        Standard__short_float
+ use        "_gnatprove_standard".Float32
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Float32 with
+ type t = Standard__short_float.short_float, 
+ predicate in_range = Standard__short_float.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "float", created in Gnat2Why.Types.Translate_Type *)
+module Standard__float
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".Float32
+
+ type float #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : Float32.t =
+  (Float32.neg (340282346638528859811704183484516925440.0:Float32.t))
+ 
+ function last #"system.ads" 1 0 0# 
+   : Float32.t =
+  (340282346638528859811704183484516925440.0:Float32.t)
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : Float32.t)  =
+  #"system.ads" 1 0 0# (Float32.t'isFinite x)
+ 
+ clone export "ada__model".Static_Float32 with
+ type t = float, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type float__ref #"system.ads" 1 0 0# =
+  { mutable float__content "model_trace:" : float }
+ 
+ function float__ref___projection #"system.ads" 1 0 0# 
+   (a : float__ref) : float =
+  a.float__content
+ 
+ meta "model_projection" function float__ref___projection
+ 
+ meta "inline : no" function float__ref___projection
+ 
+ val float__havoc #"system.ads" 1 0 0# 
+   (x : float__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "float", created in Gnat2Why.Types.Translate_Type *)
+module Standard__float__rep
+ use        Standard__float
+ use        "_gnatprove_standard".Float32
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Float32 with
+ type t = Standard__float.float, 
+ predicate in_range = Standard__float.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "long_float", created in Gnat2Why.Types.Translate_Type *)
+module Standard__long_float
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".Float64
+
+ type long_float #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : Float64.t =
+  (Float64.neg (179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.0:Float64.t))
+ 
+ function last #"system.ads" 1 0 0# 
+   : Float64.t =
+  (179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.0:Float64.t)
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : Float64.t)  =
+  #"system.ads" 1 0 0# (Float64.t'isFinite x)
+ 
+ clone export "ada__model".Static_Float64 with
+ type t = long_float, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type long_float__ref #"system.ads" 1 0 0# =
+  { mutable long_float__content "model_trace:" : long_float }
+ 
+ function long_float__ref___projection #"system.ads" 1 0 0# 
+   (a : long_float__ref) : long_float =
+  a.long_float__content
+ 
+ meta "model_projection" function long_float__ref___projection
+ 
+ meta "inline : no" function long_float__ref___projection
+ 
+ val long_float__havoc #"system.ads" 1 0 0# 
+   (x : long_float__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "long_float", created in Gnat2Why.Types.Translate_Type *)
+module Standard__long_float__rep
+ use        Standard__long_float
+ use        "_gnatprove_standard".Float64
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Float64 with
+ type t = Standard__long_float.long_float, 
+ predicate in_range = Standard__long_float.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "character", created in Gnat2Why.Types.Translate_Type *)
+module Standard__character
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type character #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  0
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  255
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = character, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type character__ref #"system.ads" 1 0 0# =
+  { mutable character__content "model_trace:" : character }
+ 
+ function character__ref___projection #"system.ads" 1 0 0# 
+   (a : character__ref) : character =
+  a.character__content
+ 
+ meta "model_projection" function character__ref___projection
+ 
+ meta "inline : no" function character__ref___projection
+ 
+ val character__havoc #"system.ads" 1 0 0# 
+   (x : character__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "character", created in Gnat2Why.Types.Translate_Type *)
+module Standard__character__rep
+ use        Standard__character
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__character.character, 
+ predicate in_range = Standard__character.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "wide_character", created in Gnat2Why.Types.Translate_Type *)
+module Standard__wide_character
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type wide_character #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  0
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  65535
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = wide_character, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type wide_character__ref #"system.ads" 1 0 0# =
+  { mutable wide_character__content "model_trace:" : wide_character }
+ 
+ function wide_character__ref___projection #"system.ads" 1 0 0# 
+   (a : wide_character__ref) : wide_character =
+  a.wide_character__content
+ 
+ meta "model_projection" function wide_character__ref___projection
+ 
+ meta "inline : no" function wide_character__ref___projection
+ 
+ val wide_character__havoc #"system.ads" 1 0 0# 
+   (x : wide_character__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "wide_character", created in Gnat2Why.Types.Translate_Type *)
+module Standard__wide_character__rep
+ use        Standard__wide_character
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__wide_character.wide_character, 
+ predicate in_range = Standard__wide_character.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "wide_wide_character", created in Gnat2Why.Types.Translate_Type *)
+module Standard__wide_wide_character
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type wide_wide_character #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  0
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  2147483647
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = wide_wide_character, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type wide_wide_character__ref #"system.ads" 1 0 0# =
+  { mutable wide_wide_character__content "model_trace:" : wide_wide_character }
+ 
+ function wide_wide_character__ref___projection #"system.ads" 1 0 0# 
+   (a : wide_wide_character__ref) : wide_wide_character =
+  a.wide_wide_character__content
+ 
+ meta "model_projection" function wide_wide_character__ref___projection
+ 
+ meta "inline : no" function wide_wide_character__ref___projection
+ 
+ val wide_wide_character__havoc #"system.ads" 1 0 0# 
+   (x : wide_wide_character__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "wide_wide_character", created in Gnat2Why.Types.Translate_Type *)
+module Standard__wide_wide_character__rep
+ use        Standard__wide_wide_character
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__wide_wide_character.wide_wide_character, 
+ predicate in_range = Standard__wide_wide_character.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing the array theory associated to type "string", created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
+module Array__Int__Standard__character
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__character
+ use        Standard__character__rep
+
+ function index_I1_one #"system.ads" 1 0 0# 
+   : int =
+  1
+ 
+ type component_type #"system.ads" 1 0 0# =
+  Standard__character.character
+ 
+ clone export "_gnatprove_standard".Array__1 with
+ type I1.t = int, 
+ predicate I1.le = Int.(<=), 
+ predicate I1.lt = Int.(<), 
+ predicate I1.gt = Int.(>), 
+ function I1.add = Int.(+), 
+ function I1.sub = Int.(-), 
+ function I1.one = index_I1_one, 
+ type component_type = component_type
+ 
+ function bool_eq #"system.ads" 1 0 0# 
+   (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) : bool =
+  ( (if ((a__first <= a__last)) then (
+   ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
+   (b__first > b__last))) /\ (forall temp___idx_78 #"system.ads" 1 0 0#  : int.
+   (if (( (a__first <= temp___idx_78) /\ (temp___idx_78 <= a__last) )) then (
+    ((Standard__character__rep.to_rep (get a temp___idx_78)) = (Standard__character__rep.to_rep (get b ((b__first - a__first) + temp___idx_78))))) else true)) )
+ 
+ axiom bool_eq_rev :
+  (forall a #"system.ads" 1 0 0#  b #"system.ads" 1 0 0#  : map.
+  (forall a__first #"system.ads" 1 0 0#  a__last #"system.ads" 1 0 0#  b__first #"system.ads" 1 0 0#  b__last #"system.ads" 1 0 0#  : int.
+   ( ((bool_eq b b__first b__last a a__first a__last) = True) -> ( (if ((a__first <= a__last)) then (
+    ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
+    (b__first > b__last))) /\ (forall temp___idx_78 #"system.ads" 1 0 0#  : int.
+    (if (( (a__first <= temp___idx_78) /\ (temp___idx_78 <= a__last) )) then (
+     ((Standard__character__rep.to_rep (get a temp___idx_78)) = (Standard__character__rep.to_rep (get b ((b__first - a__first) + temp___idx_78))))) else true)) ) )))
+ 
+ function index_Index_one #"system.ads" 1 0 0# 
+   : int =
+  1
+ 
+ clone export "ada__model".Array_Int_Rep_Comparison_Axiom with
+ type component_type = component_type, 
+ function to_rep = Standard__character__rep.to_rep, 
+ type map = map, 
+ type Index.t = int, 
+ predicate Index.le = Int.(<=), 
+ predicate Index.lt = Int.(<), 
+ predicate Index.gt = Int.(>), 
+ function Index.add = Int.(+), 
+ function Index.sub = Int.(-), 
+ function Index.one = index_Index_one, 
+ function get = get, 
+ function bool_eq = bool_eq
+
+end
+
+(* Module for axiomatizing type "string", created in Gnat2Why.Types.Translate_Type *)
+module Standard__string
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Main
+ use        Standard__integer
+ use        Standard__positive
+ use        Standard__character
+ use        Array__Int__Standard__character
+ use        Standard__integer__rep
+
+ type component_type #"system.ads" 1 0 0# =
+  Standard__character.character
+ 
+ function index_1_id #"system.ads" 1 0 0# 
+   (x : int) : int =
+  x
+ 
+ clone export "ada__model".Unconstr_Array with
+ type map = Array__Int__Standard__character.map, 
+ function array_bool_eq = Array__Int__Standard__character.bool_eq, 
+ type index_base_type = Standard__integer.integer, 
+ type index_rep_type = int, 
+ function to_rep = Standard__integer__rep.to_rep, 
+ function rep_to_int = index_1_id, 
+ predicate in_range_base = Standard__integer.in_range, 
+ predicate index_dynamic_property = Standard__positive.dynamic_property, 
+ predicate index_rep_le = Int.(<=)
+ 
+ type string #"system.ads" 1 0 0# =
+  __t
+ 
+ meta "model_projection" function to_array
+ 
+ meta "inline : no" function to_array
+ 
+ meta "model_projection" function first
+ 
+ meta "inline : no" function first
+ 
+ meta "model_projection" function last
+ 
+ meta "inline : no" function last
+ 
+ function to_string #"system.ads" 1 0 0# 
+   (x : Main.__image) : string
+ 
+ function from_string #"system.ads" 1 0 0# 
+   (x : string) : Main.__image
+ 
+ type string__ref #"system.ads" 1 0 0# =
+  { mutable string__content "model_trace:" : string }
+ 
+ function string__ref___projection #"system.ads" 1 0 0# 
+   (a : string__ref) : string =
+  a.string__content
+ 
+ meta "model_projection" function string__ref___projection
+ 
+ meta "inline : no" function string__ref___projection
+ 
+ val string__havoc #"system.ads" 1 0 0# 
+   (x : string__ref) : unit
+  writes {x}
+
+end
+
+(* Module for axiomatizing the array theory associated to type "wide_string", created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
+module Array__Int__Standard__wide_character
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__wide_character
+ use        Standard__wide_character__rep
+
+ function index_I1_one #"system.ads" 1 0 0# 
+   : int =
+  1
+ 
+ type component_type #"system.ads" 1 0 0# =
+  Standard__wide_character.wide_character
+ 
+ clone export "_gnatprove_standard".Array__1 with
+ type I1.t = int, 
+ predicate I1.le = Int.(<=), 
+ predicate I1.lt = Int.(<), 
+ predicate I1.gt = Int.(>), 
+ function I1.add = Int.(+), 
+ function I1.sub = Int.(-), 
+ function I1.one = index_I1_one, 
+ type component_type = component_type
+ 
+ function bool_eq #"system.ads" 1 0 0# 
+   (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) : bool =
+  ( (if ((a__first <= a__last)) then (
+   ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
+   (b__first > b__last))) /\ (forall temp___idx_84 #"system.ads" 1 0 0#  : int.
+   (if (( (a__first <= temp___idx_84) /\ (temp___idx_84 <= a__last) )) then (
+    ((Standard__wide_character__rep.to_rep (get a temp___idx_84)) = (Standard__wide_character__rep.to_rep (get b ((b__first - a__first) + temp___idx_84))))) else true)) )
+ 
+ axiom bool_eq_rev :
+  (forall a #"system.ads" 1 0 0#  b #"system.ads" 1 0 0#  : map.
+  (forall a__first #"system.ads" 1 0 0#  a__last #"system.ads" 1 0 0#  b__first #"system.ads" 1 0 0#  b__last #"system.ads" 1 0 0#  : int.
+   ( ((bool_eq b b__first b__last a a__first a__last) = True) -> ( (if ((a__first <= a__last)) then (
+    ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
+    (b__first > b__last))) /\ (forall temp___idx_84 #"system.ads" 1 0 0#  : int.
+    (if (( (a__first <= temp___idx_84) /\ (temp___idx_84 <= a__last) )) then (
+     ((Standard__wide_character__rep.to_rep (get a temp___idx_84)) = (Standard__wide_character__rep.to_rep (get b ((b__first - a__first) + temp___idx_84))))) else true)) ) )))
+ 
+ function index_Index_one #"system.ads" 1 0 0# 
+   : int =
+  1
+ 
+ clone export "ada__model".Array_Int_Rep_Comparison_Axiom with
+ type component_type = component_type, 
+ function to_rep = Standard__wide_character__rep.to_rep, 
+ type map = map, 
+ type Index.t = int, 
+ predicate Index.le = Int.(<=), 
+ predicate Index.lt = Int.(<), 
+ predicate Index.gt = Int.(>), 
+ function Index.add = Int.(+), 
+ function Index.sub = Int.(-), 
+ function Index.one = index_Index_one, 
+ function get = get, 
+ function bool_eq = bool_eq
+
+end
+
+(* Module for axiomatizing type "wide_string", created in Gnat2Why.Types.Translate_Type *)
+module Standard__wide_string
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__positive
+ use        Standard__wide_character
+ use        Standard__integer__rep
+ use        Array__Int__Standard__wide_character
+
+ type component_type #"system.ads" 1 0 0# =
+  Standard__wide_character.wide_character
+ 
+ function index_1_id #"system.ads" 1 0 0# 
+   (x : int) : int =
+  x
+ 
+ clone export "ada__model".Unconstr_Array with
+ type map = Array__Int__Standard__wide_character.map, 
+ function array_bool_eq = Array__Int__Standard__wide_character.bool_eq, 
+ type index_base_type = Standard__integer.integer, 
+ type index_rep_type = int, 
+ function to_rep = Standard__integer__rep.to_rep, 
+ function rep_to_int = index_1_id, 
+ predicate in_range_base = Standard__integer.in_range, 
+ predicate index_dynamic_property = Standard__positive.dynamic_property, 
+ predicate index_rep_le = Int.(<=)
+ 
+ type wide_string #"system.ads" 1 0 0# =
+  __t
+ 
+ meta "model_projection" function to_array
+ 
+ meta "inline : no" function to_array
+ 
+ meta "model_projection" function first
+ 
+ meta "inline : no" function first
+ 
+ meta "model_projection" function last
+ 
+ meta "inline : no" function last
+ 
+ type wide_string__ref #"system.ads" 1 0 0# =
+  { mutable wide_string__content "model_trace:" : wide_string }
+ 
+ function wide_string__ref___projection #"system.ads" 1 0 0# 
+   (a : wide_string__ref) : wide_string =
+  a.wide_string__content
+ 
+ meta "model_projection" function wide_string__ref___projection
+ 
+ meta "inline : no" function wide_string__ref___projection
+ 
+ val wide_string__havoc #"system.ads" 1 0 0# 
+   (x : wide_string__ref) : unit
+  writes {x}
+
+end
+
+(* Module for axiomatizing the array theory associated to type "wide_wide_string", created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
+module Array__Int__Standard__wide_wide_character
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__wide_wide_character
+ use        Standard__wide_wide_character__rep
+
+ function index_I1_one #"system.ads" 1 0 0# 
+   : int =
+  1
+ 
+ type component_type #"system.ads" 1 0 0# =
+  Standard__wide_wide_character.wide_wide_character
+ 
+ clone export "_gnatprove_standard".Array__1 with
+ type I1.t = int, 
+ predicate I1.le = Int.(<=), 
+ predicate I1.lt = Int.(<), 
+ predicate I1.gt = Int.(>), 
+ function I1.add = Int.(+), 
+ function I1.sub = Int.(-), 
+ function I1.one = index_I1_one, 
+ type component_type = component_type
+ 
+ function bool_eq #"system.ads" 1 0 0# 
+   (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) : bool =
+  ( (if ((a__first <= a__last)) then (
+   ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
+   (b__first > b__last))) /\ (forall temp___idx_90 #"system.ads" 1 0 0#  : int.
+   (if (( (a__first <= temp___idx_90) /\ (temp___idx_90 <= a__last) )) then (
+    ((Standard__wide_wide_character__rep.to_rep (get a temp___idx_90)) = (Standard__wide_wide_character__rep.to_rep (get b ((b__first - a__first) + temp___idx_90))))) else true)) )
+ 
+ axiom bool_eq_rev :
+  (forall a #"system.ads" 1 0 0#  b #"system.ads" 1 0 0#  : map.
+  (forall a__first #"system.ads" 1 0 0#  a__last #"system.ads" 1 0 0#  b__first #"system.ads" 1 0 0#  b__last #"system.ads" 1 0 0#  : int.
+   ( ((bool_eq b b__first b__last a a__first a__last) = True) -> ( (if ((a__first <= a__last)) then (
+    ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
+    (b__first > b__last))) /\ (forall temp___idx_90 #"system.ads" 1 0 0#  : int.
+    (if (( (a__first <= temp___idx_90) /\ (temp___idx_90 <= a__last) )) then (
+     ((Standard__wide_wide_character__rep.to_rep (get a temp___idx_90)) = (Standard__wide_wide_character__rep.to_rep (get b ((b__first - a__first) + temp___idx_90))))) else true)) ) )))
+ 
+ function index_Index_one #"system.ads" 1 0 0# 
+   : int =
+  1
+ 
+ clone export "ada__model".Array_Int_Rep_Comparison_Axiom with
+ type component_type = component_type, 
+ function to_rep = Standard__wide_wide_character__rep.to_rep, 
+ type map = map, 
+ type Index.t = int, 
+ predicate Index.le = Int.(<=), 
+ predicate Index.lt = Int.(<), 
+ predicate Index.gt = Int.(>), 
+ function Index.add = Int.(+), 
+ function Index.sub = Int.(-), 
+ function Index.one = index_Index_one, 
+ function get = get, 
+ function bool_eq = bool_eq
+
+end
+
+(* Module for axiomatizing type "wide_wide_string", created in Gnat2Why.Types.Translate_Type *)
+module Standard__wide_wide_string
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__positive
+ use        Standard__wide_wide_character
+ use        Standard__integer__rep
+ use        Array__Int__Standard__wide_wide_character
+
+ type component_type #"system.ads" 1 0 0# =
+  Standard__wide_wide_character.wide_wide_character
+ 
+ function index_1_id #"system.ads" 1 0 0# 
+   (x : int) : int =
+  x
+ 
+ clone export "ada__model".Unconstr_Array with
+ type map = Array__Int__Standard__wide_wide_character.map, 
+ function array_bool_eq = Array__Int__Standard__wide_wide_character.bool_eq, 
+ type index_base_type = Standard__integer.integer, 
+ type index_rep_type = int, 
+ function to_rep = Standard__integer__rep.to_rep, 
+ function rep_to_int = index_1_id, 
+ predicate in_range_base = Standard__integer.in_range, 
+ predicate index_dynamic_property = Standard__positive.dynamic_property, 
+ predicate index_rep_le = Int.(<=)
+ 
+ type wide_wide_string #"system.ads" 1 0 0# =
+  __t
+ 
+ meta "model_projection" function to_array
+ 
+ meta "inline : no" function to_array
+ 
+ meta "model_projection" function first
+ 
+ meta "inline : no" function first
+ 
+ meta "model_projection" function last
+ 
+ meta "inline : no" function last
+ 
+ type wide_wide_string__ref #"system.ads" 1 0 0# =
+  { mutable wide_wide_string__content "model_trace:" : wide_wide_string }
+ 
+ function wide_wide_string__ref___projection #"system.ads" 1 0 0# 
+   (a : wide_wide_string__ref) : wide_wide_string =
+  a.wide_wide_string__content
+ 
+ meta "model_projection" function wide_wide_string__ref___projection
+ 
+ meta "inline : no" function wide_wide_string__ref___projection
+ 
+ val wide_wide_string__havoc #"system.ads" 1 0 0# 
+   (x : wide_wide_string__ref) : unit
+  writes {x}
+
+end
+
+(* Module for axiomatizing type "duration", created in Gnat2Why.Types.Translate_Type *)
+module Standard__duration
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Main
+
+ type duration #"system.ads" 1 0 0# 
+ 
+ function inv_small #"system.ads" 1 0 0# 
+   : Main.__fixed =
+  1000000000
+ 
+ function first #"system.ads" 1 0 0# 
+   : Main.__fixed =
+  ( -9223372036854775808 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : Main.__fixed =
+  9223372036854775807
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : Main.__fixed)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Fixed_Point with
+ type t = duration, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range, 
+ function inv_small = inv_small
+ 
+ type duration__ref #"system.ads" 1 0 0# =
+  { mutable duration__content "model_trace:" : duration }
+ 
+ function duration__ref___projection #"system.ads" 1 0 0# 
+   (a : duration__ref) : duration =
+  a.duration__content
+ 
+ meta "model_projection" function duration__ref___projection
+ 
+ meta "inline : no" function duration__ref___projection
+ 
+ val duration__havoc #"system.ads" 1 0 0# 
+   (x : duration__ref) : unit
+  writes {x}
+
+end
+
+(* Module for axiomatizing type "integer_8", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer_8
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type integer_8 #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  ( -128 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  127
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = integer_8, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type integer_8__ref #"system.ads" 1 0 0# =
+  { mutable integer_8__content "model_trace:" : integer_8 }
+ 
+ function integer_8__ref___projection #"system.ads" 1 0 0# 
+   (a : integer_8__ref) : integer_8 =
+  a.integer_8__content
+ 
+ meta "model_projection" function integer_8__ref___projection
+ 
+ meta "inline : no" function integer_8__ref___projection
+ 
+ val integer_8__havoc #"system.ads" 1 0 0# 
+   (x : integer_8__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "integer_8", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer_8__rep
+ use        Standard__integer_8
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__integer_8.integer_8, 
+ predicate in_range = Standard__integer_8.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "integer_16", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer_16
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type integer_16 #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  ( -32768 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  32767
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = integer_16, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type integer_16__ref #"system.ads" 1 0 0# =
+  { mutable integer_16__content "model_trace:" : integer_16 }
+ 
+ function integer_16__ref___projection #"system.ads" 1 0 0# 
+   (a : integer_16__ref) : integer_16 =
+  a.integer_16__content
+ 
+ meta "model_projection" function integer_16__ref___projection
+ 
+ meta "inline : no" function integer_16__ref___projection
+ 
+ val integer_16__havoc #"system.ads" 1 0 0# 
+   (x : integer_16__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "integer_16", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer_16__rep
+ use        Standard__integer_16
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__integer_16.integer_16, 
+ predicate in_range = Standard__integer_16.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "integer_32", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer_32
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type integer_32 #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  ( -2147483648 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  2147483647
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = integer_32, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type integer_32__ref #"system.ads" 1 0 0# =
+  { mutable integer_32__content "model_trace:" : integer_32 }
+ 
+ function integer_32__ref___projection #"system.ads" 1 0 0# 
+   (a : integer_32__ref) : integer_32 =
+  a.integer_32__content
+ 
+ meta "model_projection" function integer_32__ref___projection
+ 
+ meta "inline : no" function integer_32__ref___projection
+ 
+ val integer_32__havoc #"system.ads" 1 0 0# 
+   (x : integer_32__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "integer_32", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer_32__rep
+ use        Standard__integer_32
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__integer_32.integer_32, 
+ predicate in_range = Standard__integer_32.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "integer_64", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer_64
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type integer_64 #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  ( -9223372036854775808 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  9223372036854775807
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = integer_64, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type integer_64__ref #"system.ads" 1 0 0# =
+  { mutable integer_64__content "model_trace:" : integer_64 }
+ 
+ function integer_64__ref___projection #"system.ads" 1 0 0# 
+   (a : integer_64__ref) : integer_64 =
+  a.integer_64__content
+ 
+ meta "model_projection" function integer_64__ref___projection
+ 
+ meta "inline : no" function integer_64__ref___projection
+ 
+ val integer_64__havoc #"system.ads" 1 0 0# 
+   (x : integer_64__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "integer_64", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer_64__rep
+ use        Standard__integer_64
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__integer_64.integer_64, 
+ predicate in_range = Standard__integer_64.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "universal_integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__universal_integer
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type universal_integer #"system.ads" 1 0 0# 
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  ( -9223372036854775808 )
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  9223372036854775807
+ 
+ predicate in_range #"system.ads" 1 0 0# 
+   (x : int)  =
+  #"system.ads" 1 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = universal_integer, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type universal_integer__ref #"system.ads" 1 0 0# =
+  { mutable universal_integer__content "model_trace:" : universal_integer }
+ 
+ function universal_integer__ref___projection #"system.ads" 1 0 0# 
+   (a : universal_integer__ref) : universal_integer =
+  a.universal_integer__content
+ 
+ meta "model_projection" function universal_integer__ref___projection
+ 
+ meta "inline : no" function universal_integer__ref___projection
+ 
+ val universal_integer__havoc #"system.ads" 1 0 0# 
+   (x : universal_integer__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "universal_integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__universal_integer__rep
+ use        Standard__universal_integer
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Standard__universal_integer.universal_integer, 
+ predicate in_range = Standard__universal_integer.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for defining the constant "x" defined at p.ads:4, created in Gnat2Why.Decls.Translate_Constant *)
+module P__simple__x
+ use import "_gnatprove_standard".Main
+
+ function x #"p.ads" 4 0 0# "model" "model_trace:2391" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "x" defined at p.ads:4, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module P__simple__x___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for axiomatizing the array theory associated to type "vect" defined at sorted.ads:6, created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
+module Array__Int__Standard__integer
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__integer__rep
+
+ function index_I1_one #"system.ads" 1 0 0# 
+   : int =
+  1
+ 
+ type component_type #"system.ads" 1 0 0# =
+  Standard__integer.integer
+ 
+ clone export "_gnatprove_standard".Array__1 with
+ type I1.t = int, 
+ predicate I1.le = Int.(<=), 
+ predicate I1.lt = Int.(<), 
+ predicate I1.gt = Int.(>), 
+ function I1.add = Int.(+), 
+ function I1.sub = Int.(-), 
+ function I1.one = index_I1_one, 
+ type component_type = component_type
+ 
+ function bool_eq #"system.ads" 1 0 0# 
+   (a : map) (a__first : int) (a__last : int) (b : map) (b__first : int) (b__last : int) : bool =
+  ( (if ((a__first <= a__last)) then (
+   ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
+   (b__first > b__last))) /\ (forall temp___idx_132 #"system.ads" 1 0 0#  : int.
+   (if (( (a__first <= temp___idx_132) /\ (temp___idx_132 <= a__last) )) then (
+    ((Standard__integer__rep.to_rep (get a temp___idx_132)) = (Standard__integer__rep.to_rep (get b ((b__first - a__first) + temp___idx_132))))) else true)) )
+ 
+ axiom bool_eq_rev :
+  (forall a #"system.ads" 1 0 0#  b #"system.ads" 1 0 0#  : map.
+  (forall a__first #"system.ads" 1 0 0#  a__last #"system.ads" 1 0 0#  b__first #"system.ads" 1 0 0#  b__last #"system.ads" 1 0 0#  : int.
+   ( ((bool_eq b b__first b__last a a__first a__last) = True) -> ( (if ((a__first <= a__last)) then (
+    ( (b__first <= b__last) /\ ((a__last - a__first) = (b__last - b__first)) )) else (
+    (b__first > b__last))) /\ (forall temp___idx_132 #"system.ads" 1 0 0#  : int.
+    (if (( (a__first <= temp___idx_132) /\ (temp___idx_132 <= a__last) )) then (
+     ((Standard__integer__rep.to_rep (get a temp___idx_132)) = (Standard__integer__rep.to_rep (get b ((b__first - a__first) + temp___idx_132))))) else true)) ) )))
+ 
+ function index_Index_one #"system.ads" 1 0 0# 
+   : int =
+  1
+ 
+ clone export "ada__model".Array_Int_Rep_Comparison_Axiom with
+ type component_type = component_type, 
+ function to_rep = Standard__integer__rep.to_rep, 
+ type map = map, 
+ type Index.t = int, 
+ predicate Index.le = Int.(<=), 
+ predicate Index.lt = Int.(<), 
+ predicate Index.gt = Int.(>), 
+ function Index.add = Int.(+), 
+ function Index.sub = Int.(-), 
+ function Index.one = index_Index_one, 
+ function get = get, 
+ function bool_eq = bool_eq
+
+end
+
+(* Module for axiomatizing type "vect" defined at sorted.ads:6, created in Gnat2Why.Types.Translate_Type *)
+module Sorted__vect
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__integer
+ use        Standard__natural
+ use        Standard__integer__rep
+ use        Array__Int__Standard__integer
+
+ type component_type #"system.ads" 1 0 0# =
+  Standard__integer.integer
+ 
+ function index_1_id #"system.ads" 1 0 0# 
+   (x : int) : int =
+  x
+ 
+ clone export "ada__model".Unconstr_Array with
+ type map = Array__Int__Standard__integer.map, 
+ function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
+ type index_base_type = Standard__integer.integer, 
+ type index_rep_type = int, 
+ function to_rep = Standard__integer__rep.to_rep, 
+ function rep_to_int = index_1_id, 
+ predicate in_range_base = Standard__integer.in_range, 
+ predicate index_dynamic_property = Standard__natural.dynamic_property, 
+ predicate index_rep_le = Int.(<=)
+ 
+ type vect #"sorted.ads" 6 0 0# =
+  __t
+ 
+ meta "model_projection" function to_array
+ 
+ meta "inline : no" function to_array
+ 
+ meta "model_projection" function first
+ 
+ meta "inline : no" function first
+ 
+ meta "model_projection" function last
+ 
+ meta "inline : no" function last
+ 
+ type vect__ref #"sorted.ads" 6 0 0# =
+  { mutable vect__content "model_trace:" : vect }
+ 
+ function vect__ref___projection #"sorted.ads" 6 0 0# 
+   (a : vect__ref) : vect =
+  a.vect__content
+ 
+ meta "model_projection" function vect__ref___projection
+ 
+ meta "inline : no" function vect__ref___projection
+ 
+ val vect__havoc #"sorted.ads" 6 0 0# 
+   (x : vect__ref) : unit
+  writes {x}
+
+end
+
+(* Module for axiomatizing type "T10s" defined at sorted.ads:11, created in Gnat2Why.Types.Translate_Type *)
+module Sorted__init__L9s__T10s
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__integer__rep
+
+ type t10s #"sorted.ads" 11 0 0# =
+  Standard__integer.integer
+ 
+ function first #"system.ads" 1 0 0# 
+   : int
+ 
+ function last #"system.ads" 1 0 0# 
+   : int
+ 
+ predicate dynamic_property #"system.ads" 1 0 0# 
+   (first_int : int) (last_int : int) (x : int)  =
+  #"system.ads" 1 0 0# ( (first_int <= x) /\ (x <= last_int) )
+ 
+ clone export "ada__model".Dynamic_Discrete with
+ type t = t10s, 
+ type rep_type = int, 
+ function base_to_rep = Standard__integer__rep.to_rep, 
+ function base_of_rep = Standard__integer__rep.of_rep, 
+ predicate dynamic_property = dynamic_property
+ 
+ type t10s__ref #"sorted.ads" 11 0 0# =
+  { mutable t10s__content "model_trace:" : t10s }
+ 
+ function t10s__ref___projection #"sorted.ads" 11 0 0# 
+   (a : t10s__ref) : t10s =
+  a.t10s__content
+ 
+ meta "model_projection" function t10s__ref___projection
+ 
+ meta "inline : no" function t10s__ref___projection
+ 
+ val t10s__havoc #"sorted.ads" 11 0 0# 
+   (x : t10s__ref) : unit
+  writes {x}
+
+end
+
+(* Module for defining the constant "v" defined at sorted.ads:13, created in Gnat2Why.Decls.Translate_Constant *)
+module Sorted__is_sorted__v
+ use import "_gnatprove_standard".Main
+ use        Sorted__vect
+
+ function v #"sorted.ads" 13 0 0# "model_projected" "model_trace:2506" 
+   : Sorted__vect.vect
+ 
+ function attr__ATTRIBUTE_ADDRESS #"sorted.ads" 6 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "v" defined at sorted.ads:13, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Sorted__is_sorted__v___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for axiomatizing type "T12s" defined at sorted.ads:16, created in Gnat2Why.Types.Translate_Type *)
+module Sorted__is_sorted__L11s__T12s
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__integer__rep
+
+ type t12s #"sorted.ads" 16 0 0# =
+  Standard__integer.integer
+ 
+ function first #"system.ads" 1 0 0# 
+   : int
+ 
+ function last #"system.ads" 1 0 0# 
+   : int
+ 
+ predicate dynamic_property #"system.ads" 1 0 0# 
+   (first_int : int) (last_int : int) (x : int)  =
+  #"system.ads" 1 0 0# ( (first_int <= x) /\ (x <= last_int) )
+ 
+ clone export "ada__model".Dynamic_Discrete with
+ type t = t12s, 
+ type rep_type = int, 
+ function base_to_rep = Standard__integer__rep.to_rep, 
+ function base_of_rep = Standard__integer__rep.of_rep, 
+ predicate dynamic_property = dynamic_property
+ 
+ type t12s__ref #"sorted.ads" 16 0 0# =
+  { mutable t12s__content "model_trace:" : t12s }
+ 
+ function t12s__ref___projection #"sorted.ads" 16 0 0# 
+   (a : t12s__ref) : t12s =
+  a.t12s__content
+ 
+ meta "model_projection" function t12s__ref___projection
+ 
+ meta "inline : no" function t12s__ref___projection
+ 
+ val t12s__havoc #"sorted.ads" 16 0 0# 
+   (x : t12s__ref) : unit
+  writes {x}
+
+end
+
+(* Module for possibly declaring a logic function for "is_sorted" defined at sorted.ads:13, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Sorted__is_sorted
+ use import "_gnatprove_standard".Main
+ use        Sorted__vect
+
+ function is_sorted #"sorted.ads" 13 0 0# 
+   (v : Sorted__vect.vect) : bool
+ 
+ predicate is_sorted__function_guard #"sorted.ads" 6 0 0# 
+   (result : bool) (v : Sorted__vect.vect) 
+
+end
+
+(* Module for defining the constant "v" defined at sorted.ads:18, created in Gnat2Why.Decls.Translate_Constant *)
+module Sorted__min__v
+ use import "_gnatprove_standard".Main
+ use        Sorted__vect
+
+ function v #"sorted.ads" 18 0 0# "model_projected" "model_trace:2569" 
+   : Sorted__vect.vect
+ 
+ function attr__ATTRIBUTE_ADDRESS #"sorted.ads" 6 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "v" defined at sorted.ads:18, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Sorted__min__v___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for axiomatizing type "T14s" defined at sorted.ads:21, created in Gnat2Why.Types.Translate_Type *)
+module Sorted__min__L13s__T14s
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__integer__rep
+
+ type t14s #"sorted.ads" 21 0 0# =
+  Standard__integer.integer
+ 
+ function first #"system.ads" 1 0 0# 
+   : int
+ 
+ function last #"system.ads" 1 0 0# 
+   : int
+ 
+ predicate dynamic_property #"system.ads" 1 0 0# 
+   (first_int : int) (last_int : int) (x : int)  =
+  #"system.ads" 1 0 0# ( (first_int <= x) /\ (x <= last_int) )
+ 
+ clone export "ada__model".Dynamic_Discrete with
+ type t = t14s, 
+ type rep_type = int, 
+ function base_to_rep = Standard__integer__rep.to_rep, 
+ function base_of_rep = Standard__integer__rep.of_rep, 
+ predicate dynamic_property = dynamic_property
+ 
+ type t14s__ref #"sorted.ads" 21 0 0# =
+  { mutable t14s__content "model_trace:" : t14s }
+ 
+ function t14s__ref___projection #"sorted.ads" 21 0 0# 
+   (a : t14s__ref) : t14s =
+  a.t14s__content
+ 
+ meta "model_projection" function t14s__ref___projection
+ 
+ meta "inline : no" function t14s__ref___projection
+ 
+ val t14s__havoc #"sorted.ads" 21 0 0# 
+   (x : t14s__ref) : unit
+  writes {x}
+
+end
+
+(* Module for possibly declaring a logic function for "min" defined at sorted.ads:18, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Sorted__min
+ use import "_gnatprove_standard".Main
+ use        Sorted__vect
+
+ function min #"sorted.ads" 18 0 0# 
+   (v : Sorted__vect.vect) : int
+ 
+ predicate min__function_guard #"system.ads" 1 0 0# 
+   (result : int) (v : Sorted__vect.vect) 
+
+end
+
+(* Module for axiomatizing type "name" defined at system.ads:46, created in Gnat2Why.Types.Translate_Type *)
+module System__name
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type name #"system.ads" 46 0 0# 
+ 
+ function first #"system.ads" 46 0 0# 
+   : int =
+  0
+ 
+ function last #"system.ads" 46 0 0# 
+   : int =
+  0
+ 
+ predicate in_range #"system.ads" 46 0 0# 
+   (x : int)  =
+  #"system.ads" 46 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = name, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type name__ref #"system.ads" 46 0 0# =
+  { mutable name__content "model_trace:" : name }
+ 
+ function name__ref___projection #"system.ads" 46 0 0# 
+   (a : name__ref) : name =
+  a.name__content
+ 
+ meta "model_projection" function name__ref___projection
+ 
+ meta "inline : no" function name__ref___projection
+ 
+ val name__havoc #"system.ads" 46 0 0# 
+   (x : name__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "name" defined at system.ads:46, created in Gnat2Why.Types.Translate_Type *)
+module System__name__rep
+ use        System__name
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = System__name.name, 
+ predicate in_range = System__name.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for defining the constant "system_name" defined at system.ads:47, created in Gnat2Why.Decls.Translate_Constant *)
+module System__system_name
+ use import "_gnatprove_standard".Main
+
+ function system_name #"system.ads" 47 0 0# "model" "model_trace:2979" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 46 0 0# 
+   : int
+
+end
+
+(* Module for axiomatizing type "address" defined at system.ads:116, created in Gnat2Why.Types.Translate_Type *)
+module System__address
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".BV64
+
+ type address #"system.ads" 116 0 0# 
+ 
+ function attr__ATTRIBUTE_MODULUS #"system.ads" 116 0 0# 
+   : BV64.t
+ 
+ function first #"system.ads" 116 0 0# 
+   : BV64.t =
+  ( BV64.of_int 0 )
+ 
+ function last #"system.ads" 116 0 0# 
+   : BV64.t =
+  ( BV64.of_int 18446744073709551615 )
+ 
+ function first_int #"system.ads" 116 0 0# 
+   : int =
+  0
+ 
+ function last_int #"system.ads" 116 0 0# 
+   : int =
+  18446744073709551615
+ 
+ predicate in_range #"system.ads" 116 0 0# 
+   (x : BV64.t)  =
+  #"system.ads" 116 0 0# true
+ 
+ predicate in_range_int #"system.ads" 116 0 0# 
+   (x : int)  =
+  #"system.ads" 116 0 0# BV64.uint_in_range x
+ 
+ clone export "ada__model".Static_Modular_64 with
+ type t = address, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range, 
+ predicate in_range_int = in_range_int
+ 
+ type address__ref #"system.ads" 116 0 0# =
+  { mutable address__content "model_trace:" : address }
+ 
+ function address__ref___projection #"system.ads" 116 0 0# 
+   (a : address__ref) : address =
+  a.address__content
+ 
+ meta "model_projection" function address__ref___projection
+ 
+ meta "inline : no" function address__ref___projection
+ 
+ val address__havoc #"system.ads" 116 0 0# 
+   (x : address__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "address" defined at system.ads:116, created in Gnat2Why.Types.Translate_Type *)
+module System__address__rep
+ use        System__address
+ use        "_gnatprove_standard".BV64
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_BV64 with
+ type t = System__address.address, 
+ predicate in_range = System__address.in_range, 
+ predicate in_range_int = System__address.in_range_int
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for defining the constant "null_address" defined at system.ads:69, created in Gnat2Why.Decls.Translate_Constant *)
+module System__null_address
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function null_address #"system.ads" 69 0 0# "model" "model_trace:3101" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "left" defined at system.ads:77, created in Gnat2Why.Decls.Translate_Constant *)
+module System__Olt__left
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function left #"system.ads" 77 0 0# "model" "model_trace:3148" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "left" defined at system.ads:77, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module System__Olt__left___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "right" defined at system.ads:77, created in Gnat2Why.Decls.Translate_Constant *)
+module System__Olt__right
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function right #"system.ads" 77 0 0# "model" "model_trace:3155" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "right" defined at system.ads:77, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module System__Olt__right___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "Olt" defined at system.ads:77, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module System__Olt
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function olt #"system.ads" 77 0 0# 
+   (left : BV64.t) (right : BV64.t) : bool
+ 
+ predicate olt__function_guard #"system.ads" 116 0 0# 
+   (result : bool) (left : BV64.t) (right : BV64.t) 
+
+end
+
+(* Module for defining the constant "left" defined at system.ads:78, created in Gnat2Why.Decls.Translate_Constant *)
+module System__Ole__left
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function left #"system.ads" 78 0 0# "model" "model_trace:3175" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "left" defined at system.ads:78, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module System__Ole__left___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "right" defined at system.ads:78, created in Gnat2Why.Decls.Translate_Constant *)
+module System__Ole__right
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function right #"system.ads" 78 0 0# "model" "model_trace:3182" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "right" defined at system.ads:78, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module System__Ole__right___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "Ole" defined at system.ads:78, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module System__Ole
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function ole #"system.ads" 78 0 0# 
+   (left : BV64.t) (right : BV64.t) : bool
+ 
+ predicate ole__function_guard #"system.ads" 116 0 0# 
+   (result : bool) (left : BV64.t) (right : BV64.t) 
+
+end
+
+(* Module for defining the constant "left" defined at system.ads:79, created in Gnat2Why.Decls.Translate_Constant *)
+module System__Ogt__left
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function left #"system.ads" 79 0 0# "model" "model_trace:3202" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "left" defined at system.ads:79, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module System__Ogt__left___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "right" defined at system.ads:79, created in Gnat2Why.Decls.Translate_Constant *)
+module System__Ogt__right
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function right #"system.ads" 79 0 0# "model" "model_trace:3209" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "right" defined at system.ads:79, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module System__Ogt__right___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "Ogt" defined at system.ads:79, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module System__Ogt
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function ogt #"system.ads" 79 0 0# 
+   (left : BV64.t) (right : BV64.t) : bool
+ 
+ predicate ogt__function_guard #"system.ads" 116 0 0# 
+   (result : bool) (left : BV64.t) (right : BV64.t) 
+
+end
+
+(* Module for defining the constant "left" defined at system.ads:80, created in Gnat2Why.Decls.Translate_Constant *)
+module System__Oge__left
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function left #"system.ads" 80 0 0# "model" "model_trace:3229" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "left" defined at system.ads:80, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module System__Oge__left___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "right" defined at system.ads:80, created in Gnat2Why.Decls.Translate_Constant *)
+module System__Oge__right
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function right #"system.ads" 80 0 0# "model" "model_trace:3236" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "right" defined at system.ads:80, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module System__Oge__right___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "Oge" defined at system.ads:80, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module System__Oge
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function oge #"system.ads" 80 0 0# 
+   (left : BV64.t) (right : BV64.t) : bool
+ 
+ predicate oge__function_guard #"system.ads" 116 0 0# 
+   (result : bool) (left : BV64.t) (right : BV64.t) 
+
+end
+
+(* Module for defining the constant "left" defined at system.ads:81, created in Gnat2Why.Decls.Translate_Constant *)
+module System__Oeq__left
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function left #"system.ads" 81 0 0# "model" "model_trace:3256" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "left" defined at system.ads:81, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module System__Oeq__left___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "right" defined at system.ads:81, created in Gnat2Why.Decls.Translate_Constant *)
+module System__Oeq__right
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function right #"system.ads" 81 0 0# "model" "model_trace:3263" 
+   : BV64.t
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 116 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "right" defined at system.ads:81, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module System__Oeq__right___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "Oeq" defined at system.ads:81, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module System__Oeq
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+
+ function oeq #"system.ads" 81 0 0# 
+   (left : BV64.t) (right : BV64.t) : bool
+ 
+ predicate oeq__function_guard #"system.ads" 116 0 0# 
+   (result : bool) (left : BV64.t) (right : BV64.t) 
+
+end
+
+(* Module for axiomatizing type "bit_order" defined at system.ads:91, created in Gnat2Why.Types.Translate_Type *)
+module System__bit_order
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type bit_order #"system.ads" 91 0 0# 
+ 
+ function first #"system.ads" 91 0 0# 
+   : int =
+  0
+ 
+ function last #"system.ads" 91 0 0# 
+   : int =
+  1
+ 
+ predicate in_range #"system.ads" 91 0 0# 
+   (x : int)  =
+  #"system.ads" 91 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = bit_order, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type bit_order__ref #"system.ads" 91 0 0# =
+  { mutable bit_order__content "model_trace:" : bit_order }
+ 
+ function bit_order__ref___projection #"system.ads" 91 0 0# 
+   (a : bit_order__ref) : bit_order =
+  a.bit_order__content
+ 
+ meta "model_projection" function bit_order__ref___projection
+ 
+ meta "inline : no" function bit_order__ref___projection
+ 
+ val bit_order__havoc #"system.ads" 91 0 0# 
+   (x : bit_order__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "bit_order" defined at system.ads:91, created in Gnat2Why.Types.Translate_Type *)
+module System__bit_order__rep
+ use        System__bit_order
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = System__bit_order.bit_order, 
+ predicate in_range = System__bit_order.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for defining the constant "default_bit_order" defined at system.ads:92, created in Gnat2Why.Decls.Translate_Constant *)
+module System__default_bit_order
+ use import "_gnatprove_standard".Main
+
+ function default_bit_order #"system.ads" 92 0 0# "model" "model_trace:3330" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 91 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "max_priority" defined at system.ads:105, created in Gnat2Why.Decls.Translate_Constant *)
+module System__max_priority
+ use import "_gnatprove_standard".Main
+
+ function max_priority #"system.ads" 105 0 0# "model" "model_trace:3346" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "max_interrupt_priority" defined at system.ads:106, created in Gnat2Why.Decls.Translate_Constant *)
+module System__max_interrupt_priority
+ use import "_gnatprove_standard".Main
+
+ function max_interrupt_priority #"system.ads" 106 0 0# "model" "model_trace:3356" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module for axiomatizing type "any_priority" defined at system.ads:108, created in Gnat2Why.Types.Translate_Type *)
+module System__any_priority
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type any_priority #"system.ads" 108 0 0# 
+ 
+ function first #"system.ads" 108 0 0# 
+   : int =
+  0
+ 
+ function last #"system.ads" 108 0 0# 
+   : int =
+  98
+ 
+ predicate in_range #"system.ads" 108 0 0# 
+   (x : int)  =
+  #"system.ads" 108 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = any_priority, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type any_priority__ref #"system.ads" 108 0 0# =
+  { mutable any_priority__content "model_trace:" : any_priority }
+ 
+ function any_priority__ref___projection #"system.ads" 108 0 0# 
+   (a : any_priority__ref) : any_priority =
+  a.any_priority__content
+ 
+ meta "model_projection" function any_priority__ref___projection
+ 
+ meta "inline : no" function any_priority__ref___projection
+ 
+ val any_priority__havoc #"system.ads" 108 0 0# 
+   (x : any_priority__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "any_priority" defined at system.ads:108, created in Gnat2Why.Types.Translate_Type *)
+module System__any_priority__rep
+ use        System__any_priority
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = System__any_priority.any_priority, 
+ predicate in_range = System__any_priority.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "priority" defined at system.ads:109, created in Gnat2Why.Types.Translate_Type *)
+module System__priority
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type priority #"system.ads" 109 0 0# 
+ 
+ function first #"system.ads" 109 0 0# 
+   : int =
+  0
+ 
+ function last #"system.ads" 109 0 0# 
+   : int =
+  97
+ 
+ predicate in_range #"system.ads" 109 0 0# 
+   (x : int)  =
+  #"system.ads" 109 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = priority, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type priority__ref #"system.ads" 109 0 0# =
+  { mutable priority__content "model_trace:" : priority }
+ 
+ function priority__ref___projection #"system.ads" 109 0 0# 
+   (a : priority__ref) : priority =
+  a.priority__content
+ 
+ meta "model_projection" function priority__ref___projection
+ 
+ meta "inline : no" function priority__ref___projection
+ 
+ val priority__havoc #"system.ads" 109 0 0# 
+   (x : priority__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "priority" defined at system.ads:109, created in Gnat2Why.Types.Translate_Type *)
+module System__priority__rep
+ use        System__priority
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = System__priority.priority, 
+ predicate in_range = System__priority.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "interrupt_priority" defined at system.ads:110, created in Gnat2Why.Types.Translate_Type *)
+module System__interrupt_priority
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type interrupt_priority #"system.ads" 110 0 0# 
+ 
+ function first #"system.ads" 110 0 0# 
+   : int =
+  98
+ 
+ function last #"system.ads" 110 0 0# 
+   : int =
+  98
+ 
+ predicate in_range #"system.ads" 110 0 0# 
+   (x : int)  =
+  #"system.ads" 110 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = interrupt_priority, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type interrupt_priority__ref #"system.ads" 110 0 0# =
+  { mutable interrupt_priority__content "model_trace:" : interrupt_priority }
+ 
+ function interrupt_priority__ref___projection #"system.ads" 110 0 0# 
+   (a : interrupt_priority__ref) : interrupt_priority =
+  a.interrupt_priority__content
+ 
+ meta "model_projection" function interrupt_priority__ref___projection
+ 
+ meta "inline : no" function interrupt_priority__ref___projection
+ 
+ val interrupt_priority__havoc #"system.ads" 110 0 0# 
+   (x : interrupt_priority__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "interrupt_priority" defined at system.ads:110, created in Gnat2Why.Types.Translate_Type *)
+module System__interrupt_priority__rep
+ use        System__interrupt_priority
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = System__interrupt_priority.interrupt_priority, 
+ predicate in_range = System__interrupt_priority.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for defining the constant "default_priority" defined at system.ads:112, created in Gnat2Why.Decls.Translate_Constant *)
+module System__default_priority
+ use import "_gnatprove_standard".Main
+
+ function default_priority #"system.ads" 112 0 0# "model" "model_trace:3408" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 109 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "backend_divide_checks" defined at system.ads:129, created in Gnat2Why.Decls.Translate_Constant *)
+module System__backend_divide_checks
+ use import "_gnatprove_standard".Main
+
+ function backend_divide_checks #"system.ads" 129 0 0# "model" "model_trace:3438" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 129 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "backend_overflow_checks" defined at system.ads:130, created in Gnat2Why.Decls.Translate_Constant *)
+module System__backend_overflow_checks
+ use import "_gnatprove_standard".Main
+
+ function backend_overflow_checks #"system.ads" 130 0 0# "model" "model_trace:3448" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 130 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "command_line_args" defined at system.ads:131, created in Gnat2Why.Decls.Translate_Constant *)
+module System__command_line_args
+ use import "_gnatprove_standard".Main
+
+ function command_line_args #"system.ads" 131 0 0# "model" "model_trace:3458" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 131 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "configurable_run_time" defined at system.ads:132, created in Gnat2Why.Decls.Translate_Constant *)
+module System__configurable_run_time
+ use import "_gnatprove_standard".Main
+
+ function configurable_run_time #"system.ads" 132 0 0# "model" "model_trace:3468" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 132 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "denorm" defined at system.ads:133, created in Gnat2Why.Decls.Translate_Constant *)
+module System__denorm
+ use import "_gnatprove_standard".Main
+
+ function denorm #"system.ads" 133 0 0# "model" "model_trace:3478" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 133 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "duration_32_bits" defined at system.ads:134, created in Gnat2Why.Decls.Translate_Constant *)
+module System__duration_32_bits
+ use import "_gnatprove_standard".Main
+
+ function duration_32_bits #"system.ads" 134 0 0# "model" "model_trace:3488" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 134 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "exit_status_supported" defined at system.ads:135, created in Gnat2Why.Decls.Translate_Constant *)
+module System__exit_status_supported
+ use import "_gnatprove_standard".Main
+
+ function exit_status_supported #"system.ads" 135 0 0# "model" "model_trace:3498" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 135 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "fractional_fixed_ops" defined at system.ads:136, created in Gnat2Why.Decls.Translate_Constant *)
+module System__fractional_fixed_ops
+ use import "_gnatprove_standard".Main
+
+ function fractional_fixed_ops #"system.ads" 136 0 0# "model" "model_trace:3508" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 136 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "frontend_layout" defined at system.ads:137, created in Gnat2Why.Decls.Translate_Constant *)
+module System__frontend_layout
+ use import "_gnatprove_standard".Main
+
+ function frontend_layout #"system.ads" 137 0 0# "model" "model_trace:3518" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 137 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "machine_overflows" defined at system.ads:138, created in Gnat2Why.Decls.Translate_Constant *)
+module System__machine_overflows
+ use import "_gnatprove_standard".Main
+
+ function machine_overflows #"system.ads" 138 0 0# "model" "model_trace:3528" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 138 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "machine_rounds" defined at system.ads:139, created in Gnat2Why.Decls.Translate_Constant *)
+module System__machine_rounds
+ use import "_gnatprove_standard".Main
+
+ function machine_rounds #"system.ads" 139 0 0# "model" "model_trace:3538" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 139 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "preallocated_stacks" defined at system.ads:140, created in Gnat2Why.Decls.Translate_Constant *)
+module System__preallocated_stacks
+ use import "_gnatprove_standard".Main
+
+ function preallocated_stacks #"system.ads" 140 0 0# "model" "model_trace:3548" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 140 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "signed_zeros" defined at system.ads:141, created in Gnat2Why.Decls.Translate_Constant *)
+module System__signed_zeros
+ use import "_gnatprove_standard".Main
+
+ function signed_zeros #"system.ads" 141 0 0# "model" "model_trace:3558" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 141 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "stack_check_default" defined at system.ads:142, created in Gnat2Why.Decls.Translate_Constant *)
+module System__stack_check_default
+ use import "_gnatprove_standard".Main
+
+ function stack_check_default #"system.ads" 142 0 0# "model" "model_trace:3568" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 142 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "stack_check_probes" defined at system.ads:143, created in Gnat2Why.Decls.Translate_Constant *)
+module System__stack_check_probes
+ use import "_gnatprove_standard".Main
+
+ function stack_check_probes #"system.ads" 143 0 0# "model" "model_trace:3578" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 143 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "stack_check_limits" defined at system.ads:144, created in Gnat2Why.Decls.Translate_Constant *)
+module System__stack_check_limits
+ use import "_gnatprove_standard".Main
+
+ function stack_check_limits #"system.ads" 144 0 0# "model" "model_trace:3588" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 144 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "support_aggregates" defined at system.ads:145, created in Gnat2Why.Decls.Translate_Constant *)
+module System__support_aggregates
+ use import "_gnatprove_standard".Main
+
+ function support_aggregates #"system.ads" 145 0 0# "model" "model_trace:3598" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 145 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "support_atomic_primitives" defined at system.ads:146, created in Gnat2Why.Decls.Translate_Constant *)
+module System__support_atomic_primitives
+ use import "_gnatprove_standard".Main
+
+ function support_atomic_primitives #"system.ads" 146 0 0# "model" "model_trace:3608" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 146 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "support_composite_assign" defined at system.ads:147, created in Gnat2Why.Decls.Translate_Constant *)
+module System__support_composite_assign
+ use import "_gnatprove_standard".Main
+
+ function support_composite_assign #"system.ads" 147 0 0# "model" "model_trace:3618" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 147 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "support_composite_compare" defined at system.ads:148, created in Gnat2Why.Decls.Translate_Constant *)
+module System__support_composite_compare
+ use import "_gnatprove_standard".Main
+
+ function support_composite_compare #"system.ads" 148 0 0# "model" "model_trace:3628" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 148 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "support_long_shifts" defined at system.ads:149, created in Gnat2Why.Decls.Translate_Constant *)
+module System__support_long_shifts
+ use import "_gnatprove_standard".Main
+
+ function support_long_shifts #"system.ads" 149 0 0# "model" "model_trace:3638" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 149 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "always_compatible_rep" defined at system.ads:150, created in Gnat2Why.Decls.Translate_Constant *)
+module System__always_compatible_rep
+ use import "_gnatprove_standard".Main
+
+ function always_compatible_rep #"system.ads" 150 0 0# "model" "model_trace:3648" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 150 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "suppress_standard_library" defined at system.ads:151, created in Gnat2Why.Decls.Translate_Constant *)
+module System__suppress_standard_library
+ use import "_gnatprove_standard".Main
+
+ function suppress_standard_library #"system.ads" 151 0 0# "model" "model_trace:3658" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 151 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "use_ada_main_program_name" defined at system.ads:152, created in Gnat2Why.Decls.Translate_Constant *)
+module System__use_ada_main_program_name
+ use import "_gnatprove_standard".Main
+
+ function use_ada_main_program_name #"system.ads" 152 0 0# "model" "model_trace:3668" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 152 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "frontend_exceptions" defined at system.ads:153, created in Gnat2Why.Decls.Translate_Constant *)
+module System__frontend_exceptions
+ use import "_gnatprove_standard".Main
+
+ function frontend_exceptions #"system.ads" 153 0 0# "model" "model_trace:3678" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 153 0 0# 
+   : int
+
+end
+
+(* Module for defining the constant "zcx_by_default" defined at system.ads:154, created in Gnat2Why.Decls.Translate_Constant *)
+module System__zcx_by_default
+ use import "_gnatprove_standard".Main
+
+ function zcx_by_default #"system.ads" 154 0 0# "model" "model_trace:3688" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 154 0 0# 
+   : int
+
+end
+
+(* Module for axiomatizing type "T1b" defined at main.adb:9, created in Gnat2Why.Types.Translate_Type *)
+module Main__T1b
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+
+ type t1b #"main.adb" 9 0 0# 
+ 
+ function first #"main.adb" 9 0 0# 
+   : int =
+  0
+ 
+ function last #"main.adb" 9 0 0# 
+   : int =
+  4
+ 
+ predicate in_range #"main.adb" 9 0 0# 
+   (x : int)  =
+  #"main.adb" 9 0 0# ( (first <= x) /\ (x <= last) )
+ 
+ clone export "ada__model".Static_Discrete with
+ type t = t1b, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type t1b__ref #"main.adb" 9 0 0# =
+  { mutable t1b__content "model_trace:" : t1b }
+ 
+ function t1b__ref___projection #"main.adb" 9 0 0# 
+   (a : t1b__ref) : t1b =
+  a.t1b__content
+ 
+ meta "model_projection" function t1b__ref___projection
+ 
+ meta "inline : no" function t1b__ref___projection
+ 
+ val t1b__havoc #"main.adb" 9 0 0# 
+   (x : t1b__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "T1b" defined at main.adb:9, created in Gnat2Why.Types.Translate_Type *)
+module Main__T1b__rep
+ use        Main__T1b
+ use import "_gnatprove_standard".Main
+
+ clone export "ada__model".Rep_Proj_Int with
+ type t = Main__T1b.t1b, 
+ predicate in_range = Main__T1b.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline : no" function to_rep
+
+end
+
+(* Module for axiomatizing type "T2b" defined at main.adb:9, created in Gnat2Why.Types.Translate_Type *)
+module Main__T2b
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Array__Int__Standard__integer
+
+ type component_type #"main.adb" 9 0 0# =
+  Standard__integer.integer
+ 
+ function first #"system.ads" 1 0 0# 
+   : int =
+  0
+ 
+ function last #"system.ads" 1 0 0# 
+   : int =
+  4
+ 
+ clone export "ada__model".Constr_Array with
+ type map = Array__Int__Standard__integer.map, 
+ function array_bool_eq = Array__Int__Standard__integer.bool_eq, 
+ function first = first, 
+ function last = last, 
+ type index_rep_type = int
+
+end
+(* Module for defining a ref holding the value of variable "y" defined at p.ads:4, created in Gnat2Why.Decls.Translate_Variable *)
+module P__simple__y
+ use import "_gnatprove_standard".Main
+
+ val y #"p.ads" 4 0 0# "model_projected" "model_trace:2400"  : int__ref 
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "y" defined at p.ads:4, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module P__simple__y___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining a ref holding the value of variable "v" defined at sorted.ads:8, created in Gnat2Why.Decls.Translate_Variable *)
+module Sorted__init__v
+ use import "_gnatprove_standard".Main
+ use        Standard__integer
+ use        Array__Int__Standard__integer
+
+ val v #"sorted.ads" 8 0 0# "model_projected" "model_trace:2459"  : Array__Int__Standard__integer.map__ref 
+ 
+ function v__first #"sorted.ads" 8 0 0# "model_projected" "model_trace:2459'First" 
+   : Standard__integer.integer
+ 
+ function v__last #"sorted.ads" 8 0 0# "model_projected" "model_trace:2459'Last" 
+   : Standard__integer.integer
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "v" defined at sorted.ads:8, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Sorted__init__v___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining a ref holding the value of variable "a" defined at main.adb:7, created in Gnat2Why.Decls.Translate_Variable *)
+module Main__a
+ use import "_gnatprove_standard".Main
+
+ val a #"main.adb" 7 0 0# "model_projected" "model_trace:2315"  : int__ref 
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "a" defined at main.adb:7, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Main__a___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining a ref holding the value of variable "b" defined at main.adb:8, created in Gnat2Why.Decls.Translate_Variable *)
+module Main__b
+ use import "_gnatprove_standard".Main
+
+ val b #"main.adb" 8 0 0# "model_projected" "model_trace:2325"  : int__ref 
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "b" defined at main.adb:8, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Main__b___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining a ref holding the value of variable "v" defined at main.adb:9, created in Gnat2Why.Decls.Translate_Variable *)
+module Main__v
+ use import "_gnatprove_standard".Main
+ use        Standard__integer
+ use        Array__Int__Standard__integer
+
+ val v #"main.adb" 9 0 0# "model_projected" "model_trace:2334"  : Array__Int__Standard__integer.map__ref 
+ 
+ function v__first #"main.adb" 9 0 0# "model_projected" "model_trace:2334'First" 
+   : Standard__integer.integer
+ 
+ function v__last #"main.adb" 9 0 0# "model_projected" "model_trace:2334'Last" 
+   : Standard__integer.integer
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "v" defined at main.adb:9, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Main__v___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining a ref holding the value of variable "n" defined at main.adb:10, created in Gnat2Why.Decls.Translate_Variable *)
+module Main__n
+ use import "_gnatprove_standard".Main
+
+ val n #"main.adb" 10 0 0# "model_projected" "model_trace:2349"  : int__ref 
+ 
+ function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "n" defined at main.adb:10, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Main__n___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module declaring the external object "sorted__min__min," created in Gnat2Why.Decls.Translate_External_Object *)
+module Sorted__min__min
+ use import "_gnatprove_standard".Main
+
+ val min #"system.ads" 1 0 0#  : Main.__private__ref 
+
+end
+
+(* Module giving an empty axiom for the entity "sorted__min__min", created in Gnat2Why.Decls.Translate_External_Object *)
+module Sorted__min__min___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+(* Module giving axioms for type "short_short_integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__short_short_integer___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__short_short_integer
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_3 : int) (temp___is_init_0 : bool) (temp___skip_constant_1 : bool) (temp___do_toplevel_2 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_0 \/ (Standard__short_short_integer.first <= Standard__short_short_integer.last) )) then (
+   (Standard__short_short_integer.dynamic_property Standard__short_short_integer.first Standard__short_short_integer.last temp___expr_3)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_4 : int) (temp___skip_top_level_5 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "short_integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__short_integer___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__short_integer
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_9 : int) (temp___is_init_6 : bool) (temp___skip_constant_7 : bool) (temp___do_toplevel_8 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_6 \/ (Standard__short_integer.first <= Standard__short_integer.last) )) then (
+   (Standard__short_integer.dynamic_property Standard__short_integer.first Standard__short_integer.last temp___expr_9)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_10 : int) (temp___skip_top_level_11 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_15 : int) (temp___is_init_12 : bool) (temp___skip_constant_13 : bool) (temp___do_toplevel_14 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_12 \/ (Standard__integer.first <= Standard__integer.last) )) then (
+   (Standard__integer.dynamic_property Standard__integer.first Standard__integer.last temp___expr_15)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_16 : int) (temp___skip_top_level_17 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "long_integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__long_integer___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__long_integer
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_21 : int) (temp___is_init_18 : bool) (temp___skip_constant_19 : bool) (temp___do_toplevel_20 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_18 \/ (Standard__long_integer.first <= Standard__long_integer.last) )) then (
+   (Standard__long_integer.dynamic_property Standard__long_integer.first Standard__long_integer.last temp___expr_21)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_22 : int) (temp___skip_top_level_23 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "long_long_integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__long_long_integer___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__long_long_integer
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_27 : int) (temp___is_init_24 : bool) (temp___skip_constant_25 : bool) (temp___do_toplevel_26 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_24 \/ (Standard__long_long_integer.first <= Standard__long_long_integer.last) )) then (
+   (Standard__long_long_integer.dynamic_property Standard__long_long_integer.first Standard__long_long_integer.last temp___expr_27)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_28 : int) (temp___skip_top_level_29 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "natural", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__natural___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__natural
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_33 : int) (temp___is_init_30 : bool) (temp___skip_constant_31 : bool) (temp___do_toplevel_32 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_30 \/ (Standard__natural.first <= Standard__natural.last) )) then (
+   (Standard__natural.dynamic_property Standard__natural.first Standard__natural.last temp___expr_33)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_34 : int) (temp___skip_top_level_35 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "positive", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__positive___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__positive
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_39 : int) (temp___is_init_36 : bool) (temp___skip_constant_37 : bool) (temp___do_toplevel_38 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_36 \/ (Standard__positive.first <= Standard__positive.last) )) then (
+   (Standard__positive.dynamic_property Standard__positive.first Standard__positive.last temp___expr_39)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_40 : int) (temp___skip_top_level_41 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "short_float", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__short_float___axiom
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".Float32
+ use        Standard__short_float
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_45 : Float32.t) (temp___is_init_42 : bool) (temp___skip_constant_43 : bool) (temp___do_toplevel_44 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_42 \/ (Float32.le Standard__short_float.first Standard__short_float.last) )) then (
+   (Standard__short_float.dynamic_property Standard__short_float.first Standard__short_float.last temp___expr_45)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_46 : Float32.t) (temp___skip_top_level_47 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "float", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__float___axiom
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".Float32
+ use        Standard__float
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_51 : Float32.t) (temp___is_init_48 : bool) (temp___skip_constant_49 : bool) (temp___do_toplevel_50 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_48 \/ (Float32.le Standard__float.first Standard__float.last) )) then (
+   (Standard__float.dynamic_property Standard__float.first Standard__float.last temp___expr_51)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_52 : Float32.t) (temp___skip_top_level_53 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "long_float", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__long_float___axiom
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".Float64
+ use        Standard__long_float
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_57 : Float64.t) (temp___is_init_54 : bool) (temp___skip_constant_55 : bool) (temp___do_toplevel_56 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_54 \/ (Float64.le Standard__long_float.first Standard__long_float.last) )) then (
+   (Standard__long_float.dynamic_property Standard__long_float.first Standard__long_float.last temp___expr_57)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_58 : Float64.t) (temp___skip_top_level_59 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "character", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__character___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__character
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_63 : int) (temp___is_init_60 : bool) (temp___skip_constant_61 : bool) (temp___do_toplevel_62 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_60 \/ (Standard__character.first <= Standard__character.last) )) then (
+   (Standard__character.dynamic_property Standard__character.first Standard__character.last temp___expr_63)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_64 : int) (temp___skip_top_level_65 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "wide_character", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__wide_character___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__wide_character
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_69 : int) (temp___is_init_66 : bool) (temp___skip_constant_67 : bool) (temp___do_toplevel_68 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_66 \/ (Standard__wide_character.first <= Standard__wide_character.last) )) then (
+   (Standard__wide_character.dynamic_property Standard__wide_character.first Standard__wide_character.last temp___expr_69)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_70 : int) (temp___skip_top_level_71 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "wide_wide_character", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__wide_wide_character___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__wide_wide_character
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_75 : int) (temp___is_init_72 : bool) (temp___skip_constant_73 : bool) (temp___do_toplevel_74 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_72 \/ (Standard__wide_wide_character.first <= Standard__wide_wide_character.last) )) then (
+   (Standard__wide_wide_character.dynamic_property Standard__wide_wide_character.first Standard__wide_wide_character.last temp___expr_75)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_76 : int) (temp___skip_top_level_77 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "string", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__string___axiom
+ use import "_gnatprove_standard".Main
+ use        Standard__string
+ use        Standard__positive
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_82 : Standard__string.string) (temp___is_init_79 : bool) (temp___skip_constant_80 : bool) (temp___do_toplevel_81 : bool)  =
+  #"system.ads" 1 0 0# (if (temp___skip_constant_80) then (
+   true) else (
+   (Standard__string.dynamic_property Standard__positive.first Standard__positive.last (Standard__string.first temp___expr_82) (Standard__string.last temp___expr_82))))
+
+end
+
+(* Module giving axioms for type "wide_string", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__wide_string___axiom
+ use import "_gnatprove_standard".Main
+ use        Standard__positive
+ use        Standard__wide_string
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_88 : Standard__wide_string.wide_string) (temp___is_init_85 : bool) (temp___skip_constant_86 : bool) (temp___do_toplevel_87 : bool)  =
+  #"system.ads" 1 0 0# (if (temp___skip_constant_86) then (
+   true) else (
+   (Standard__wide_string.dynamic_property Standard__positive.first Standard__positive.last (Standard__wide_string.first temp___expr_88) (Standard__wide_string.last temp___expr_88))))
+
+end
+
+(* Module giving axioms for type "wide_wide_string", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__wide_wide_string___axiom
+ use import "_gnatprove_standard".Main
+ use        Standard__positive
+ use        Standard__wide_wide_string
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_94 : Standard__wide_wide_string.wide_wide_string) (temp___is_init_91 : bool) (temp___skip_constant_92 : bool) (temp___do_toplevel_93 : bool)  =
+  #"system.ads" 1 0 0# (if (temp___skip_constant_92) then (
+   true) else (
+   (Standard__wide_wide_string.dynamic_property Standard__positive.first Standard__positive.last (Standard__wide_wide_string.first temp___expr_94) (Standard__wide_wide_string.last temp___expr_94))))
+
+end
+
+(* Module giving axioms for type "duration", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__duration___axiom
+ use import "_gnatprove_standard".Main
+ use        Standard__duration
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_99 : Standard__duration.duration) (temp___is_init_96 : bool) (temp___skip_constant_97 : bool) (temp___do_toplevel_98 : bool)  =
+  #"system.ads" 1 0 0# true
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_100 : Standard__duration.duration) (temp___skip_top_level_101 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "integer_8", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer_8___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer_8
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_105 : int) (temp___is_init_102 : bool) (temp___skip_constant_103 : bool) (temp___do_toplevel_104 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_102 \/ (Standard__integer_8.first <= Standard__integer_8.last) )) then (
+   (Standard__integer_8.dynamic_property Standard__integer_8.first Standard__integer_8.last temp___expr_105)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_106 : int) (temp___skip_top_level_107 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "integer_16", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer_16___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer_16
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_111 : int) (temp___is_init_108 : bool) (temp___skip_constant_109 : bool) (temp___do_toplevel_110 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_108 \/ (Standard__integer_16.first <= Standard__integer_16.last) )) then (
+   (Standard__integer_16.dynamic_property Standard__integer_16.first Standard__integer_16.last temp___expr_111)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_112 : int) (temp___skip_top_level_113 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "integer_32", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer_32___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer_32
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_117 : int) (temp___is_init_114 : bool) (temp___skip_constant_115 : bool) (temp___do_toplevel_116 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_114 \/ (Standard__integer_32.first <= Standard__integer_32.last) )) then (
+   (Standard__integer_32.dynamic_property Standard__integer_32.first Standard__integer_32.last temp___expr_117)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_118 : int) (temp___skip_top_level_119 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "integer_64", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer_64___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer_64
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_123 : int) (temp___is_init_120 : bool) (temp___skip_constant_121 : bool) (temp___do_toplevel_122 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_120 \/ (Standard__integer_64.first <= Standard__integer_64.last) )) then (
+   (Standard__integer_64.dynamic_property Standard__integer_64.first Standard__integer_64.last temp___expr_123)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_124 : int) (temp___skip_top_level_125 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module giving axioms for type "universal_integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__universal_integer___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__universal_integer
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_129 : int) (temp___is_init_126 : bool) (temp___skip_constant_127 : bool) (temp___do_toplevel_128 : bool)  =
+  #"system.ads" 1 0 0# (if (( temp___is_init_126 \/ (Standard__universal_integer.first <= Standard__universal_integer.last) )) then (
+   (Standard__universal_integer.dynamic_property Standard__universal_integer.first Standard__universal_integer.last temp___expr_129)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 1 0 0# "inline" 
+   (temp___expr_130 : int) (temp___skip_top_level_131 : bool)  =
+  #"system.ads" 1 0 0# true
+
+end
+
+(* Module for possibly declaring a logic function for "simple" defined at p.ads:4, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module P__simple
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "init" defined at sorted.ads:8, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Sorted__init
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "main" defined at main.adb:5, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Main
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module giving axioms for type "vect" defined at sorted.ads:6, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Sorted__vect___axiom
+ use import "_gnatprove_standard".Main
+ use        Standard__natural
+ use        Sorted__vect
+
+ predicate dynamic_invariant #"system.ads" 1 0 0# "inline" 
+   (temp___expr_136 : Sorted__vect.vect) (temp___is_init_133 : bool) (temp___skip_constant_134 : bool) (temp___do_toplevel_135 : bool)  =
+  #"sorted.ads" 6 0 0# (if (temp___skip_constant_134) then (
+   true) else (
+   (Sorted__vect.dynamic_property Standard__natural.first Standard__natural.last (Sorted__vect.first temp___expr_136) (Sorted__vect.last temp___expr_136))))
+
+end
+
+(* Module giving axioms for type "T10s" defined at sorted.ads:11, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Sorted__init__L9s__T10s___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module giving axioms for type "T12s" defined at sorted.ads:16, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Sorted__is_sorted__L11s__T12s___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module giving axioms for type "T14s" defined at sorted.ads:21, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Sorted__min__L13s__T14s___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module giving axioms for type "name" defined at system.ads:46, created in Gnat2Why.Types.Generate_Type_Completion *)
+module System__name___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        System__name
+
+ predicate dynamic_invariant #"sorted.ads" 6 0 0# "inline" 
+   (temp___expr_147 : int) (temp___is_init_144 : bool) (temp___skip_constant_145 : bool) (temp___do_toplevel_146 : bool)  =
+  #"system.ads" 46 0 0# (if (( temp___is_init_144 \/ (System__name.first <= System__name.last) )) then (
+   (System__name.dynamic_property System__name.first System__name.last temp___expr_147)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 46 0 0# "inline" 
+   (temp___expr_148 : int) (temp___skip_top_level_149 : bool)  =
+  #"system.ads" 46 0 0# true
+
+end
+
+(* Module giving axioms for type "address" defined at system.ads:116, created in Gnat2Why.Types.Generate_Type_Completion *)
+module System__address___axiom
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+ use        System__address
+
+ predicate dynamic_invariant #"system.ads" 46 0 0# "inline" 
+   (temp___expr_153 : BV64.t) (temp___is_init_150 : bool) (temp___skip_constant_151 : bool) (temp___do_toplevel_152 : bool)  =
+  #"system.ads" 116 0 0# (if (( temp___is_init_150 \/ (BV64.ule System__address.first System__address.last) )) then (
+   (System__address.dynamic_property System__address.first System__address.last temp___expr_153)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 116 0 0# "inline" 
+   (temp___expr_154 : BV64.t) (temp___skip_top_level_155 : bool)  =
+  #"system.ads" 116 0 0# true
+
+end
+
+(* Module giving axioms for type "bit_order" defined at system.ads:91, created in Gnat2Why.Types.Generate_Type_Completion *)
+module System__bit_order___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        System__bit_order
+
+ predicate dynamic_invariant #"system.ads" 116 0 0# "inline" 
+   (temp___expr_159 : int) (temp___is_init_156 : bool) (temp___skip_constant_157 : bool) (temp___do_toplevel_158 : bool)  =
+  #"system.ads" 91 0 0# (if (( temp___is_init_156 \/ (System__bit_order.first <= System__bit_order.last) )) then (
+   (System__bit_order.dynamic_property System__bit_order.first System__bit_order.last temp___expr_159)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 91 0 0# "inline" 
+   (temp___expr_160 : int) (temp___skip_top_level_161 : bool)  =
+  #"system.ads" 91 0 0# true
+
+end
+
+(* Module giving axioms for type "any_priority" defined at system.ads:108, created in Gnat2Why.Types.Generate_Type_Completion *)
+module System__any_priority___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        System__any_priority
+
+ predicate dynamic_invariant #"system.ads" 91 0 0# "inline" 
+   (temp___expr_165 : int) (temp___is_init_162 : bool) (temp___skip_constant_163 : bool) (temp___do_toplevel_164 : bool)  =
+  #"system.ads" 108 0 0# (if (( temp___is_init_162 \/ (System__any_priority.first <= System__any_priority.last) )) then (
+   (System__any_priority.dynamic_property System__any_priority.first System__any_priority.last temp___expr_165)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 108 0 0# "inline" 
+   (temp___expr_166 : int) (temp___skip_top_level_167 : bool)  =
+  #"system.ads" 108 0 0# true
+
+end
+
+(* Module giving axioms for type "priority" defined at system.ads:109, created in Gnat2Why.Types.Generate_Type_Completion *)
+module System__priority___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        System__priority
+
+ predicate dynamic_invariant #"system.ads" 108 0 0# "inline" 
+   (temp___expr_171 : int) (temp___is_init_168 : bool) (temp___skip_constant_169 : bool) (temp___do_toplevel_170 : bool)  =
+  #"system.ads" 109 0 0# (if (( temp___is_init_168 \/ (System__priority.first <= System__priority.last) )) then (
+   (System__priority.dynamic_property System__priority.first System__priority.last temp___expr_171)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 109 0 0# "inline" 
+   (temp___expr_172 : int) (temp___skip_top_level_173 : bool)  =
+  #"system.ads" 109 0 0# true
+
+end
+
+(* Module giving axioms for type "interrupt_priority" defined at system.ads:110, created in Gnat2Why.Types.Generate_Type_Completion *)
+module System__interrupt_priority___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        System__interrupt_priority
+
+ predicate dynamic_invariant #"system.ads" 109 0 0# "inline" 
+   (temp___expr_177 : int) (temp___is_init_174 : bool) (temp___skip_constant_175 : bool) (temp___do_toplevel_176 : bool)  =
+  #"system.ads" 110 0 0# (if (( temp___is_init_174 \/ (System__interrupt_priority.first <= System__interrupt_priority.last) )) then (
+   (System__interrupt_priority.dynamic_property System__interrupt_priority.first System__interrupt_priority.last temp___expr_177)) else true)
+ 
+ predicate default_initial_assumption #"system.ads" 110 0 0# "inline" 
+   (temp___expr_178 : int) (temp___skip_top_level_179 : bool)  =
+  #"system.ads" 110 0 0# true
+
+end
+
+(* Module giving axioms for type "T1b" defined at main.adb:9, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Main__T1b___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module giving axioms for type "T2b" defined at main.adb:9, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Main__T2b___axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the value of the aggregate at main.adb:9, created in Gnat2Why.Expr.Transform_Aggregate.Generate_Logic_Function *)
+module Main__v__aggregate_def
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__integer__rep
+ use        Array__Int__Standard__integer
+ use        Array__Int__Standard__integer
+ use        Array__Int__Standard__integer
+
+ function main__v__aggregate_def #"main.adb" 9 0 0# 
+   (temp___181 : int) (temp___182 : int) (temp___183 : int) (temp___184 : int) (temp___185 : int) : Array__Int__Standard__integer.map
+ 
+ axiom def_axiom :
+  (forall temp___181 #"main.adb" 9 0 0#  temp___182 #"main.adb" 9 0 0#  temp___183 #"main.adb" 9 0 0#  temp___184 #"main.adb" 9 0 0#  temp___185 #"main.adb" 9 0 0#  : int.
+   (let temp___180 = (main__v__aggregate_def temp___181 temp___182 temp___183 temp___184 temp___185) in (
+    ( ( ( ( ((Array__Int__Standard__integer.get temp___180 0) = (Standard__integer__rep.of_rep temp___181)) /\ ((Array__Int__Standard__integer.get temp___180 1) = (Standard__integer__rep.of_rep temp___182)) ) /\ ((Array__Int__Standard__integer.get temp___180 2) = (Standard__integer__rep.of_rep temp___183)) ) /\ ((Array__Int__Standard__integer.get temp___180 3) = (Standard__integer__rep.of_rep temp___184)) ) /\ ((Array__Int__Standard__integer.get temp___180 4) = (Standard__integer__rep.of_rep temp___185)) )))
+  )
+
+end
+(* Module for defining the value of constant "system_name" defined at system.ads:47, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__system_name___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        System__system_name
+
+ axiom system_name__def_axiom :
+  ((System__system_name.system_name ) = 0)
+
+end
+
+(* Module for defining the value of constant "default_bit_order" defined at system.ads:92, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__default_bit_order___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        System__default_bit_order
+
+ axiom default_bit_order__def_axiom :
+  ((System__default_bit_order.default_bit_order ) = 1)
+
+end
+
+(* Module for defining the value of constant "max_priority" defined at system.ads:105, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__max_priority___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        System__max_priority
+
+ axiom max_priority__def_axiom :
+  ((System__max_priority.max_priority ) = 97)
+
+end
+
+(* Module for defining the value of constant "max_interrupt_priority" defined at system.ads:106, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__max_interrupt_priority___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        System__max_interrupt_priority
+
+ axiom max_interrupt_priority__def_axiom :
+  ((System__max_interrupt_priority.max_interrupt_priority ) = 98)
+
+end
+
+(* Module for defining the value of constant "default_priority" defined at system.ads:112, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__default_priority___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        System__default_priority
+
+ axiom default_priority__def_axiom :
+  ((System__default_priority.default_priority ) = 48)
+
+end
+
+(* Module for defining the value of constant "null_address" defined at system.ads:117, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__null_address___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".BV64
+ use        System__null_address
+
+ axiom null_address__def_axiom :
+  ((System__null_address.null_address ) = (BV64.of_int 0))
+
+end
+
+(* Module for defining the value of constant "backend_divide_checks" defined at system.ads:129, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__backend_divide_checks___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__backend_divide_checks
+
+ axiom backend_divide_checks__def_axiom :
+  ((System__backend_divide_checks.backend_divide_checks ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "backend_overflow_checks" defined at system.ads:130, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__backend_overflow_checks___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__backend_overflow_checks
+
+ axiom backend_overflow_checks__def_axiom :
+  ((System__backend_overflow_checks.backend_overflow_checks ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "command_line_args" defined at system.ads:131, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__command_line_args___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__command_line_args
+
+ axiom command_line_args__def_axiom :
+  ((System__command_line_args.command_line_args ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "configurable_run_time" defined at system.ads:132, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__configurable_run_time___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__configurable_run_time
+
+ axiom configurable_run_time__def_axiom :
+  ((System__configurable_run_time.configurable_run_time ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "denorm" defined at system.ads:133, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__denorm___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__denorm
+
+ axiom denorm__def_axiom :
+  ((System__denorm.denorm ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "duration_32_bits" defined at system.ads:134, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__duration_32_bits___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__duration_32_bits
+
+ axiom duration_32_bits__def_axiom :
+  ((System__duration_32_bits.duration_32_bits ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "exit_status_supported" defined at system.ads:135, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__exit_status_supported___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__exit_status_supported
+
+ axiom exit_status_supported__def_axiom :
+  ((System__exit_status_supported.exit_status_supported ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "fractional_fixed_ops" defined at system.ads:136, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__fractional_fixed_ops___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__fractional_fixed_ops
+
+ axiom fractional_fixed_ops__def_axiom :
+  ((System__fractional_fixed_ops.fractional_fixed_ops ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "frontend_layout" defined at system.ads:137, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__frontend_layout___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__frontend_layout
+
+ axiom frontend_layout__def_axiom :
+  ((System__frontend_layout.frontend_layout ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "machine_overflows" defined at system.ads:138, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__machine_overflows___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__machine_overflows
+
+ axiom machine_overflows__def_axiom :
+  ((System__machine_overflows.machine_overflows ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "machine_rounds" defined at system.ads:139, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__machine_rounds___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__machine_rounds
+
+ axiom machine_rounds__def_axiom :
+  ((System__machine_rounds.machine_rounds ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "preallocated_stacks" defined at system.ads:140, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__preallocated_stacks___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__preallocated_stacks
+
+ axiom preallocated_stacks__def_axiom :
+  ((System__preallocated_stacks.preallocated_stacks ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "signed_zeros" defined at system.ads:141, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__signed_zeros___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__signed_zeros
+
+ axiom signed_zeros__def_axiom :
+  ((System__signed_zeros.signed_zeros ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "stack_check_default" defined at system.ads:142, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__stack_check_default___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__stack_check_default
+
+ axiom stack_check_default__def_axiom :
+  ((System__stack_check_default.stack_check_default ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "stack_check_probes" defined at system.ads:143, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__stack_check_probes___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__stack_check_probes
+
+ axiom stack_check_probes__def_axiom :
+  ((System__stack_check_probes.stack_check_probes ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "stack_check_limits" defined at system.ads:144, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__stack_check_limits___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__stack_check_limits
+
+ axiom stack_check_limits__def_axiom :
+  ((System__stack_check_limits.stack_check_limits ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "support_aggregates" defined at system.ads:145, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__support_aggregates___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__support_aggregates
+
+ axiom support_aggregates__def_axiom :
+  ((System__support_aggregates.support_aggregates ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "support_atomic_primitives" defined at system.ads:146, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__support_atomic_primitives___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__support_atomic_primitives
+
+ axiom support_atomic_primitives__def_axiom :
+  ((System__support_atomic_primitives.support_atomic_primitives ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "support_composite_assign" defined at system.ads:147, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__support_composite_assign___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__support_composite_assign
+
+ axiom support_composite_assign__def_axiom :
+  ((System__support_composite_assign.support_composite_assign ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "support_composite_compare" defined at system.ads:148, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__support_composite_compare___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__support_composite_compare
+
+ axiom support_composite_compare__def_axiom :
+  ((System__support_composite_compare.support_composite_compare ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "support_long_shifts" defined at system.ads:149, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__support_long_shifts___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__support_long_shifts
+
+ axiom support_long_shifts__def_axiom :
+  ((System__support_long_shifts.support_long_shifts ) = (Boolean.of_int 1))
+
+end
+
+(* Module for defining the value of constant "always_compatible_rep" defined at system.ads:150, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__always_compatible_rep___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__always_compatible_rep
+
+ axiom always_compatible_rep__def_axiom :
+  ((System__always_compatible_rep.always_compatible_rep ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "suppress_standard_library" defined at system.ads:151, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__suppress_standard_library___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__suppress_standard_library
+
+ axiom suppress_standard_library__def_axiom :
+  ((System__suppress_standard_library.suppress_standard_library ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "use_ada_main_program_name" defined at system.ads:152, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__use_ada_main_program_name___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__use_ada_main_program_name
+
+ axiom use_ada_main_program_name__def_axiom :
+  ((System__use_ada_main_program_name.use_ada_main_program_name ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "frontend_exceptions" defined at system.ads:153, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__frontend_exceptions___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__frontend_exceptions
+
+ axiom frontend_exceptions__def_axiom :
+  ((System__frontend_exceptions.frontend_exceptions ) = (Boolean.of_int 0))
+
+end
+
+(* Module for defining the value of constant "zcx_by_default" defined at system.ads:154, created in Gnat2Why.Decls.Translate_Constant_Value *)
+module System__zcx_by_default___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        "_gnatprove_standard".Boolean
+ use        System__zcx_by_default
+
+ axiom zcx_by_default__def_axiom :
+  ((System__zcx_by_default.zcx_by_default ) = (Boolean.of_int 1))
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "simple" defined at p.ads:4, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module P__simple___axiom
+ use import "_gnatprove_standard".Main
+ use        Standard__natural___axiom
+
+ val simple #"p.ads" 4 0 0# 
+   (x : int) (y : int__ref) : unit
+  requires { #"system.ads" 1 0 0# true }
+  ensures { #"system.ads" 1 0 0# ( (y.int__content = x) /\ (Standard__natural___axiom.dynamic_invariant y.int__content True True True) ) }
+  writes {y}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "init" defined at sorted.ads:8, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Sorted__init___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__integer
+ use        Standard__integer__rep
+ use        Standard__natural
+ use        Standard__integer__rep
+ use        Array__Int__Standard__integer
+ use        Sorted__vect
+ use        Array__Int__Standard__integer
+
+ val init #"sorted.ads" 8 0 0# 
+   (v : Array__Int__Standard__integer.map__ref) (v__first : Standard__integer.integer) (v__last : Standard__integer.integer) : unit
+  requires { #"system.ads" 1 0 0# ((Standard__integer__rep.to_rep v__first) <= (Standard__integer__rep.to_rep v__last)) }
+  ensures { #"sorted.ads" 8 0 0# ( (forall x #"sorted.ads" 11 0 0#  "model" "model_trace:2484"  : int.
+   ( ( ((Standard__integer__rep.to_rep v__first) <= x) /\ (x <= (Standard__integer__rep.to_rep v__last)) ) -> ((Standard__integer__rep.to_rep (Array__Int__Standard__integer.get v.Array__Int__Standard__integer.map__content x)) = 0) )) /\ (if (True) then (
+   true) else (
+   (Sorted__vect.dynamic_property Standard__natural.first Standard__natural.last (Standard__integer__rep.to_rep v__first) (Standard__integer__rep.to_rep v__last)))) ) }
+  writes {v}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "is_sorted" defined at sorted.ads:13, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Sorted__is_sorted___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__integer__rep
+ use        Array__Int__Standard__integer
+ use        Sorted__vect
+ use        Sorted__vect___axiom
+ use        Sorted__is_sorted
+ use        Array__Int__Standard__integer
+ use        Array__Int__Standard__integer
+ use        Array__Int__Standard__integer
+ use        Array__Int__Standard__integer
+
+ val is_sorted #"sorted.ads" 13 0 0# 
+   (v : Sorted__vect.vect) : bool
+  requires { #"sorted.ads" 6 0 0# ((Sorted__vect.first v) < (Sorted__vect.last v)) }
+  ensures { #"sorted.ads" 13 0 0# ( ( (result = (Sorted__is_sorted.is_sorted v)) /\ (Sorted__is_sorted.is_sorted__function_guard result v) ) /\ ( (result = True) <-> (forall x #"sorted.ads" 16 0 0#  "model" "model_trace:2536"  : int.
+   ( ( (((Sorted__vect.first v) + 1) <= x) /\ (x <= (Sorted__vect.last v)) ) -> ((Standard__integer__rep.to_rep (Array__Int__Standard__integer.get (Sorted__vect.to_array v) x)) >= (Standard__integer__rep.to_rep (Array__Int__Standard__integer.get (Sorted__vect.to_array v) (x - 1)))) )) ) ) }
+ 
+ axiom is_sorted__post_axiom :
+  (forall v #"sorted.ads" 13 0 0#  : Sorted__vect.vect [(Sorted__is_sorted.is_sorted v)].
+   ( ( (Sorted__vect___axiom.dynamic_invariant v True True True) /\ ((Sorted__vect.first v) < (Sorted__vect.last v)) ) -> (let result = (Sorted__is_sorted.is_sorted v) in (
+    (if ((Sorted__is_sorted.is_sorted__function_guard result v)) then (
+     ( (result = True) <-> (forall x #"sorted.ads" 16 0 0#  "model" "model_trace:2536"  : int.
+      ( ( (((Sorted__vect.first v) + 1) <= x) /\ (x <= (Sorted__vect.last v)) ) -> ((Standard__integer__rep.to_rep (Array__Int__Standard__integer.get (Sorted__vect.to_array v) x)) >= (Standard__integer__rep.to_rep (Array__Int__Standard__integer.get (Sorted__vect.to_array v) (x - 1)))) )) )) else true)))
+    ))
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "min" defined at sorted.ads:18, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Sorted__min___axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer
+ use        Standard__integer___axiom
+ use        Standard__integer__rep
+ use        Array__Int__Standard__integer
+ use        Sorted__vect
+ use        Sorted__vect___axiom
+ use        Sorted__min
+ use        Array__Int__Standard__integer
+ use        Array__Int__Standard__integer
+
+ val min #"sorted.ads" 18 0 0# 
+   (v : Sorted__vect.vect) : int
+  requires { #"system.ads" 1 0 0# ((Sorted__vect.first v) < (Sorted__vect.last v)) }
+  ensures { #"sorted.ads" 18 0 0# ( ( (result = (Sorted__min.min v)) /\ (Sorted__min.min__function_guard result v) ) /\ ( (Standard__integer___axiom.dynamic_invariant result True False True) /\ (forall x #"sorted.ads" 21 0 0#  "model" "model_trace:2595"  : int.
+   ( ( ((Sorted__vect.first v) <= x) /\ (x <= (Sorted__vect.last v)) ) -> (result <= (Standard__integer__rep.to_rep (Array__Int__Standard__integer.get (Sorted__vect.to_array v) x))) )) ) ) }
+ 
+ axiom min__post_axiom :
+  (forall v #"sorted.ads" 18 0 0#  : Sorted__vect.vect [(Sorted__min.min v)].
+   ( ( (Sorted__vect___axiom.dynamic_invariant v True True True) /\ ((Sorted__vect.first v) < (Sorted__vect.last v)) ) -> (let result = (Sorted__min.min v) in (
+    (if ((Sorted__min.min__function_guard result v)) then (
+     ( (forall x #"sorted.ads" 21 0 0#  "model" "model_trace:2595"  : int.
+      ( ( ((Sorted__vect.first v) <= x) /\ (x <= (Sorted__vect.last v)) ) -> (result <= (Standard__integer__rep.to_rep (Array__Int__Standard__integer.get (Sorted__vect.to_array v) x))) )) /\ (Standard__integer___axiom.dynamic_invariant result True False True) )) else true)))
+    ))
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "Olt" defined at system.ads:77, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module System__Olt___axiom
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+ use        System__Olt
+
+ val olt #"system.ads" 77 0 0# 
+   (left : BV64.t) (right : BV64.t) : bool
+  requires { #"system.ads" 116 0 0# true }
+  ensures { #"system.ads" 116 0 0# ( ( (result = (System__Olt.olt left right)) /\ true ) /\ true ) }
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "Ole" defined at system.ads:78, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module System__Ole___axiom
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+ use        System__Ole
+
+ val ole #"system.ads" 78 0 0# 
+   (left : BV64.t) (right : BV64.t) : bool
+  requires { #"system.ads" 116 0 0# true }
+  ensures { #"system.ads" 116 0 0# ( ( (result = (System__Ole.ole left right)) /\ true ) /\ true ) }
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "Ogt" defined at system.ads:79, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module System__Ogt___axiom
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+ use        System__Ogt
+
+ val ogt #"system.ads" 79 0 0# 
+   (left : BV64.t) (right : BV64.t) : bool
+  requires { #"system.ads" 116 0 0# true }
+  ensures { #"system.ads" 116 0 0# ( ( (result = (System__Ogt.ogt left right)) /\ true ) /\ true ) }
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "Oge" defined at system.ads:80, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module System__Oge___axiom
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+ use        System__Oge
+
+ val oge #"system.ads" 80 0 0# 
+   (left : BV64.t) (right : BV64.t) : bool
+  requires { #"system.ads" 116 0 0# true }
+  ensures { #"system.ads" 116 0 0# ( ( (result = (System__Oge.oge left right)) /\ true ) /\ true ) }
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "Oeq" defined at system.ads:81, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module System__Oeq___axiom
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".BV64
+ use        System__Oeq
+
+ val oeq #"system.ads" 81 0 0# 
+   (left : BV64.t) (right : BV64.t) : bool
+  requires { #"system.ads" 116 0 0# true }
+  ensures { #"system.ads" 116 0 0# ( ( (result = (System__Oeq.oeq left right)) /\ true ) /\ true ) }
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "main" defined at main.adb:5, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Main___axiom
+ use import "_gnatprove_standard".Main
+
+ val main #"main.adb" 5 0 0# 
+   (__void_param : unit) : unit
+  requires { #"main.adb" 5 0 0# true }
+  ensures { #"main.adb" 5 0 0# true }
+
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "main" defined at main.adb:5, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Main__subprogram_def
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Standard__integer___axiom
+ use        Standard__natural
+ use        Standard__natural___axiom
+ use        Standard__integer__rep
+ use        P__simple___axiom
+ use        Sorted__vect
+ use        Sorted__init___axiom
+ use        Sorted__min___axiom
+ use        Main__a
+ use        Main__b
+ use        Main__T1b
+ use        Array__Int__Standard__integer
+ use        Main__v
+ use        Main__n
+ use        Main__v__aggregate_def
+ use        Array__Int__Standard__integer
+ use        Array__Int__Standard__integer
+ use        Standard__integer___axiom
+ use        Standard__natural___axiom
+ use        Standard__integer___axiom
+ use        Main__a___axiom
+ use        Main__b___axiom
+ use        Main__v___axiom
+ use        Main__n___axiom
+ use        P__simple___axiom
+ use        Sorted__vect___axiom
+ use        Sorted__init___axiom
+ use        Sorted__min___axiom
+ use        Main__T1b___axiom
+
+ let def #"main.adb" 5 0 0# "GP_Subp:main.adb:5" "W:diverges:N" 
+   (__void_param : unit)
+  requires { #"main.adb" 5 0 0# true }
+  ensures { #"main.adb" 5 0 0# true }
+   =
+  ( () (* Assume dynamic invariants of inputs of the subprogram main.adb:5 *)
+  ;
+  #"main.adb" 5 0 0# assume { #"main.adb" 5 0 0# true };
+  () (* Assume Initial_Condition of withed units *)
+  ;
+  () (* Declarations introduced by the compiler at the beginning of the subprogram main.adb:5 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram main.adb:5 *)
+  ;
+  #"main.adb" 5 0 0# abstract ensures {true}(let _ = True in (
+   ()))
+   end ;
+  () (* Assume Pre of the subprogram main.adb:5 *)
+  ;
+  #"main.adb" 5 0 0# assert { #"main.adb" 5 0 0# true };
+  #"main.adb" 5 0 0# try
+   ( #"main.adb" 7 0 0# Main__a.a.int__content <- ( 13 );
+   #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__natural___axiom.dynamic_invariant Main__a.a.int__content True False True) };
+   #"system.ads" 1 0 0# abstract ensures {true}(let _ = () in (
+    ()))
+    end ;
+   #"main.adb" 8 0 0# assume { #"main.adb" 8 0 0# (Standard__natural___axiom.default_initial_assumption Main__b.b.int__content False) };
+   #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__natural___axiom.dynamic_invariant Main__b.b.int__content False False True) };
+   (let main__v__assume = (Sorted__vect.of_array((Main__v__aggregate_def.main__v__aggregate_def(5) (4) (2) (3) (6))) (Main__T1b.first) (Main__T1b.last)) in (
+    ( #"main.adb" 9 0 0# Main__v.v.Array__Int__Standard__integer.map__content <- ( (Sorted__vect.to_array(main__v__assume)) );
+    #"main.adb" 9 0 0# assume { #"main.adb" 9 0 0# ((Standard__integer__rep.to_rep(Main__v.v__first)) = (Sorted__vect.first(main__v__assume))) };
+    #"main.adb" 9 0 0# assume { #"main.adb" 9 0 0# ((Standard__integer__rep.to_rep(Main__v.v__last)) = (Sorted__vect.last(main__v__assume))) } )))
+   ;
+   #"sorted.ads" 6 0 0# assume { #"sorted.ads" 6 0 0# (if (False) then (
+    true) else (
+    (Sorted__vect.dynamic_property Standard__natural.first Standard__natural.last (Standard__integer__rep.to_rep Main__v.v__first) (Standard__integer__rep.to_rep Main__v.v__last)))) };
+   #"main.adb" 9 0 0# abstract ensures {true}(let _ = () in (
+    ()))
+    end ;
+   #"main.adb" 10 0 0# assume { #"main.adb" 10 0 0# (Standard__integer___axiom.default_initial_assumption Main__n.n.int__content False) };
+   #"system.ads" 1 0 0# assume { #"system.ads" 1 0 0# (Standard__integer___axiom.dynamic_invariant Main__n.n.int__content False False True) };
+   ( "GP_Sloc:main.adb:13:4" ( #"main.adb" 13 0 0# "model_vc" "keep_on_simp" "GP_Sloc:main.adb:13:4" "GP_Reason:VC_PRECONDITION" "GP_Id:0" "comment:   Simple(A, B);
+   ^ main.adb:13:4:VC_PRECONDITION" "GP_Shape:call_simple" (P__simple___axiom.simple(Main__a.a.int__content) (Main__b.b)) ) );
+   ( "GP_Sloc:main.adb:14:6" #"main.adb" 14 0 0# Main__n.n.int__content <- ( ( #"main.adb" 14 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_PRECONDITION" "GP_Sloc:main.adb:14:9" "GP_Id:1" "comment:   N := Min(V);
+        ^ main.adb:14:9:VC_PRECONDITION" "GP_Shape:n_assign__call_min" (Sorted__min___axiom.min((Sorted__vect.of_array(Main__v.v.Array__Int__Standard__integer.map__content) ((Standard__integer__rep.to_rep(Main__v.v__first))) ((Standard__integer__rep.to_rep(Main__v.v__last)))))) ) ) );
+   ( "GP_Sloc:main.adb:15:4" ( #"main.adb" 15 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_PRECONDITION" "GP_Sloc:main.adb:15:4" "GP_Id:2" "comment:   Init(V);
+   ^ main.adb:15:4:VC_PRECONDITION" "GP_Shape:call_init" (Sorted__init___axiom.init(Main__v.v) (Main__v.v__first) (Main__v.v__last)) ) );
+   #"main.adb" 5 0 0# raise Return__exc )
+  with
+   Return__exc -> ()
+  end;
+  #"main.adb" 5 0 0# abstract ensures {true}(let _ = True in (
+   ()))
+   end  )
+end

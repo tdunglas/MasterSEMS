@@ -1,0 +1,49 @@
+V "GNAT Lib v2017"
+A -gnatA
+A -gnata
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U sorted%b		sorted.adb		ff562e8c NE OO PK
+W system.assertions%s	s-assert.adb		s-assert.ali
+
+U sorted%s		sorted.ads		7785caad EE NE OO PK
+
+D ada.ads		20170516105951 76789da1 ada%s
+D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
+D sorted.ads		20180216104053 7785caad sorted%s
+D sorted.adb		20180216110806 88d3e421 sorted%b
+D system.ads		20170516105953 6326c08a system%s
+D s-assert.ads		20170516105954 cd8d2c94 system.assertions%s
+D s-exctab.ads		20170516105954 54135002 system.exception_table%s
+D s-stalib.ads		20170516105955 09bd3940 system.standard_library%s
+X 3 sorted.ads
+2K9*Sorted 23l5 23e11 4|1b14 41l5 41t11
+6A9*Vect(integer)<integer> 8r27 13r30 18r24 4|5r27 15r30 27r24
+8U14*Init 8<20 4|5b14 13l8 13t12
+8a20 V{6A9} 10r15 10r26 11r30 11r42 4|5b20 8r16 8r27 9m10 10r46 10r63 12r35
+. 12r46 12r57
+11i25 X{integer} 11r44
+13V13*Is_Sorted{boolean} 13>24 16r17 4|15b13 25l8 25t17
+13a24 V{6A9} 15r15 15r25 16r50 16r65 16r76 16r84 4|15b24 18r16 18r27 19r13
+. 19r20
+16i45 X{integer} 16r78 16r86
+18V13*Min{integer} 18>18 21r42 4|27b13 39l8 39t11
+18a18 V{6A9} 20r15 20r25 21r30 21r56 4|27b18 28r21 28r23 31r16 31r31 32r13
+. 33r19
+21i25 X{integer} 21r58
+X 4 sorted.adb
+8i11 I{integer} 9r12 10r57
+10i41 X{integer} 10r65
+12i30 X{integer} 12r59
+18i11 I{integer} 19r15 19r22
+28i4 min{integer} 32r20 33m12 37r14
+31i11 I{integer} 32r15 33r21
+

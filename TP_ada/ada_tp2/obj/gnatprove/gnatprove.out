@@ -1,0 +1,28 @@
+Summary of SPARK analysis
+=========================
+
+-------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total       Flow   Interval   CodePeer     Provers   Justified   Unproved
+-------------------------------------------------------------------------------------------------------
+Data Dependencies                 .          .          .          .           .           .          .
+Flow Dependencies                 .          .          .          .           .           .          .
+Initialization                    9          5          .          .           .           .          4
+Non-Aliasing                      .          .          .          .           .           .          .
+Run-time Checks                  15          .          .          .     15 (Z3)           .          .
+Assertions                        3          .          .          .      3 (Z3)           .          .
+Functional Contracts              6          .          .          .      4 (Z3)           .          2
+LSP Verification                  .          .          .          .           .           .          .
+-------------------------------------------------------------------------------------------------------
+Total                            33    5 (15%)          .          .    22 (67%)           .    6 (18%)
+
+
+Analyzed 3 units
+in unit main, 1 subprograms and packages out of 1 analyzed
+  Main at main.adb:5 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+in unit p, 0 subprograms and packages out of 1 analyzed
+  p.Simple at p.ads:4 skipped
+in unit sorted, 4 subprograms and packages out of 4 analyzed
+  Sorted at sorted.ads:2 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  Sorted.Init at sorted.ads:8 flow analyzed (0 errors and 4 warnings) and proved (7 checks)
+  Sorted.Is_Sorted at sorted.ads:13 flow analyzed (0 errors and 0 warnings) and not proved, 8 checks out of 9 proved
+  Sorted.Min at sorted.ads:18 flow analyzed (0 errors and 0 warnings) and not proved, 4 checks out of 5 proved

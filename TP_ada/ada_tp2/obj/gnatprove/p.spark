@@ -1,0 +1,31 @@
+{
+  "spark": [
+    {
+      "name": "p.Simple",
+      "sloc": [
+        {
+          "file": "p.ads",
+          "line": 4
+        }
+      ],
+      "spark": "no"
+    }
+  ],
+  "flow": [
+  ],
+  "proof": [
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "marking": 1.51000000187196E-04,
+    "globals (basic)": 1.23000005260110E-04,
+    "globals/properties (advanced)": 1.82000003405847E-04,
+    "flow analysis": 2.80000003840541E-05,
+    "codepeer results": 1.99999999495049E-06,
+    "init_why_sections": 1.69999999343418E-04,
+    "translation of standard": 3.02900001406670E-03,
+    "translation of compilation unit": 1.55000001541339E-04,
+    "proof": 9.99999997475243E-07
+  }
+}
