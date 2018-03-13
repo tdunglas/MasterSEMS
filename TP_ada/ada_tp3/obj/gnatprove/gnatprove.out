@@ -1,0 +1,26 @@
+Summary of SPARK analysis
+=========================
+
+-------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total       Flow   Interval   CodePeer     Provers   Justified   Unproved
+-------------------------------------------------------------------------------------------------------
+Data Dependencies                 .          .          .          .           .           .          .
+Flow Dependencies                 .          .          .          .           .           .          .
+Initialization                    6          6          .          .           .           .          .
+Non-Aliasing                      .          .          .          .           .           .          .
+Run-time Checks                  28          .          .          .     28 (Z3)           .          .
+Assertions                        8          .          .          .      8 (Z3)           .          .
+Functional Contracts              5          .          .          .      5 (Z3)           .          .
+LSP Verification                  .          .          .          .           .           .          .
+-------------------------------------------------------------------------------------------------------
+Total                            47    6 (13%)          .          .    41 (87%)           .          .
+
+
+Analyzed 2 units
+in unit main, 0 subprograms and packages out of 1 analyzed
+  Main at main.adb:8 skipped
+in unit selection_sort, 4 subprograms and packages out of 4 analyzed
+  selection_sort at selection_sort.ads:1 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  selection_sort.Min_Index at selection_sort.ads:13 flow analyzed (0 errors and 0 warnings) and proved (13 checks)
+  selection_sort.SelectionSort at selection_sort.ads:18 flow analyzed (0 errors and 0 warnings) and proved (19 checks)
+  selection_sort.Swap at selection_sort.ads:7 flow analyzed (0 errors and 0 warnings) and proved (9 checks)
