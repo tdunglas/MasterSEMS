@@ -1,0 +1,41 @@
+V "GNAT Lib v2017"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U stack_adt%b		stack_adt.adb		7b255964 NE OO PK GE IL
+
+U stack_adt%s		stack_adt.ads		8996d550 BN EE NE OO PK GE IL
+
+D stack_adt.ads		20180327090907 8996d550 stack_adt%s
+D stack_adt.adb		20180327090613 f2b38c34 stack_adt%b
+D system.ads		20170516105953 6326c08a system%s
+X 1 stack_adt.ads
+2+9 Item 3r14 18r44 22r44 29r46 2|16r44 22r44
+3*4 Default{2+9}
+4i4 Max{natural}
+6k9*stack_adt 2z9 3z4 4z4 28E12 37l5 37e14 2|1b14 28l5 28t14
+10R9*stack 12r26 13r25 15r31 18r30 22r29 31c9 35e17 2|5r26 8r25 11r31 16r30
+. 22r29
+12V13*is_Empty{boolean} 12>22 16s19 20s18 23s22 2|5b13
+12r22 S{10R9} 2|6r7
+13V13*is_Full{boolean} 13>21 19s22 24s18 2|8b13
+13r21 S{10R9} 2|9r7
+15U14*clear 15=20 2|11b14 14l8 14t13
+15r20 S{10R9} 16r28 2|11b20 13m7
+18U14*push 18=19 18>37 2|16b14 20l8 20t12
+18r19 S{10R9} 19r30 20r27 2|16b19 18m7 18r17 19m7 19r14
+18*37 X{2+9} 2|16b37 19r25
+22U14*pop 22=18 22<36 2|22b14 26l8 26t11
+22r18 S{10R9} 23r31 24r26 2|22b18 24r12 24r19 25m7 25r17
+22*36 X{2+9} 2|22b36 24m7
+28I12 Index{natural} 33r17 34r29 2|9r16
+29A9 Vector(2+9)<integer> 34r17
+33i10 size{28I12} 2|6r9 9r9 13m9 18m9 18r19 19r16 24r21 25m9 25r19
+34a10 Vect{29A9} 2|19m9 24r14
+
