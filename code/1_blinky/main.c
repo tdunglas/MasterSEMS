@@ -27,6 +27,8 @@ void motif_B();
 void motif_C();
 void motif_D();
 
+
+
 static unsigned char button_state; // is pressed or not
 static unsigned char global_state; // clignotement or frequency
 
@@ -42,10 +44,53 @@ int main()
     // init timer Systick
     HAL_Init();
     
-    stm32f3_init_leds();
-    stm32f3_init_button();
+    __HAL_RCC_GPIO_CLK_ENABLE();
     
-    int i = 0;
+    GPIO_InitTypeDef gpio;
+    
+    gpio.Pin = GPIO_PIN_4 | GPIO_PIN_5;
+    gpio.Mode = GPIO_MODE_AF_PP;
+    gpio.Pull = GPIO_NOPULL;
+    gpio.Speed = GPIO_SPEED_FREQ_HIGH;
+    gpio.Alternate = GPIO_AF7_USART1;
+    
+    HAL_GPIO_Init(GPIOC, &gpio);
+    
+    UART_InitTypeDef init;
+    init.BaudRate = 9600;
+    init.WordLength = ;
+    init.StopBits = ;
+    init.Parity = ;
+    init.Mode = ;
+    init.HwFlowCtl = ;
+    init. = ;
+    init.OverSampling = ;
+    init.OneBitSampling = ;
+    
+    UART_HandleTypeDef huart;
+    huart.Instance = USART1;
+    huart.Init = init; 
+    /*huart.AdvancedInit = ;
+    huart.pTxBuffPtr = ;
+    huart.TxXferSize = ;
+    huart.TxXferCount = ;
+    huart.pRxBuffPtr = ;
+    huart.RxXferSize = ;
+    huart.RxXferCount = ;
+    huart.Mask = ;
+    huart.hdmatx = ;
+    huart.hdmarx = ;
+    huart.Lock = ;
+    huart.gState = ;
+    huart.RxState = ;
+    huart.ErrorCode = ;*/
+    
+    HAL_UART_Init(&huart);
+    
+    //stm32f3_init_leds();
+    //stm32f3_init_button();
+    
+    //int i = 0;
     
     while(1) {
         //delay();
@@ -118,6 +163,7 @@ char stm32f3_just_released(){
 
 void SysTick_Handler(){
     
+    /*
     if((count % FREQUENCY) == 0){
         curr_state = !curr_state;
         
@@ -131,7 +177,7 @@ void SysTick_Handler(){
         motif_C();
         //motif_D();
     }
-    count++;
+    count++;*/
 }
 
 // set all led on then off
