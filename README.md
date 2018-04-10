@@ -1,13 +1,4 @@
 # MasterSEMS 2017 - 2019
 
-ref : 
-
-cedric.cnam.fr/~taktaks/SEMS/M1
-
-http://deptmedia.cnam.fr/~barthe/SEMS/
-
-http://deptmedia.cnam.fr/~puechm/
-
-ssh -X sems1703@chou.cnam.fr
-
-http://cedric.cnam.fr/sys/crolard/enseignement/index.html
+- NFP209 : Construction rigoureuse des logiciels - ADA 
+- http://cedric.cnam.fr/sys/crolard/enseignement/
