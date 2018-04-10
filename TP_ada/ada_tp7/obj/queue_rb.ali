@@ -1,0 +1,44 @@
+V "GNAT Lib v2017"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U queue_rb%b		queue_rb.adb		5fce8862 NE OO PK GE
+
+U queue_rb%s		queue_rb.ads		188dfaa4 BN EE NE OO PK GE
+
+D queue_rb.ads		20180410094022 188dfaa4 queue_rb%s
+D queue_rb.adb		20180410093155 474372c6 queue_rb%b
+D system.ads		20170516105953 6326c08a system%s
+X 1 queue_rb.ads
+2+9 Item 16r54 20r59 29r45 2|16r54 23r59
+3i4 Max{natural} 26r46 27r44 28r42 36r29 2|7r16 19r38 27r42
+5k9*Queue_RB 2z9 3z4 26E12 39l5 39e13 2|1b14 33l5 33t13
+7R9*ring_buffer 9r26 11r25 13r31 16r34 20r38 31c9 37e17 2|3r26 6r25 9r31
+. 16r34 23r38
+9V13*Is_Empty{boolean} 9>22 14s19 18s18 21s22 2|3b13
+9r22 R{7R9} 2|4r8 4r21
+11V13*Is_Full{boolean} 11>21 17s22 22s18 2|6b13
+11r21 R{7R9} 2|7r7
+13U14*Clear 13=20 2|9b14 14l8 14t13
+13r20 R{7R9} 14r28 2|9b20 11m7 12m7 13m7
+16U14*Add_Last 16=23 16>47 2|16b14 21l8 21t16
+16r23 R{7R9} 17r30 18r27 2|16b23 18m7 18r17 19m7 19r20 20m7 20r14
+16*47 X{2+9} 2|16b47 20r27
+20U14*Remove_First 20=27 20<51 2|23b14 30l8 30t20
+20r27 R{7R9} 21r31 22r26 2|23b27 26r12 26r19 27m7 27r22 28m7 28r17
+20*51 X{2+9} 2|23b51 26m7
+26I12 Index_start{natural} 33r21
+27I12 Index_end{natural} 34r19
+28I12 rb_size{natural} 35r17
+29A9 Vector(2+9)<integer> 36r17
+33i10 rb_start{26I12} 2|4r10 12m9 26r21 27m9 27r24
+34i10 rb_end{27I12} 2|4r23 13m9 19m9 19r22 20r16
+35i10 size{28I12} 2|7r9 11m9 18m9 18r19 28m9 28r19
+36a10 Vect{29A9} 2|20m9 26r14
+

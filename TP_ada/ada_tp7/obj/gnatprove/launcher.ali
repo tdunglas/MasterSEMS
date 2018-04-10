@@ -1,0 +1,451 @@
+V "GNAT Lib v2017"
+A -gnatc
+P GP FX
+
+RN
+RV NO_IO
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U launcher%b		launcher.adb		112535f3 OO PK IL
+
+U launcher%s		launcher.ads		5394d1c8 OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W queue_adt%s		queue_adt.adb		queue_adt.ali
+W queue_rb%s		queue_rb.adb		queue_rb.ali
+
+D ada.ads		20170516105951 76789da1 ada%s
+D a-inteio.ads		20170516105955 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20170516105949 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20170516105952 119b8fb3 ada.streams%s
+D a-textio.ads		20170516105955 386df5d4 ada.text_io%s
+D a-tiinio.ads		20170516105950 aa04e5d6 ada.text_io.integer_io%s
+D interfac.ads		20170516105950 5ab55268 interfaces%s
+D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
+D launcher.ads		20180410100523 4fe2dcb1 launcher%s
+D launcher.adb		20180410100620 5ec7e942 launcher%b
+D queue_adt.ads		20180410082618 cadd8bad queue_adt%s
+D queue_adt.adb		20180410082700 ebabf47c queue_adt%b
+D queue_rb.ads		20180410094022 188dfaa4 queue_rb%s
+D queue_rb.adb		20180410093155 474372c6 queue_rb%b
+D system.ads		20170516105953 6326c08a system%s
+D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
+D s-ficobl.ads		20170516105956 078245e4 system.file_control_block%s
+D s-parame.ads		20170516105955 7e2a0d7f system.parameters%s
+D s-wchcon.ads		20170516105954 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 9|1r6 1r19 2r5 2r18
+X 2 a-inteio.ads
+18K13*Integer_Text_IO[6|46] 9|1w23 2r22
+X 5 a-textio.ads
+49K13*Text_IO 471e16 9|1w10 2r9
+263U14*Put_Line 10|14s7 18s7 24s7
+X 9 launcher.ads
+7K9*launcher 20l5 20e13 10|2b15 31l5 31t13
+9K12*Integer_queue[11|5] 11r8
+13K12*Integer_ring[13|5] 15r8
+17U14*test 10|5b11 29l8 29t12
+2I9 Item{integer} 16r48[9] 20r53[9] 27r45[9] 14r48[9] 20r53[9]
+3i4 Max{natural} 26r40[9]
+7R9*Queue 9r26[9] 11r25[9] 13r31[9] 16r34[9] 20r38[9] 33e17[9] 3r26[9] 6r25[9]
+. 9r31[9] 14r34[9] 20r38[9] 10|7r8[9|9]
+9V13*Is_Empty{boolean} 14s19[9] 18s18[9] 21s22[9] 10|13s7[9|9] 23s11[9|9]
+9r22 Q{11|7R9[9]} 4r8[9]
+11V13*Is_Full{boolean} 17s22[9] 22s18[9] 10|17s11[9|9]
+11r21 Q{11|7R9[9]} 7r8[9]
+13U14*Clear 10|11s4[9|9]
+13r20 Q{11|7R9[9]} 14r28[9] 11m7[9]
+16U14*Add_Last 10|21s4[9|9]
+16r23 Q{11|7R9[9]} 17r30[9] 18r27[9] 16m7[9] 16r17[9] 17m7[9] 17r14[9]
+16i41 X{integer} 17r25[9]
+20r27 Q{11|7R9[9]} 21r31[9] 22r26[9] 22r12[9] 22r19[9] 24r16[9] 24r33[9]
+. 26m10[9] 26r23[9] 30m7[9] 30r17[9]
+20i45 X{integer} 22m7[9]
+26I12 Index{natural} 31r17[9] 32r29[9] 7r17[9]
+27A9 Vector(integer)<integer> 32r17[9]
+31i10*size{11|26I12[9]} 4r10[9] 7r10[9] 11m9[9] 16m9[9] 16r19[9] 17r16[9]
+. 24r35[9] 30m9[9] 30r19[9]
+32a10*Vect{11|27A9[9]} 17m9[9] 22r14[9] 22r21[9] 24r18[9] 26m12[9] 26r25[9]
+2I9 Item{integer} 16r54[13] 20r59[13] 29r45[13] 16r54[13] 23r59[13]
+3i4 Max{natural} 26r46[13] 27r44[13] 28r42[13] 36r29[13] 7r16[13] 19r38[13]
+. 27r42[13]
+7R9*ring_buffer 9r26[13] 11r25[13] 13r31[13] 16r34[13] 20r38[13] 37e17[13]
+. 3r26[13] 6r25[13] 9r31[13] 16r34[13] 23r38[13] 10|8r9[9|13]
+9V13*Is_Empty{boolean} 14s19[13] 18s18[13] 21s22[13]
+9r22 R{13|7R9[13]} 4r8[13] 4r21[13]
+11V13*Is_Full{boolean} 17s22[13] 22s18[13]
+11r21 R{13|7R9[13]} 7r7[13]
+13U14*Clear 10|27s4[9|13]
+13r20 R{13|7R9[13]} 14r28[13] 11m7[13] 12m7[13] 13m7[13]
+16r23 R{13|7R9[13]} 17r30[13] 18r27[13] 18m7[13] 18r17[13] 19m7[13] 19r20[13]
+. 20m7[13] 20r14[13]
+16i47 X{integer} 20r27[13]
+20r27 R{13|7R9[13]} 21r31[13] 22r26[13] 26r12[13] 26r19[13] 27m7[13] 27r22[13]
+. 28m7[13] 28r17[13]
+20i51 X{integer} 26m7[13]
+26I12 Index_start{natural} 33r21[13]
+27I12 Index_end{natural} 34r19[13]
+28I12 rb_size{natural} 35r17[13]
+29A9 Vector(integer)<integer> 36r17[13]
+33i10*rb_start{13|26I12[13]} 4r10[13] 12m9[13] 26r21[13] 27m9[13] 27r24[13]
+34i10*rb_end{13|27I12[13]} 4r23[13] 13m9[13] 19m9[13] 19r22[13] 20r16[13]
+35i10*size{13|28I12[13]} 7r9[13] 11m9[13] 18m9[13] 18r19[13] 28m9[13] 28r19[13]
+36a10*Vect{13|29A9[13]} 20m9[13] 26r14[13]
+24i11 I{integer} 26r17[9] 26r30[9]
+X 10 launcher.adb
+7r4 Q{11|7R9[9|9]} 11m10 11r10 13r16 17r19 21m13 21r13 23r20
+8r4 rb{13|7R9[9|13]} 27m10 27r10
+X 11 queue_adt.ads
+2+9 Item 9|10r20
+5k9*Queue_ADT 9|4w6 10r10 11|35e14
+X 13 queue_rb.ads
+2+9 Item 9|14r19
+5k9*Queue_RB 9|5w6 14r10 13|39e13
+FD 1 ada.ads
+FS .1 16K9 ada
+FD 2 a-inteio.ads
+FS .1 18K13 ada__integer_text_io
+FS .2 51U14 ada__integer_text_io__get
+FS .3 56U14 ada__integer_text_io__get__2
+FS .4 60U14 ada__integer_text_io__put
+FS .5 66U14 ada__integer_text_io__put__2
+FS .6 71U14 ada__integer_text_io__get__3
+FS .7 76U14 ada__integer_text_io__put__3
+FD 3 a-ioexce.ads
+FS .1 18K13 ada__io_exceptions
+FD 4 a-stream.ads
+FS .1 36K13 ada__streams
+FS .2 76U14 ada__streams__read_sea
+FS .3 80U14 ada__streams__write_sea
+FS .4 84U4 ada__streams__stream_element_arraySR
+FS .5 85U4 ada__streams__stream_element_arraySW
+FS .6 84U4 ada__streams__stream_element_arraySR -> 4.4
+FS .7 85U4 ada__streams__stream_element_arraySW -> 4.5
+FD 5 a-textio.ads
+FS .1 49K13 ada__text_io
+FS .2 86U14 ada__text_io__create
+FS .3 92U14 ada__text_io__open
+FS .4 98U14 ada__text_io__close
+FS .5 99U14 ada__text_io__delete
+FS .6 100U14 ada__text_io__reset
+FS .7 101U14 ada__text_io__reset__2
+FS .8 103V13 ada__text_io__mode
+FS .9 104V13 ada__text_io__name
+FS .10 105V13 ada__text_io__form
+FS .11 107V13 ada__text_io__is_open
+FS .12 113U14 ada__text_io__set_input
+FS .13 114U14 ada__text_io__set_output
+FS .14 115U14 ada__text_io__set_error
+FS .15 117V13 ada__text_io__standard_input
+FS .16 118V13 ada__text_io__standard_output
+FS .17 119V13 ada__text_io__standard_error
+FS .18 121V13 ada__text_io__current_input
+FS .19 122V13 ada__text_io__current_output
+FS .20 123V13 ada__text_io__current_error
+FS .21 127V13 ada__text_io__standard_input__2
+FS .22 128V13 ada__text_io__standard_output__2
+FS .23 129V13 ada__text_io__standard_error__2
+FS .24 131V13 ada__text_io__current_input__2
+FS .25 132V13 ada__text_io__current_output__2
+FS .26 133V13 ada__text_io__current_error__2
+FS .27 142U14 ada__text_io__flush
+FS .28 143U14 ada__text_io__flush__2
+FS .29 149U14 ada__text_io__set_line_length
+FS .30 150U14 ada__text_io__set_line_length__2
+FS .31 152U14 ada__text_io__set_page_length
+FS .32 153U14 ada__text_io__set_page_length__2
+FS .33 155V13 ada__text_io__line_length
+FS .34 156V13 ada__text_io__line_length__2
+FS .35 158V13 ada__text_io__page_length
+FS .36 159V13 ada__text_io__page_length__2
+FS .37 165U14 ada__text_io__new_line
+FS .38 166U14 ada__text_io__new_line__2
+FS .39 168U14 ada__text_io__skip_line
+FS .40 169U14 ada__text_io__skip_line__2
+FS .41 171V13 ada__text_io__end_of_line
+FS .42 172V13 ada__text_io__end_of_line__2
+FS .43 174U14 ada__text_io__new_page
+FS .44 175U14 ada__text_io__new_page__2
+FS .45 177U14 ada__text_io__skip_page
+FS .46 178U14 ada__text_io__skip_page__2
+FS .47 180V13 ada__text_io__end_of_page
+FS .48 181V13 ada__text_io__end_of_page__2
+FS .49 183V13 ada__text_io__end_of_file
+FS .50 184V13 ada__text_io__end_of_file__2
+FS .51 186U14 ada__text_io__set_col
+FS .52 187U14 ada__text_io__set_col__2
+FS .53 189U14 ada__text_io__set_line
+FS .54 190U14 ada__text_io__set_line__2
+FS .55 192V13 ada__text_io__col
+FS .56 193V13 ada__text_io__col__2
+FS .57 195V13 ada__text_io__line
+FS .58 196V13 ada__text_io__line__2
+FS .59 198V13 ada__text_io__page
+FS .60 199V13 ada__text_io__page__2
+FS .61 205U14 ada__text_io__get
+FS .62 206U14 ada__text_io__get__2
+FS .63 207U14 ada__text_io__put
+FS .64 208U14 ada__text_io__put__2
+FS .65 210U14 ada__text_io__look_ahead
+FS .66 215U14 ada__text_io__look_ahead__2
+FS .67 219U14 ada__text_io__get_immediate
+FS .68 223U14 ada__text_io__get_immediate__2
+FS .69 226U14 ada__text_io__get_immediate__3
+FS .70 231U14 ada__text_io__get_immediate__4
+FS .71 239U14 ada__text_io__get__3
+FS .72 240U14 ada__text_io__get__4
+FS .73 241U14 ada__text_io__put__3
+FS .74 242U14 ada__text_io__put__4
+FS .75 244U14 ada__text_io__get_line
+FS .76 249U14 ada__text_io__get_line__2
+FS .77 253V13 ada__text_io__get_line__3
+FS .78 256V13 ada__text_io__get_line__4
+FS .79 259U14 ada__text_io__put_line
+FS .80 263U14 ada__text_io__put_line__2
+FS .81 426V13 ada__text_io__afcb_allocate__2
+FS .82 428U14 ada__text_io__afcb_close__2
+FS .83 429U14 ada__text_io__afcb_free__2
+FS .84 431U14 ada__text_io__read__2
+FS .85 437U14 ada__text_io__write__2
+FS .86 460V13 ada__text_io__eof_char
+FS .87 466U14 ada__text_io__initialize_standard_files
+FD 6 a-tiinio.ads
+FD 7 interfac.ads
+FS .1 38K9 interfaces
+FS .2 81V13 interfaces__shift_left
+FS .3 85V13 interfaces__shift_right
+FS .4 89V13 interfaces__shift_right_arithmetic
+FS .5 93V13 interfaces__rotate_left
+FS .6 97V13 interfaces__rotate_right
+FS .7 101V13 interfaces__shift_left__2
+FS .8 105V13 interfaces__shift_right__2
+FS .9 109V13 interfaces__shift_right_arithmetic__2
+FS .10 113V13 interfaces__rotate_left__2
+FS .11 117V13 interfaces__rotate_right__2
+FS .12 121V13 interfaces__shift_left__3
+FS .13 125V13 interfaces__shift_right__3
+FS .14 129V13 interfaces__shift_right_arithmetic__3
+FS .15 133V13 interfaces__rotate_left__3
+FS .16 137V13 interfaces__rotate_right__3
+FS .17 141V13 interfaces__shift_left__4
+FS .18 145V13 interfaces__shift_right__4
+FS .19 149V13 interfaces__shift_right_arithmetic__4
+FS .20 153V13 interfaces__rotate_left__4
+FS .21 157V13 interfaces__rotate_right__4
+FD 8 i-cstrea.ads
+FS .1 37K20 interfaces__c_streams
+FS .2 72V13 interfaces__c_streams__stdin
+FS .3 73V13 interfaces__c_streams__stdout
+FS .4 74V13 interfaces__c_streams__stderr
+FS .5 95V13 interfaces__c_streams__feof
+FS .6 97V13 interfaces__c_streams__ferror
+FS .7 106V13 interfaces__c_streams__fileno
+FS .8 128V13 interfaces__c_streams__fread
+FS .9 134V13 interfaces__c_streams__fread__2
+FS .10 171V13 interfaces__c_streams__fwrite
+FS .11 184V13 interfaces__c_streams__setvbuf
+FS .12 212V13 interfaces__c_streams__file_exists
+FS .13 215V13 interfaces__c_streams__is_regular_file
+FS .14 223U14 interfaces__c_streams__set_binary_mode
+FS .15 224U14 interfaces__c_streams__set_text_mode
+FS .16 254U14 interfaces__c_streams__set_mode
+FS .17 262U14 interfaces__c_streams__full_name
+FD 9 launcher.ads
+FS .1 7K9 launcher
+FS .2 9K12 launcher__integer_queue
+FS .3 9V13 launcher__integer_queue__is_empty
+FS .4 11V13 launcher__integer_queue__is_full
+FS .5 13U14 launcher__integer_queue__clear
+FS .6 16U14 launcher__integer_queue__add_last
+FS .7 20U14 launcher__integer_queue__remove_first
+FS .8 9K12 launcher__integer_queue -> 9.2
+FS .9 3V13 launcher__integer_queue__is_empty -> 9.3
+FS .10 6V13 launcher__integer_queue__is_full -> 9.4
+FS .11 9U14 launcher__integer_queue__clear -> 9.5
+FS .12 14U14 launcher__integer_queue__add_last -> 9.6
+FS .13 20U14 launcher__integer_queue__remove_first -> 9.7
+FS .14 13K12 launcher__integer_ring
+FS .15 9V13 launcher__integer_ring__is_empty
+FS .16 11V13 launcher__integer_ring__is_full
+FS .17 13U14 launcher__integer_ring__clear
+FS .18 16U14 launcher__integer_ring__add_last
+FS .19 20U14 launcher__integer_ring__remove_first
+FS .20 13K12 launcher__integer_ring -> 9.14
+FS .21 3V13 launcher__integer_ring__is_empty -> 9.15
+FS .22 6V13 launcher__integer_ring__is_full -> 9.16
+FS .23 9U14 launcher__integer_ring__clear -> 9.17
+FS .24 16U14 launcher__integer_ring__add_last -> 9.18
+FS .25 23U14 launcher__integer_ring__remove_first -> 9.19
+FS .26 17U14 launcher__test
+FD 10 launcher.adb
+FS .1 2K15 launcher -> 9.1
+FS .2 5U11 launcher__test -> 9.26
+FD 11 queue_adt.ads
+FD 12 queue_adt.adb
+FD 13 queue_rb.ads
+FD 14 queue_rb.adb
+FD 15 system.ads
+FS .1 37K9 system
+FS .2 77V13 system__Olt
+FS .3 78V13 system__Ole
+FS .4 79V13 system__Ogt
+FS .5 80V13 system__Oge
+FS .6 81V13 system__Oeq
+FD 16 s-crtl.ads
+FS .1 38K16 system__crtl
+FS .2 85V13 system__crtl__strlen
+FS .3 88U14 system__crtl__strncpy
+FS .4 95V13 system__crtl__atoi
+FS .5 98U14 system__crtl__clearerr
+FS .6 101V13 system__crtl__dup
+FS .7 104V13 system__crtl__dup2
+FS .8 107V13 system__crtl__fclose
+FS .9 110V13 system__crtl__fdopen
+FS .10 113V13 system__crtl__fflush
+FS .11 116V13 system__crtl__fgetc
+FS .12 119V13 system__crtl__fgets
+FS .13 122V13 system__crtl__fopen
+FS .14 128V13 system__crtl__fputc
+FS .15 131V13 system__crtl__fputwc
+FS .16 134V13 system__crtl__fputs
+FS .17 137U14 system__crtl__free
+FS .18 140V13 system__crtl__freopen
+FS .19 147V13 system__crtl__fseek
+FS .20 153V13 system__crtl__fseek64
+FS .21 159V13 system__crtl__ftell
+FS .22 162V13 system__crtl__ftell64
+FS .23 165V13 system__crtl__getenv
+FS .24 168V13 system__crtl__isatty
+FS .25 171V13 system__crtl__lseek
+FS .26 174V13 system__crtl__malloc
+FS .27 177U14 system__crtl__memcpy
+FS .28 180U14 system__crtl__memmove
+FS .29 183U14 system__crtl__mktemp
+FS .30 186V13 system__crtl__pclose
+FS .31 189V13 system__crtl__popen
+FS .32 192V13 system__crtl__realloc
+FS .33 196U14 system__crtl__rewind
+FS .34 199V13 system__crtl__rmdir
+FS .35 202V13 system__crtl__chdir
+FS .36 205V13 system__crtl__mkdir
+FS .37 210V13 system__crtl__setvbuf
+FS .38 217U14 system__crtl__tmpnam
+FS .39 220V13 system__crtl__tmpfile
+FS .40 223V13 system__crtl__ungetc
+FS .41 226V13 system__crtl__unlink
+FS .42 229V13 system__crtl__open
+FS .43 232V13 system__crtl__close
+FS .44 235V13 system__crtl__read
+FS .45 238V13 system__crtl__write
+FD 17 s-ficobl.ads
+FS .1 42K16 system__file_control_block
+FD 18 s-parame.ads
+FS .1 51K16 system__parameters
+FS .2 81V13 system__parameters__default_stack_size
+FS .3 84V13 system__parameters__minimum_stack_size
+FS .4 87V13 system__parameters__adjust_storage_size
+FD 19 s-wchcon.ads
+FS .1 41K16 system__wch_con
+FS .2 203V13 system__wch_con__get_wc_encoding_method
+FS .3 207V13 system__wch_con__get_wc_encoding_method__2
+FS .4 212V13 system__wch_con__is_start_of_encoding
+FX 5 a-textio.ads .1 ada__text_io
+F 263*14 ada__text_io__put_line__2 10|.2:14s7 18s7 24s7
+FX 9 launcher.ads .2 launcher__integer_queue
+F 3*4 launcher__integer_queue__max 26c40
+F 9*13 launcher__integer_queue__is_empty .5:14s19 .6:18s18 .7:21s22 10|.2:13s7
+. 23s11
+F 11*13 launcher__integer_queue__is_full .6:17s22 .7:22s18 10|.2:17s11
+F 13*14 launcher__integer_queue__clear 10|.2:11s4
+F 16*14 launcher__integer_queue__add_last 10|.2:21s4
+FX 9 launcher.ads .3 launcher__integer_queue__is_empty
+F 9>22 launcher__integer_queue__is_empty__q .9:4c8
+FX 9 launcher.ads .4 launcher__integer_queue__is_full
+F 11>21 launcher__integer_queue__is_full__q .10:7c8
+FX 9 launcher.ads .5 launcher__integer_queue__clear
+F 13=20 launcher__integer_queue__clear__q 14r28 .11:11m7
+FX 9 launcher.ads .6 launcher__integer_queue__add_last
+F 16=23 launcher__integer_queue__add_last__q 17r30 18r27 .12:16m7 16r17 17m7
+. 17r14
+F 16>41 launcher__integer_queue__add_last__x .12:17c25
+FX 9 launcher.ads .7 launcher__integer_queue__remove_first
+F 20=27 launcher__integer_queue__remove_first__q 21r31 22r26 .13:22r12 22r19
+. 24r16 24r33 26m10 26r23 30m7 30r17
+F 20<45 launcher__integer_queue__remove_first__x .13:22m7
+FX 9 launcher.ads .13 launcher__integer_queue__remove_first
+F 24*11 launcher__integer_queue__remove_first__L_1__i 26c17 26c30
+FX 9 launcher.ads .14 launcher__integer_ring
+F 3*4 launcher__integer_ring__max 26c46 27c44 28c42 36c29 .22:7c16 .24:19c38
+. .25:27c42
+F 9*13 launcher__integer_ring__is_empty .17:14s19 .18:18s18 .19:21s22
+F 11*13 launcher__integer_ring__is_full .18:17s22 .19:22s18
+F 13*14 launcher__integer_ring__clear 10|.2:27s4
+FX 9 launcher.ads .15 launcher__integer_ring__is_empty
+F 9>22 launcher__integer_ring__is_empty__r .21:4c8 4c21
+FX 9 launcher.ads .16 launcher__integer_ring__is_full
+F 11>21 launcher__integer_ring__is_full__r .22:7c7
+FX 9 launcher.ads .17 launcher__integer_ring__clear
+F 13=20 launcher__integer_ring__clear__r 14r28 .23:11m7 12m7 13m7
+FX 9 launcher.ads .18 launcher__integer_ring__add_last
+F 16=23 launcher__integer_ring__add_last__r 17r30 18r27 .24:18m7 18r17 19m7
+. 19r20 20m7 20r14
+F 16>47 launcher__integer_ring__add_last__x .24:20c27
+FX 9 launcher.ads .19 launcher__integer_ring__remove_first
+F 20=27 launcher__integer_ring__remove_first__r 21r31 22r26 .25:26r12 26r19
+. 27m7 27r22 28m7 28r17
+F 20<51 launcher__integer_ring__remove_first__x .25:26m7
+FX 10 launcher.adb .2 launcher__test
+F 7*4 launcher__test__q 11m10 11r10 13r16 17r19 21m13 21r13 23r20
+F 8*4 launcher__test__rb 27m10 27r10
+
+QQ SPARKVERSION 2017 (20170515)
+GG EK_REMOTE_STATES RS 0
+GG EK_GLOBALS launcher KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 11 launcher__integer_ring__clear launcher__integer_queue__remove_first launcher__integer_ring__add_last launcher__integer_ring__remove_first launcher__test launcher__integer_queue__is_empty launcher__integer_queue__is_full launcher__integer_ring__is_empty launcher__integer_ring__is_full launcher__integer_queue__clear launcher__integer_queue__add_last local_init 0
+GG EK_GLOBALS launcher__integer_queue KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 5 launcher__integer_queue__remove_first launcher__integer_queue__is_empty launcher__integer_queue__is_full launcher__integer_queue__clear launcher__integer_queue__add_last local_init 0
+GG EK_GLOBALS launcher__integer_ring KIND_PACKAGE_BODY ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 local_ghost 0 local_sub 5 launcher__integer_ring__clear launcher__integer_ring__add_last launcher__integer_ring__remove_first launcher__integer_ring__is_empty launcher__integer_ring__is_full local_init 0
+GG EK_GLOBALS launcher__integer_queue__is_empty KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 1 launcher__integer_queue__is_empty__q local_ghost 0 local_sub 0
+GG EK_GLOBALS launcher__integer_queue__is_full KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 1 launcher__integer_queue__is_full__q local_ghost 0 local_sub 0
+GG EK_GLOBALS launcher__integer_queue__clear KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 1 launcher__integer_queue__is_empty calls 0 calls_conditional 0 local_var 1 launcher__integer_queue__clear__q local_ghost 0 local_sub 0
+GG EK_GLOBALS launcher__integer_queue__add_last KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 2 launcher__integer_queue__is_empty launcher__integer_queue__is_full calls 0 calls_conditional 0 local_var 2 launcher__integer_queue__add_last__q launcher__integer_queue__add_last__x local_ghost 0 local_sub 0
+GG EK_GLOBALS launcher__integer_queue__remove_first KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 2 launcher__integer_queue__is_empty launcher__integer_queue__is_full calls 0 calls_conditional 0 local_var 4 launcher__integer_queue__remove_first__q launcher__integer_queue__remove_first__x launcher__integer_queue__remove_first__L_1__R21s launcher__integer_queue__remove_first__L_1__i local_ghost 0 local_sub 0
+GG EK_GLOBALS launcher__integer_ring__is_empty KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 1 launcher__integer_ring__is_empty__r local_ghost 0 local_sub 0
+GG EK_GLOBALS launcher__integer_ring__is_full KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 0 local_var 1 launcher__integer_ring__is_full__r local_ghost 0 local_sub 0
+GG EK_GLOBALS launcher__integer_ring__clear KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 1 launcher__integer_ring__is_empty calls 0 calls_conditional 0 local_var 1 launcher__integer_ring__clear__r local_ghost 0 local_sub 0
+GG EK_GLOBALS launcher__integer_ring__add_last KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 2 launcher__integer_ring__is_empty launcher__integer_ring__is_full calls 0 calls_conditional 0 local_var 2 launcher__integer_ring__add_last__r launcher__integer_ring__add_last__x local_ghost 0 local_sub 0
+GG EK_GLOBALS launcher__integer_ring__remove_first KIND_SUBPROGRAM ORIGIN_FLOW var_proof 0 var_in 0 var_out 0 calls_proof 2 launcher__integer_ring__is_empty launcher__integer_ring__is_full calls 0 calls_conditional 0 local_var 2 launcher__integer_ring__remove_first__r launcher__integer_ring__remove_first__x local_ghost 0 local_sub 0
+GG EK_GLOBALS launcher__test KIND_SUBPROGRAM ORIGIN_FRONTEND var_proof 0 var_in 0 var_out 0 calls_proof 0 calls 0 calls_conditional 6 launcher__integer_ring__clear launcher__integer_queue__is_empty launcher__integer_queue__is_full launcher__integer_queue__clear ada__text_io__put_line__2 launcher__integer_queue__add_last local_var 0 local_ghost 0 local_sub 0
+GG EK_VOLATILES AR 0 AW 0 ER 0 EW 0
+GG EK_NONBLOCKING 13 launcher launcher__integer_queue launcher__integer_ring launcher__integer_queue__is_empty launcher__integer_queue__is_full launcher__integer_queue__clear launcher__integer_queue__add_last launcher__integer_queue__remove_first launcher__integer_ring__is_empty launcher__integer_ring__is_full launcher__integer_ring__clear launcher__integer_ring__add_last launcher__integer_ring__remove_first
+GG EK_NONRETURNING 1 launcher__test
+GG EK_TERMINATING 0
+GG EK_DIRECT_CALLS launcher 2 launcher__integer_queue launcher__integer_ring
+GG EK_DIRECT_CALLS launcher__integer_queue 0
+GG EK_DIRECT_CALLS launcher__integer_ring 0
+GG EK_DIRECT_CALLS launcher__integer_queue__is_empty 0
+GG EK_DIRECT_CALLS launcher__integer_queue__is_full 0
+GG EK_DIRECT_CALLS launcher__integer_queue__clear 1 launcher__integer_queue__is_empty
+GG EK_DIRECT_CALLS launcher__integer_queue__add_last 2 launcher__integer_queue__is_empty launcher__integer_queue__is_full
+GG EK_DIRECT_CALLS launcher__integer_queue__remove_first 2 launcher__integer_queue__is_empty launcher__integer_queue__is_full
+GG EK_DIRECT_CALLS launcher__integer_ring__is_empty 0
+GG EK_DIRECT_CALLS launcher__integer_ring__is_full 0
+GG EK_DIRECT_CALLS launcher__integer_ring__clear 1 launcher__integer_ring__is_empty
+GG EK_DIRECT_CALLS launcher__integer_ring__add_last 2 launcher__integer_ring__is_empty launcher__integer_ring__is_full
+GG EK_DIRECT_CALLS launcher__integer_ring__remove_first 2 launcher__integer_ring__is_empty launcher__integer_ring__is_full
+GG EK_DIRECT_CALLS launcher__test 0
+GG EK_TASKING_INFO launcher ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_queue ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_ring ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_queue__is_empty ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_queue__is_full ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_queue__clear ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_queue__add_last ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_queue__remove_first ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_ring__is_empty ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_ring__is_full ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_ring__clear ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_ring__add_last ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_TASKING_INFO launcher__integer_ring__remove_first ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_END_MARKER

@@ -35,7 +35,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#6a81b703#;
+   u00001 : constant Version_32 := 16#fffd0006#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#b6df930e#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -305,10 +305,14 @@ package ada_main is
    pragma Export (C, u00134, "queue_adtB");
    u00135 : constant Version_32 := 16#cadd8bad#;
    pragma Export (C, u00135, "queue_adtS");
-   u00136 : constant Version_32 := 16#a6359005#;
-   pragma Export (C, u00136, "system__memoryB");
-   u00137 : constant Version_32 := 16#3a5ba6be#;
-   pragma Export (C, u00137, "system__memoryS");
+   u00136 : constant Version_32 := 16#5fce8862#;
+   pragma Export (C, u00136, "queue_rbB");
+   u00137 : constant Version_32 := 16#188dfaa4#;
+   pragma Export (C, u00137, "queue_rbS");
+   u00138 : constant Version_32 := 16#a6359005#;
+   pragma Export (C, u00138, "system__memoryB");
+   u00139 : constant Version_32 := 16#3a5ba6be#;
+   pragma Export (C, u00139, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -447,6 +451,8 @@ package ada_main is
    --  ada.integer_text_io%b
    --  queue_adt%s
    --  queue_adt%b
+   --  queue_rb%s
+   --  queue_rb%b
    --  main%b
    --  END ELABORATION ORDER
 

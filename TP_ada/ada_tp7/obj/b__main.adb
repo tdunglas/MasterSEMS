@@ -29,6 +29,7 @@ package body ada_main is
    E111 : Short_Integer; pragma Import (Ada, E111, "system__file_io_E");
    E099 : Short_Integer; pragma Import (Ada, E099, "ada__text_io_E");
    E135 : Short_Integer; pragma Import (Ada, E135, "queue_adt_E");
+   E137 : Short_Integer; pragma Import (Ada, E137, "queue_rb_E");
 
    Local_Priority_Specific_Dispatching : constant String := "";
    Local_Interrupt_States : constant String := "";
@@ -188,6 +189,7 @@ package body ada_main is
       Ada.Text_Io'Elab_Body;
       E099 := E099 + 1;
       E135 := E135 + 1;
+      E137 := E137 + 1;
    end adainit;
 
    procedure Ada_Main_Program;
@@ -224,6 +226,7 @@ package body ada_main is
 
 --  BEGIN Object file/option list
    --   /home/sems1703/MasterSEMS/TP_ada/ada_tp7/obj/queue_adt.o
+   --   /home/sems1703/MasterSEMS/TP_ada/ada_tp7/obj/queue_rb.o
    --   /home/sems1703/MasterSEMS/TP_ada/ada_tp7/obj/main.o
    --   -L/home/sems1703/MasterSEMS/TP_ada/ada_tp7/obj/
    --   -L/home/sems1703/MasterSEMS/TP_ada/ada_tp7/obj/

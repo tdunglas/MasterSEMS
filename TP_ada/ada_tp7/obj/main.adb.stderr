@@ -1,0 +1,16 @@
+main.adb:9:08: "Queue" is not visible
+main.adb:9:08: non-visible declaration at queue_adt.ads:7, instance at launcher.ads:6
+main.adb:10:09: "ring_buffer" is not visible
+main.adb:10:09: non-visible declaration at queue_rb.ads:7, instance at launcher.ads:10
+main.adb:13:04: "Clear" is not visible (more references follow)
+main.adb:13:04: non-visible declaration at queue_rb.ads:13, instance at launcher.ads:10
+main.adb:13:04: non-visible declaration at queue_adt.ads:13, instance at launcher.ads:6
+main.adb:15:07: "Is_Empty" is not visible (more references follow)
+main.adb:15:07: non-visible declaration at queue_rb.ads:9, instance at launcher.ads:10
+main.adb:15:07: non-visible declaration at queue_adt.ads:9, instance at launcher.ads:6
+main.adb:19:11: "Is_Full" is not visible
+main.adb:19:11: non-visible declaration at queue_rb.ads:11, instance at launcher.ads:10
+main.adb:19:11: non-visible declaration at queue_adt.ads:11, instance at launcher.ads:6
+main.adb:23:04: "Add_Last" is not visible
+main.adb:23:04: non-visible declaration at queue_rb.ads:16, instance at launcher.ads:10
+main.adb:23:04: non-visible declaration at queue_adt.ads:16, instance at launcher.ads:6

@@ -1,1 +1,38 @@
+Summary of SPARK analysis
+=========================
 
+-------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total       Flow   Interval   CodePeer     Provers   Justified   Unproved
+-------------------------------------------------------------------------------------------------------
+Data Dependencies                 .          .          .          .           .           .          .
+Flow Dependencies                 .          .          .          .           .           .          .
+Initialization                    2          2          .          .           .           .          .
+Non-Aliasing                      .          .          .          .           .           .          .
+Run-time Checks                  11          .          .          .      7 (Z3)           .          4
+Assertions                        .          .          .          .           .           .          .
+Functional Contracts              6          .          .          .      5 (Z3)           .          1
+LSP Verification                  .          .          .          .           .           .          .
+-------------------------------------------------------------------------------------------------------
+Total                            19    2 (11%)          .          .    12 (63%)           .    5 (26%)
+
+
+Analyzed 2 units
+in unit launcher, 15 subprograms and packages out of 16 analyzed
+  launcher at launcher.ads:7 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  launcher.Integer_queue at launcher.ads:9 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  launcher.Integer_queue.Add_Last at queue_adt.ads:16, instantiated at launcher.ads:9 flow analyzed (0 errors and 0 warnings) and proved (3 checks)
+  launcher.Integer_queue.Clear at queue_adt.ads:13, instantiated at launcher.ads:9 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  launcher.Integer_queue.Is_Empty at queue_adt.ads:9, instantiated at launcher.ads:9 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  launcher.Integer_queue.Is_Full at queue_adt.ads:11, instantiated at launcher.ads:9 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  launcher.Integer_queue.Queue at queue_adt.ads:7, instantiated at launcher.ads:9 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  launcher.Integer_queue.Remove_First at queue_adt.ads:20, instantiated at launcher.ads:9 flow analyzed (0 errors and 0 warnings) and proved (4 checks)
+  launcher.Integer_ring at launcher.ads:13 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  launcher.Integer_ring.Add_Last at queue_rb.ads:16, instantiated at launcher.ads:13 flow analyzed (0 errors and 0 warnings) and not proved, 1 checks out of 4 proved
+  launcher.Integer_ring.Clear at queue_rb.ads:13, instantiated at launcher.ads:13 flow analyzed (0 errors and 0 warnings) and proved (1 checks)
+  launcher.Integer_ring.Is_Empty at queue_rb.ads:9, instantiated at launcher.ads:13 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  launcher.Integer_ring.Is_Full at queue_rb.ads:11, instantiated at launcher.ads:13 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  launcher.Integer_ring.Remove_First at queue_rb.ads:20, instantiated at launcher.ads:13 flow analyzed (0 errors and 0 warnings) and not proved, 2 checks out of 4 proved
+  launcher.Integer_ring.ring_buffer at queue_rb.ads:7, instantiated at launcher.ads:13 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  launcher.test at launcher.ads:17 skipped
+in unit main, 0 subprograms and packages out of 1 analyzed
+  Main at main.adb:6 skipped

@@ -1,0 +1,2204 @@
+{
+  "spark": [
+    {
+      "name": "launcher",
+      "sloc": [
+        {
+          "file": "launcher.ads",
+          "line": 7
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_queue",
+      "sloc": [
+        {
+          "file": "launcher.ads",
+          "line": 9
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_queue.Queue",
+      "sloc": [
+        {
+          "file": "queue_adt.ads",
+          "line": 7
+        },
+        {
+          "file": "launcher.ads",
+          "line": 9
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_queue.Is_Empty",
+      "sloc": [
+        {
+          "file": "queue_adt.ads",
+          "line": 9
+        },
+        {
+          "file": "launcher.ads",
+          "line": 9
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_queue.Is_Full",
+      "sloc": [
+        {
+          "file": "queue_adt.ads",
+          "line": 11
+        },
+        {
+          "file": "launcher.ads",
+          "line": 9
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_queue.Clear",
+      "sloc": [
+        {
+          "file": "queue_adt.ads",
+          "line": 13
+        },
+        {
+          "file": "launcher.ads",
+          "line": 9
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_queue.Add_Last",
+      "sloc": [
+        {
+          "file": "queue_adt.ads",
+          "line": 16
+        },
+        {
+          "file": "launcher.ads",
+          "line": 9
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_queue.Remove_First",
+      "sloc": [
+        {
+          "file": "queue_adt.ads",
+          "line": 20
+        },
+        {
+          "file": "launcher.ads",
+          "line": 9
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_ring",
+      "sloc": [
+        {
+          "file": "launcher.ads",
+          "line": 13
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_ring.ring_buffer",
+      "sloc": [
+        {
+          "file": "queue_rb.ads",
+          "line": 7
+        },
+        {
+          "file": "launcher.ads",
+          "line": 13
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_ring.Is_Empty",
+      "sloc": [
+        {
+          "file": "queue_rb.ads",
+          "line": 9
+        },
+        {
+          "file": "launcher.ads",
+          "line": 13
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_ring.Is_Full",
+      "sloc": [
+        {
+          "file": "queue_rb.ads",
+          "line": 11
+        },
+        {
+          "file": "launcher.ads",
+          "line": 13
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_ring.Clear",
+      "sloc": [
+        {
+          "file": "queue_rb.ads",
+          "line": 13
+        },
+        {
+          "file": "launcher.ads",
+          "line": 13
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_ring.Add_Last",
+      "sloc": [
+        {
+          "file": "queue_rb.ads",
+          "line": 16
+        },
+        {
+          "file": "launcher.ads",
+          "line": 13
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.Integer_ring.Remove_First",
+      "sloc": [
+        {
+          "file": "queue_rb.ads",
+          "line": 20
+        },
+        {
+          "file": "launcher.ads",
+          "line": 13
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "launcher.test",
+      "sloc": [
+        {
+          "file": "launcher.ads",
+          "line": 17
+        }
+      ],
+      "spark": "spec"
+    }
+  ],
+  "flow": [
+    {
+      "file": "queue_adt.ads",
+      "line": 20,
+      "col": 45,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_queue.Remove_First",
+        "sloc": [
+          {
+            "file": "queue_adt.ads",
+            "line": 20
+          },
+          {
+            "file": "launcher.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "launcher__flow__175.trace",
+      "msg_id": 0,
+      "how_proved": "flow"
+    },
+    {
+      "file": "queue_rb.ads",
+      "line": 20,
+      "col": 51,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_ring.Remove_First",
+        "sloc": [
+          {
+            "file": "queue_rb.ads",
+            "line": 20
+          },
+          {
+            "file": "launcher.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "launcher__flow__225.trace",
+      "msg_id": 1,
+      "how_proved": "flow"
+    }
+  ],
+  "proof": [
+    {
+      "file": "queue_rb.adb",
+      "line": 19,
+      "col": 34,
+      "rule": "VC_DIVISION_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_ring.Add_Last",
+        "sloc": [
+          {
+            "file": "queue_rb.ads",
+            "line": 16
+          },
+          {
+            "file": "launcher.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1361,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 2,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "queue_rb.ads",
+      "line": 14,
+      "col": 19,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_ring.Clear",
+        "sloc": [
+          {
+            "file": "queue_rb.ads",
+            "line": 13
+          },
+          {
+            "file": "launcher.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2638,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 3,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "queue_adt.adb",
+      "line": 16,
+      "col": 24,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_queue.Add_Last",
+        "sloc": [
+          {
+            "file": "queue_adt.ads",
+            "line": 16
+          },
+          {
+            "file": "launcher.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2336,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 4,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "queue_adt.ads",
+      "line": 22,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_queue.Remove_First",
+        "sloc": [
+          {
+            "file": "queue_adt.ads",
+            "line": 20
+          },
+          {
+            "file": "launcher.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2763,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 5,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "queue_adt.adb",
+      "line": 17,
+      "col": 15,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_queue.Add_Last",
+        "sloc": [
+          {
+            "file": "queue_adt.ads",
+            "line": 16
+          },
+          {
+            "file": "launcher.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2437,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2436,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 6,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "queue_rb.ads",
+      "line": 18,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "medium",
+      "entity": {
+        "name": "launcher.Integer_ring.Add_Last",
+        "sloc": [
+          {
+            "file": "queue_rb.ads",
+            "line": 16
+          },
+          {
+            "file": "launcher.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "CVC4_CE": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Unknown (none)",
+              "steps": 9792,
+              "time": 4.00000000000000E-02
+            },
+            "altergo": {
+              "result": "Unknown (none)",
+              "steps": -1,
+              "time": 1.81000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 7,
+      "how_proved": "prover"
+    },
+    {
+      "file": "queue_rb.adb",
+      "line": 27,
+      "col": 38,
+      "rule": "VC_DIVISION_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_ring.Remove_First",
+        "sloc": [
+          {
+            "file": "queue_rb.ads",
+            "line": 20
+          },
+          {
+            "file": "launcher.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 1341,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 8,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "queue_adt.ads",
+      "line": 14,
+      "col": 19,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_queue.Clear",
+        "sloc": [
+          {
+            "file": "queue_adt.ads",
+            "line": 13
+          },
+          {
+            "file": "launcher.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2319,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 9,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 9.99999977648258E-03
+        }
+      }
+    },
+    {
+      "file": "queue_rb.adb",
+      "line": 26,
+      "col": 20,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "launcher.Integer_ring.Remove_First",
+        "sloc": [
+          {
+            "file": "queue_rb.ads",
+            "line": 20
+          },
+          {
+            "file": "launcher.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2831,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "CVC4_CE": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Unknown (none)",
+              "steps": 8178,
+              "time": 4.00000000000000E-02
+            },
+            "altergo": {
+              "result": "Unknown (none)",
+              "steps": -1,
+              "time": 1.10000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 10,
+      "how_proved": "prover"
+    },
+    {
+      "file": "queue_rb.adb",
+      "line": 20,
+      "col": 15,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "launcher.Integer_ring.Add_Last",
+        "sloc": [
+          {
+            "file": "queue_rb.ads",
+            "line": 16
+          },
+          {
+            "file": "launcher.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 3118,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "CVC4_CE": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Unknown (none)",
+              "steps": 8641,
+              "time": 3.00000000000000E-02
+            },
+            "altergo": {
+              "result": "Unknown (none)",
+              "steps": -1,
+              "time": 1.54000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 11,
+      "how_proved": "prover"
+    },
+    {
+      "file": "queue_rb.adb",
+      "line": 18,
+      "col": 24,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "launcher.Integer_ring.Add_Last",
+        "sloc": [
+          {
+            "file": "queue_rb.ads",
+            "line": 16
+          },
+          {
+            "file": "launcher.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "CVC4_CE": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Unknown (none)",
+              "steps": 7815,
+              "time": 3.00000000000000E-02
+            },
+            "altergo": {
+              "result": "Unknown (none)",
+              "steps": -1,
+              "time": 1.00000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 12,
+      "how_proved": "prover"
+    },
+    {
+      "file": "queue_rb.ads",
+      "line": 22,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_ring.Remove_First",
+        "sloc": [
+          {
+            "file": "queue_rb.ads",
+            "line": 20
+          },
+          {
+            "file": "launcher.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 3256,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 13,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "queue_adt.ads",
+      "line": 18,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_queue.Add_Last",
+        "sloc": [
+          {
+            "file": "queue_adt.ads",
+            "line": 16
+          },
+          {
+            "file": "launcher.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2534,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 14,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "queue_adt.adb",
+      "line": 26,
+      "col": 32,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_queue.Remove_First",
+        "sloc": [
+          {
+            "file": "queue_adt.ads",
+            "line": 20
+          },
+          {
+            "file": "launcher.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2477,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 15,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "queue_rb.adb",
+      "line": 28,
+      "col": 24,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "launcher.Integer_ring.Remove_First",
+        "sloc": [
+          {
+            "file": "queue_rb.ads",
+            "line": 20
+          },
+          {
+            "file": "launcher.ads",
+            "line": 13
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "CVC4_CE": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Unknown (none)",
+              "steps": 9322,
+              "time": 4.00000000000000E-02
+            },
+            "altergo": {
+              "result": "Unknown (none)",
+              "steps": -1,
+              "time": 1.80000000000000E+00
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 16,
+      "how_proved": "prover"
+    },
+    {
+      "file": "queue_adt.adb",
+      "line": 30,
+      "col": 24,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_queue.Remove_First",
+        "sloc": [
+          {
+            "file": "queue_adt.ads",
+            "line": 20
+          },
+          {
+            "file": "launcher.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2714,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 17,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "queue_adt.adb",
+      "line": 26,
+      "col": 32,
+      "rule": "VC_INDEX_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "launcher.Integer_queue.Remove_First",
+        "sloc": [
+          {
+            "file": "queue_adt.ads",
+            "line": 20
+          },
+          {
+            "file": "launcher.ads",
+            "line": 9
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2483,
+              "time": 1.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "HighFailure",
+              "steps": -1,
+              "time": 0.00000000000000E+00
+            },
+            "Z3": {
+              "result": "Valid",
+              "steps": 2394,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "msg_id": 18,
+      "how_proved": "prover",
+      "stats": {
+        "Z3": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.test",
+          "sloc": [
+            {
+              "file": "launcher.ads",
+              "line": 17
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_ring.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_rb.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 13
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_ring.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_rb.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 13
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "launcher.Integer_ring.Clear",
+          "sloc": [
+            {
+              "file": "queue_rb.ads",
+              "line": 13
+            },
+            {
+              "file": "launcher.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_ring",
+          "sloc": [
+            {
+              "file": "launcher.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_ring.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_rb.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 13
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "launcher.Integer_ring.Clear",
+          "sloc": [
+            {
+              "file": "queue_rb.ads",
+              "line": 13
+            },
+            {
+              "file": "launcher.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_ring.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_rb.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 13
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_ring.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_rb.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 13
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_ring.Clear",
+          "sloc": [
+            {
+              "file": "queue_rb.ads",
+              "line": 13
+            },
+            {
+              "file": "launcher.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_ring.ring_buffer",
+          "sloc": [
+            {
+              "file": "queue_rb.ads",
+              "line": 7
+            },
+            {
+              "file": "launcher.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "launcher.Integer_queue.Is_Empty",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 9
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_queue.Is_Empty",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 9
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "launcher.Integer_ring.Is_Full",
+          "sloc": [
+            {
+              "file": "queue_rb.ads",
+              "line": 11
+            },
+            {
+              "file": "launcher.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_ring.Is_Full",
+          "sloc": [
+            {
+              "file": "queue_rb.ads",
+              "line": 11
+            },
+            {
+              "file": "launcher.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_ring.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_rb.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 13
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_ring.Is_Full",
+            "sloc": [
+              {
+                "file": "queue_rb.ads",
+                "line": 11
+              },
+              {
+                "file": "launcher.ads",
+                "line": 13
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "launcher.Integer_ring.Add_Last",
+          "sloc": [
+            {
+              "file": "queue_rb.ads",
+              "line": 16
+            },
+            {
+              "file": "launcher.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "launcher.Integer_queue.Clear",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 13
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_queue",
+          "sloc": [
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "launcher.Integer_queue.Clear",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 13
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_queue.Clear",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 13
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_queue.Queue",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 7
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Full",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 11
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Full",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 11
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "launcher.Integer_queue.Remove_First",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 20
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "launcher.Integer_queue.Is_Full",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 11
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_queue.Is_Full",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 11
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Full",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 11
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Full",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 11
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_queue.Remove_First",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 20
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Full",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 11
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Full",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 11
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "launcher.Integer_queue.Add_Last",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 16
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Full",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 11
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "launcher.Integer_queue.Add_Last",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 16
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Full",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 11
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Empty",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 9
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue.Is_Full",
+            "sloc": [
+              {
+                "file": "queue_adt.ads",
+                "line": 11
+              },
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_queue.Add_Last",
+          "sloc": [
+            {
+              "file": "queue_adt.ads",
+              "line": 16
+            },
+            {
+              "file": "launcher.ads",
+              "line": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "launcher.Integer_ring.Is_Empty",
+          "sloc": [
+            {
+              "file": "queue_rb.ads",
+              "line": 9
+            },
+            {
+              "file": "launcher.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher.Integer_ring.Is_Empty",
+          "sloc": [
+            {
+              "file": "queue_rb.ads",
+              "line": 9
+            },
+            {
+              "file": "launcher.ads",
+              "line": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_queue",
+            "sloc": [
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "launcher.Integer_ring",
+            "sloc": [
+              {
+                "file": "launcher.ads",
+                "line": 13
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_queue",
+            "sloc": [
+              {
+                "file": "launcher.ads",
+                "line": 9
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "launcher.Integer_ring",
+            "sloc": [
+              {
+                "file": "launcher.ads",
+                "line": 13
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "launcher",
+          "sloc": [
+            {
+              "file": "launcher.ads",
+              "line": 7
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "marking": 2.26800004020333E-03,
+    "globals (basic)": 5.24100009351969E-03,
+    "globals/properties (advanced)": 4.68599982559681E-03,
+    "flow analysis": 1.42280003055930E-02,
+    "codepeer results": 1.99999999495049E-06,
+    "init_why_sections": 1.71000006957911E-04,
+    "translation of standard": 2.97400006093085E-03,
+    "translation of compilation unit": 4.51980009675026E-02,
+    "gnatwhy3.transformations.eliminate_definition_if_poly": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_algebraic_if_poly": 1.20000001043081E-02,
+    "gnatwhy3.transformations.detect_polymorphism": 4.00000018998981E-03,
+    "gnatwhy3.run_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
+    "gnatwhy3.register_vcs": 4.00000018998981E-03,
+    "gnatwhy3.transformations.discriminate_if_poly": 0.00000000000000E+00,
+    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
+    "gnatwhy3.init": 1.06400001049042E+00,
+    "gnatwhy3.transformations.inline_trivial": 3.99999991059303E-02,
+    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
+    "gnatwhy3.save_session": 1.20000001043081E-02,
+    "gnatwhy3.transformations.eliminate_builtin": 4.00000018998981E-03,
+    "gnatwhy3.transformations.prepare_for_counterexmp": 4.00000018998981E-03,
+    "gnatwhy3.transformations.encoding_smt_if_poly": 0.00000000000000E+00,
+    "proof": 1.35952901840210E+00
+  }
+}

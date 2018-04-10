@@ -5,6 +5,7 @@ b__main.o
 20180410074217
 [BOUND OBJECT FILES]
 /home/sems1703/MasterSEMS/TP_ada/ada_tp7/obj/queue_adt.o
+/home/sems1703/MasterSEMS/TP_ada/ada_tp7/obj/queue_rb.o
 /home/sems1703/MasterSEMS/TP_ada/ada_tp7/obj/main.o
 [GENERATED SOURCE FILES]
 b__main.ads

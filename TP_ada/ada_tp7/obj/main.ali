@@ -11,11 +11,12 @@ RV NO_DEFAULT_INITIALIZATION
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U main%b		main.adb		6a81b703 NE OO SU
+U main%b		main.adb		fffd0006 NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W queue_adt%s		queue_adt.adb		queue_adt.ali
+W queue_rb%s		queue_rb.adb		queue_rb.ali
 
 D ada.ads		20170516105951 76789da1 ada%s
 D a-except.ads		20170516105953 291912d5 ada.exceptions%s
@@ -28,9 +29,11 @@ D a-tiinio.ads		20170516105950 aa04e5d6 ada.text_io.integer_io%s
 D a-unccon.ads		20170516105954 31484697 ada.unchecked_conversion%s
 D interfac.ads		20170516105950 5ab55268 interfaces%s
 D i-cstrea.ads		20170516105950 e53d8b8e interfaces.c_streams%s
-D main.adb		20180410082919 6e7a40de main%b
+D main.adb		20180410094000 e38b0d7f main%b
 D queue_adt.ads		20180410082618 cadd8bad queue_adt%s
 D queue_adt.adb		20180410082700 ebabf47c queue_adt%b
+D queue_rb.ads		20180410094022 188dfaa4 queue_rb%s
+D queue_rb.adb		20180410093155 474372c6 queue_rb%b
 D system.ads		20170516105953 6326c08a system%s
 D s-crtl.ads		20170516105948 0ebbdb71 system.crtl%s
 D s-exctab.ads		20170516105954 54135002 system.exception_table%s
@@ -49,17 +52,24 @@ X 3 a-inteio.ads
 18K13*Integer_Text_IO[8|46] 12|1w23 2r22
 X 7 a-textio.ads
 49K13*Text_IO 471e16 12|1w10 2r9
-263U14*Put_Line 12|18s7 22s7 28s7
+263U14*Put_Line 12|24s7 28s7 34s7
 X 12 main.adb
-6U11*Main 6b11 31l5 31t9
-8K12 Integer_queue[13|5] 10r8
-12r4 Q{13|7R9[8]} 15m10 15r10 17r16 21r19 25m13 25r13 27r20
+7U11*Main 7b11 39l5 39t9
+9K12 Integer_queue[13|5] 11r8
+13K12 Integer_ring[15|5] 15r8
+17r4 Q{13|7R9[9]} 21m10 21r10 23r16 27r19 31m13 31r13 33r20
+18r4 rb{15|7R9[13]} 37m10 37r10
 X 13 queue_adt.ads
-2+9 Item 12|9r20
-5k9*Queue_ADT 12|4w6 9r10 13|35e14
-7R9 Queue 12|12r8[8]
-9V13 Is_Empty{boolean} 12|17s7[8] 27s11[8]
-11V13 Is_Full{boolean} 12|21s11[8]
-13U14 Clear 12|15s4[8]
-16U14 Add_Last 12|25s4[8]
+2+9 Item 12|10r20
+5k9*Queue_ADT 12|4w6 10r10 13|35e14
+7R9 Queue 12|17r8[9]
+9V13 Is_Empty{boolean} 12|23s7[9] 33s11[9]
+11V13 Is_Full{boolean} 12|27s11[9]
+13U14 Clear 12|21s4[9]
+16U14 Add_Last 12|31s4[9]
+X 15 queue_rb.ads
+2+9 Item 12|14r19
+5k9*Queue_RB 12|5w6 14r10 15|39e13
+7R9 ring_buffer 12|18r9[13]
+13U14 Clear 12|37s4[13]
 
