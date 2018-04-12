@@ -3,6 +3,8 @@
 #include "system_stm32f3xx.h"
 #include "math.h"
 
+#include <string.h>
+
 // led functions 
 void stm32f3_init_leds(void);
 void stm32f3_set_led(char num, char v);
@@ -44,55 +46,76 @@ int main()
     // init timer Systick
     HAL_Init();
     
-    __HAL_RCC_GPIO_CLK_ENABLE();
+    __HAL_RCC_GPIOC_CLK_ENABLE();
     
     GPIO_InitTypeDef gpio;
     
     gpio.Pin = GPIO_PIN_4 | GPIO_PIN_5;
     gpio.Mode = GPIO_MODE_AF_PP;
-    gpio.Pull = GPIO_NOPULL;
+    gpio.Pull = GPIO_NOPULL; // GPIO_PULLUP;
     gpio.Speed = GPIO_SPEED_FREQ_HIGH;
     gpio.Alternate = GPIO_AF7_USART1;
     
     HAL_GPIO_Init(GPIOC, &gpio);
     
-    UART_InitTypeDef init;
+    __HAL_RCC_USART1_CLK_ENABLE();
+
+    UART_InitTypeDef init = {0};
     init.BaudRate = 9600;
-    init.WordLength = ;
-    init.StopBits = ;
-    init.Parity = ;
-    init.Mode = ;
-    init.HwFlowCtl = ;
-    init. = ;
-    init.OverSampling = ;
-    init.OneBitSampling = ;
+    init.WordLength = UART_WORDLENGTH_8B;
+    init.StopBits = UART_STOPBITS_1_5;
+    init.Parity = UART_PARITY_NONE;
+    init.Mode = UART_MODE_TX_RX;
+    init.HwFlowCtl = UART_HWCONTROL_RTS_CTS;
+    init.OverSampling = UART_OVERSAMPLING_8;
+    init.OneBitSampling = UART_ONE_BIT_SAMPLE_ENABLE;
     
-    UART_HandleTypeDef huart;
+    UART_HandleTypeDef huart = {0};
     huart.Instance = USART1;
     huart.Init = init; 
-    /*huart.AdvancedInit = ;
-    huart.pTxBuffPtr = ;
-    huart.TxXferSize = ;
-    huart.TxXferCount = ;
-    huart.pRxBuffPtr = ;
-    huart.RxXferSize = ;
-    huart.RxXferCount = ;
-    huart.Mask = ;
-    huart.hdmatx = ;
-    huart.hdmarx = ;
-    huart.Lock = ;
-    huart.gState = ;
-    huart.RxState = ;
-    huart.ErrorCode = ;*/
     
     HAL_UART_Init(&huart);
     
-    //stm32f3_init_leds();
+    stm32f3_init_leds();
     //stm32f3_init_button();
     
     //int i = 0;
-    
+    unsigned char msgU = '5';
+    unsigned char* msg = "mississippi";
+    unsigned char* msgR;
+    //unsigned char msgGet[] = unsigned char[12];
+    unsigned char data = 0;
+    HAL_StatusTypeDef res;
     while(1) {
+        
+        stm32f3_set_led(3,1);
+        //stm32f3_set_led(1,!stm32f3_get_leds(1));
+        
+        //HAL_UART_Transmit(&huart, &data, 1, 500);
+        HAL_UART_Transmit(&huart, msg, strlen((char*)msg), 500);
+        //HAL_UART_Transmit(&huart, &msg, sizeof(msg), 500);
+        //HAL_UART_Transmit(&huart, &msgU, 1, 500);
+        
+        data = data + 1;
+        
+        //ttyACM0
+        
+        res = HAL_UART_Receive(&huart, &data, 1, 500);
+        //res = HAL_UART_Receive(&huart, msgR, strlen((char*)msg), 500);
+        //res = HAL_UART_Receive(&huart, msgGet, sizeof(msgGet), 500);
+        
+        switch(res){
+            case HAL_OK : stm32f3_set_led(1,!stm32f3_get_leds(1)); 
+            break;   
+            case HAL_ERROR : stm32f3_set_led(2,1); 
+            break;   
+            case HAL_BUSY : stm32f3_set_led(3,1); 
+            break;   
+            case HAL_TIMEOUT : stm32f3_set_led(4,1); 
+            break;   
+        }
+        
+        
         //delay();
     }
 }
@@ -163,21 +186,24 @@ char stm32f3_just_released(){
 
 void SysTick_Handler(){
     
-    /*
+    
     if((count % FREQUENCY) == 0){
         curr_state = !curr_state;
         
+        
+        //stm32f3_set_leds_multiple_off(255);
+        /*
         if(count == FREQUENCY * 5){
             count = 0;
-        }
+        }*/
         
         
         //motif_A();
         //motif_B();
-        motif_C();
+        //motif_C();
         //motif_D();
     }
-    count++;*/
+    count++;
 }
 
 // set all led on then off
