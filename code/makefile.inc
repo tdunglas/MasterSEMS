@@ -42,6 +42,8 @@ HAL = 	stm32f3xx_hal.o \
 	stm32f3xx_hal_uart.o \
 	stm32f3xx_hal_uart_ex.o \
 	stm32f3xx_hal_dma.o \
+	stm32f3xx_hal_tim_ex.o \
+	stm32f3xx_hal_tim.o \
 
 OBJS += $(STARTUP).o \
 	$(SYSTEM).o \
