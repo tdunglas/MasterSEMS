@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">My Application</string>
+    <string name="authentification">AUTHENTIFICATION</string>
+    <string name="hint_log">ENTER LOGIN</string>
+    <string name="hint_pass">ENTER PASSWORD</string>
+    <string name="button_send">SEND</string>
+    <string name="button_map">MAP</string>
+    <string name="button_nav">NAVIGATEUR</string>
+    <string name="title_activity_home">activity home</string>
+    <string name="button_coucou">COUCOU</string>
+    <string name="button_recup">Recuperation text</string>
+    <string name="title_activity_lieux_avisiter">LieuxAVisiter</string>
+    <string name="title_activity_listing_des_lieux">ListingDesLieuxActivity</string>
+    <string name="chargement_message">chargement_message</string>
+
+</resources>
