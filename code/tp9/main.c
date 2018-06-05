@@ -3,11 +3,13 @@
 #include "leds.h"
 #include "button.h"
 
-#define FREQ 32 // 32 millisconds
+#define freq 20
+
+void AccelWrite(uint8_t reg, uint8_t* data, uint16_t size);
+void AccelRead(uint8_t reg, uint8_t* data, uint16_t size);
 
 unsigned char inc = 0;
-unsigned char msgtx;
-unsigned char msgrx;
+I2C_HandleTypeDef i2c = {0};
 
 int main()
 {
@@ -29,88 +31,53 @@ int main()
     
     HAL_GPIO_Init(GPIOB, &gpio_init);
     
-    I2C_HandleTypeDef init = {0};
-    init.Instance = I2C1; // ?
+    i2c.Instance = I2C1;
+    i2c.Mode = HAL_I2C_MODE_MASTER;
+    i2c.Init.Timing = 0x00902025;
+    i2c.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+
+    HAL_I2C_Init(&i2c);
+
+    unsigned char reg = 16*2; // 20 hexa
+
+    // 0100 = 50hz for odr
+    // 0111 = activate Zen, Yen, Xen
+    unsigned char uc = 0b01000111;
+    AccelWrite(reg, &uc, 1); 
 
 
-
-
-    init.BaudRate = 9600;
-    init.WordLength = UART_WORDLENGTH_8B;
-    init.Parity = UART_PARITY_NONE;
-    init.Mode = UART_MODE_TX_RX;
-
-    uart_handle.Init = init;
-    uart_handle.Instance = USART3;
-
-    HAL_UART_Init(&uart_handle);
-
-    HAL_UART_Receive_IT(&uart_handle, &msgrx, 1);
-    //HAL_UART_Transmit_IT(&uart_handle, &msgtx, 1);
-    while(1) { __WFI(); }
+    while(1) { __WFI(); } 
 }
 
-void USART3_IRQHandler() {   
-    HAL_UART_IRQHandler(&uart_handle);
+void AccelWrite(uint8_t reg, uint8_t* data, uint16_t size) {    
+    /* Transmit data request */
+    HAL_I2C_Master_Transmit(&i2c, 0x32, data, size, HAL_MAX_DELAY);
 }
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
-
-    unsigned char msgcp = msgrx;
-    unsigned char client, led, state;
-    client = led = state = 0;
-
-    // get client value
-    client = msgrx >> 4;
-
-    // message is our
-    if(!client){
-        state = msgcp & 1;
-        led = msgcp << 4; // remove client part
-        led = led >> 5; // remove state part
-
-        stmtp_set_led(led, !state);
-    }
-    else { // send message away with -1 for client
-        client = msgcp >> 4;
-        client--;
-        client = client << 4;
-
-        msgcp = msgcp << 4;
-        msgcp = msgcp >> 4;
-        msgcp |= client;
-
-        msgtx = msgcp;
-
-        HAL_UART_Transmit_IT(&uart_handle, &msgtx, 1);
-    }
-}
-
-void HAL_UART_TxCpltCallback(UART_HandleTypeDef *UartHandle) {
-    //stmtp_set_led(3, !stmtp_get_led(3));
-    HAL_UART_Receive_IT(&uart_handle, &msgrx, 1);
+void AccelRead(uint8_t reg, uint8_t* data, uint16_t size) {
+    
+    /* Then we receive the data at this address */
+    HAL_I2C_Master_Receive(&i2c, 0x32, data, size, HAL_MAX_DELAY);
 }
 
 void SysTick_Handler()
 {
-    // server state
-    if(stmtp_get_button()){
-        inc++;
-        if(inc % FREQ == 0) {
-            // reset
-            if(msgtx == 255){ // 1111 client, 111 led 1 state : 1111 111 1
-                msgtx = 0;
-            }
-            else { // increase
-                msgtx++;
-            }
-            
-            HAL_UART_Transmit_IT(&uart_handle, &msgtx, 1);
-        }
-        
+    
+    if(inc % freq == 0){
+        inc = 0; 
+
+        // OUT_X_H_A = 0x29
+        unsigned char reg = 0x29;
+        uint8_t data[2]; 
+        uint8_t request = 0x44;
+
+        AccelRead(reg, data, 2); 
+        stmtp_set_led(data[1], !stmtp_get_led(data[1]));
+
     }
-    else { // client state
-        msgtx = 0;
-        HAL_UART_Receive_IT(&uart_handle, &msgrx, 1);
-    }
+
+    inc++;
 }
+
+// to disable an error from hal which don't have this function
+void assert_failed(){}
