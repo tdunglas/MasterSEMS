@@ -13,3 +13,5 @@ ssh -X sems1703@chou.cnam.fr
 http://cedric.cnam.fr/sys/crolard/enseignement/index.html
 
 http://cedric.cnam.fr/~taktaks/SEMS/SEE/
+
+http://deptmedia.cnam.fr/~rovedaks/Documents/RECIA/
