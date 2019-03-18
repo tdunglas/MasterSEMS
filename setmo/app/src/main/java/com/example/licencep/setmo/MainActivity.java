@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -38,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private String [] permissions = {Manifest.permission.RECORD_AUDIO};
     private static final int REQUEST_RECORD_AUDIO_PERMISSION = 200;
 
-    public int sampleRate = 8000;
+    //public int sampleRate = 8000;
+    public int sampleRate = 44100;
     public AudioRecord audio;
     public int bufferSize;
     public boolean isRecording = false;
@@ -113,7 +115,13 @@ public class MainActivity extends AppCompatActivity {
                 recording.setFocusable(true);
                 stop.setFocusable(true);
 
-                playRecording();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        playRecording();
+                    }
+                }).start();
+
 
             }
         });
@@ -152,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
         audio.startRecording();
         isRecording = true;
 
+        double max = 1;
         while (isRecording) {
 
             read = audio.read(audioData,0,bufferSize);
@@ -164,14 +173,27 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            if (read > maxAmplitude) {
-                maxAmplitude = read;
+            double sum = 0;
+            int value = 0;
+            for (int i = 0; i < bufferSize; i++) {
+                sum += audioData [i] * audioData [i];
+            }
+            if (bufferSize > 0) {
+                final double amplitude = sum / bufferSize;
+                value = (int) Math.sqrt(amplitude);
             }
 
-            int value = (read / maxAmplitude) * 100;
-            progressBar.setProgress(value);
-            progressBar.setVisibility(View.VISIBLE);
+            int amplitude =  (audioData[0] & 0xff) << 8 | audioData[1];
+            double amplitudeDb = 20 * Math.log10((double)Math.abs(amplitude) / 32768);
 
+            if (value > max){
+                max = value;
+            }
+
+            value = (int) Math.abs(amplitudeDb);
+
+            Log.d("DEBUGG", "value : " + value + " amplitudeDb : " + amplitudeDb + " max : " + maxAmplitude);
+            progressBar.setProgress(value);
         }
 
         try {
@@ -202,21 +224,12 @@ public class MainActivity extends AppCompatActivity {
 
             audioTrack.play();
 
-            int maxAmplitude = 0;
+            //int maxAmplitude = 0;
             int i=0;
+            //int a = 0;
             while((i = inputStream.read(audioData)) != -1) {
                 audioTrack.write(audioData,0,i);
 
-                if (i > maxAmplitude) {
-                    maxAmplitude = i;
-                }
-
-                //int value = (i / maxAmplitude) * 100;
-                //int value = 75;
-                //progressBar.setProgress(value);
-                //progressBar.setVisibility(View.VISIBLE);
-
-                //new myAsyncTask().execute();
             }
 
             audioTrack.stop();
