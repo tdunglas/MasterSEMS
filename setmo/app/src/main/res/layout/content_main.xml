@@ -7,6 +7,17 @@
         tools:context=".MainActivity"
         tools:showIn="@layout/activity_main">
 
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/plot"
+        style="@style/APDefacto.Dark"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
+        app:domainTitle="domain"
+        app:lineLabelRotationBottom="-45"
+        app:lineLabels="left|bottom"
+        app:rangeTitle="range"
+        app:title="A Simple XY Plot" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -52,7 +63,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="308dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="96dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
