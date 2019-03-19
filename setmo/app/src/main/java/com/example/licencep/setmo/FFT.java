@@ -176,11 +176,11 @@ public class FFT {
                 else{
                     y[i] = 0.00000;
                 }
-                System.out.println(y[i]);
+                //System.out.println(y[i]);
 
             }
 
-            System.out.println();
+            //System.out.println();
 
             return y;
         }

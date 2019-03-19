@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -31,6 +32,7 @@ import java.text.Format;
 import java.text.ParsePosition;
 import java.util.Arrays;
 
+import static com.androidplot.xy.StepMode.INCREMENT_BY_VAL;
 import static com.example.licencep.setmo.FFT.complexetoNumber;
 import static com.example.licencep.setmo.FFT.fft;
 
@@ -41,6 +43,7 @@ import com.androidplot.xy.SimpleXYSeries;
 import com.androidplot.xy.XYGraphWidget;
 import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.XYSeries;
+import com.androidplot.xy.*;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     //graphic var
     private XYPlot plot;
+    public byte[] dataBytes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -213,12 +217,12 @@ public class MainActivity extends AppCompatActivity {
 
             value = (int) Math.abs(amplitudeDb);
 
-            Log.d("DEBUGG", "value : " + value + " amplitudeDb : " + amplitudeDb + " max : " + maxAmplitude);
+            //Log.d("DEBUGG", "value : " + value + " amplitudeDb : " + amplitudeDb + " max : " + maxAmplitude);
             progressBar.setProgress(value);
         }
 
         for(int i=0; i<bufferSize; i++){
-            Log.d("array", "i " + i + " : value " + audioData[i]);
+            //Log.d("array", "i " + i + " : value " + audioData[i]);
         }
 
         try {
@@ -300,7 +304,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showGraph(){
-        int n = 1024;
+        /*
+        //int n = 1024;
         int pont_for_128= n%127;
         int b=0;
         Byte[] data={0x22,0x65};
@@ -315,62 +320,128 @@ public class MainActivity extends AppCompatActivity {
         Number[] series2Numbers = {5, 2, 10, 5, 20, 10, 40, 20, 80, 40};
 
 
-
+/*
         for (int i = 0; i < n; i++) {
             x[i] = new Complex(i, 0);
             x[i] = new Complex(-2*Math.random() + 1, 0);
         }
+*/
 
 
+        Log.d("result double array"," START --- DEBBUG ");
+        Log.d("result double array"," START --- DEBBUG ");
+        Log.d("result double array"," START --- DEBBUG ");
 
-        Complex[] y = fft(x);
-        data_imag=complexetoNumber(y);
+        Complex[] values;
+
+        try {
+
+            InputStream inputStream = new FileInputStream(filePath);
 
 
-
-
-        XYSeries series1 = new SimpleXYSeries(
-                Arrays.asList(data_imag), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series1");
-        //XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.XY_VALS_INTERLEAVED, "Series2");
-
-        // create formatters to use for drawing a series using LineAndPointRenderer
-        // and configure them from xml:
-        LineAndPointFormatter series1Format =
-                new LineAndPointFormatter(this, R.xml.line_point_formatter_with_labels);
-
-        LineAndPointFormatter series2Format =
-                new LineAndPointFormatter(this, R.xml.line_point_formatter_with_labels_2);
-
-        // add an "dash" effect to the series2 line:
-        series2Format.getLinePaint().setPathEffect(new DashPathEffect(new float[] {
-
-                // always use DP when specifying pixel sizes, to keep things consistent across devices:
-                PixelUtils.dpToPix(20),
-                PixelUtils.dpToPix(15)}, 0));
-
-        // just for fun, add some smoothing to the lines:
-        // see: http://androidplot.com/smooth-curves-and-androidplot/
-        series1Format.setInterpolationParams(
-                new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
-
-        series2Format.setInterpolationParams(
-                new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
-
-        // add a new series' to the xyplot:
-        plot.addSeries(series1, series1Format);
-        //plot.addSeries(series2, series2Format);
-
-        plot.getGraph().getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).setFormat(new Format() {
-            @Override
-            public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
-                int i = Math.round(((Number) obj).floatValue());
-                return toAppendTo.append(domainLabels[i]);
+            int limit = 256;
+            while(limit < bufferSize / 2){
+                limit *= 2;
             }
-            @Override
-            public Object parseObject(String source, ParsePosition pos) {
-                return null;
+
+
+            //int size = (int) (bufferSize / 2);
+            int currentSize = (int) (bufferSize / 2);
+            int size = limit;
+            double[] result = new double[size];
+            DataInputStream is = new DataInputStream(inputStream);
+            values = new Complex[size];
+
+            for (int i = 0; i < size; i++) {
+                //result[i] = is.readShort() / 32768.0;
+                if(i < currentSize){
+                    result[i] = is.readDouble();
+                    Log.d("result double array","debugg - i " + i + " : " + result[i]);
+                    values[i] = new Complex(i, 0);
+                    values[i] = new Complex(-2*result[i], 0);
+                    //values[i] = new Complex(-2*result[i] * 10E284, 0);
+                }
+                else {
+                    values[i] = new Complex(i, 0);
+                    values[i] = new Complex(0, 0);
+                }
             }
-        });
+
+
+            setContentView(R.layout.activity_main);
+            plot = (XYPlot) findViewById(R.id.plot);
+            final Number[] domainLabels = new Number[size];
+
+
+            Complex[] y = fft(values);
+
+            //Complex[] y = fft(x);
+            Number[] data_imag=complexetoNumber(y);
+
+
+
+
+
+
+            XYSeries series1 = new SimpleXYSeries(
+                    Arrays.asList(data_imag), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series1");
+            //XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.XY_VALS_INTERLEAVED, "Series2");
+
+            // create formatters to use for drawing a series using LineAndPointRenderer
+            // and configure them from xml:
+            LineAndPointFormatter series1Format =
+                    new LineAndPointFormatter(this, R.xml.line_point_formatter_with_labels);
+
+            LineAndPointFormatter series2Format =
+                    new LineAndPointFormatter(this, R.xml.line_point_formatter_with_labels_2);
+
+            // add an "dash" effect to the series2 line:
+            series2Format.getLinePaint().setPathEffect(new DashPathEffect(new float[] {
+
+                    // always use DP when specifying pixel sizes, to keep things consistent across devices:
+                    PixelUtils.dpToPix(20),
+                    PixelUtils.dpToPix(15)}, 0));
+
+            // just for fun, add some smoothing to the lines:
+            // see: http://androidplot.com/smooth-curves-and-androidplot/
+            series1Format.setInterpolationParams(
+                    new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
+
+            series2Format.setInterpolationParams(
+                    new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
+
+
+
+            // try to change label range
+            plot.setDomainStep(INCREMENT_BY_VAL, 10);
+            plot.setRangeStep(INCREMENT_BY_VAL, 10);
+
+            // add a new series' to the xyplot:
+            plot.addSeries(series1, series1Format);
+            //plot.addSeries(series2, series2Format);
+
+            plot.getGraph().getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).setFormat(new Format() {
+                @Override
+                public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
+                    int i = Math.round(((Number) obj).floatValue());
+                    return toAppendTo.append(domainLabels[i]);
+                }
+                @Override
+                public Object parseObject(String source, ParsePosition pos) {
+                    return null;
+                }
+            });
+        }
+        catch( IOException e){
+            e.printStackTrace();
+        }
+
+        Log.d("result double array"," END --- DEBBUG ");
+        Log.d("result double array"," END --- DEBBUG ");
+        Log.d("result double array"," END --- DEBBUG ");
+
+
+
     }
 
 }
