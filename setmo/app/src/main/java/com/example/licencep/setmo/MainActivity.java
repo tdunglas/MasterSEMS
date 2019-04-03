@@ -2,13 +2,13 @@ package com.example.licencep.setmo;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioRecord;
 import android.media.AudioTrack;
 import android.media.MediaRecorder;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -18,7 +18,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
-import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -38,13 +37,14 @@ import static com.example.licencep.setmo.FFT.complexetoNumber;
 import static com.example.licencep.setmo.FFT.fft;
 
 import com.androidplot.util.PixelUtils;
+import com.androidplot.xy.BoundaryMode;
 import com.androidplot.xy.CatmullRomInterpolator;
+import com.androidplot.xy.FastLineAndPointRenderer;
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.SimpleXYSeries;
 import com.androidplot.xy.XYGraphWidget;
 import com.androidplot.xy.XYPlot;
 import com.androidplot.xy.XYSeries;
-import com.androidplot.xy.*;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -74,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
     public float[] audioDataFloat;
     public List<Float> analogs;
 
+    public int green = Color.parseColor("#69e800");
+    public int red = Color.parseColor("#e82900");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
         stop = findViewById(R.id.stop);
         play = findViewById(R.id.play);
         progressBar = findViewById(R.id.progressBar);
+
+        recording.setBackgroundColor(Color.GREEN);
+        stop.setBackgroundColor(Color.RED);
+        play.setBackgroundColor(Color.RED);
 
         filePath = getExternalCacheDir().getAbsolutePath();
         filePath += "/audiorecordtest.3gp";
@@ -105,12 +112,16 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run(){
 
-                        prepareRecording();
-
                         stop.setFocusable(true);
                         play.setFocusable(false);
 
+                        recording.setBackgroundColor(red);
+                        stop.setBackgroundColor(green);
+                        play.setBackgroundColor(red);
+
                         try {
+
+                            prepareRecording();
                             recording();
                         }
                         catch(IllegalStateException e){
@@ -133,6 +144,10 @@ public class MainActivity extends AppCompatActivity {
                 recording.setFocusable(true);
                 play.setFocusable(true);
 
+                recording.setBackgroundColor(green);
+                stop.setBackgroundColor(red);
+                play.setBackgroundColor(green);
+
                 isRecording = false;
                 audio.stop();
                 progressBar.setProgress(0);
@@ -148,14 +163,35 @@ public class MainActivity extends AppCompatActivity {
                 recording.setFocusable(true);
                 stop.setFocusable(true);
 
-                showGraph();
+
+
 
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
+
                         playRecording();
                     }
                 }).start();
+
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        Log.d("UI thread", "I am the UI thread");
+                        showGraph();
+                    }
+                });
+
+                //playRecording();
+
+                //showGraph();
+
+                audio.release();
+                audio = null;
+
+
+                recording.setBackgroundColor(green);
+                stop.setBackgroundColor(red);
+                play.setBackgroundColor(red);
             }
         });
     }
@@ -196,7 +232,6 @@ public class MainActivity extends AppCompatActivity {
 
         byte[] audioData = new byte[bufferSize];
         int read = 0;
-        //int maxAmplitude = 0;
 
         audioDataFloat = new float[bufferSize];
 
@@ -205,6 +240,9 @@ public class MainActivity extends AppCompatActivity {
 
         double max = 1;
         float average = 0;
+        analogs.clear();
+
+
         while (isRecording) {
 
             read = audio.read(audioData,0,bufferSize);
@@ -212,8 +250,23 @@ public class MainActivity extends AppCompatActivity {
             //read = audio.read(audioDataFloat,0,bufferSize, AudioRecord.READ_BLOCKING);
 
             for(int i=0; i<bufferSize; i++){
+
+                /*
+                if(i == bufferSize / 10){
+
+                    average /= bufferSize / 10;
+                    analogs.add(average);
+                    average = 0;
+                }
+                */
+
                 average += audioData[i];
+                //average = audioData[i];
+
+                //analogs.add(average);
+
             }
+            //average /= bufferSize / 10;
             average /= bufferSize;
             analogs.add(average);
             Log.e("audioData", "------ audioData average " + average + " ------ buffer size " + bufferSize);
@@ -226,36 +279,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            /*
-            double sum = 0;
-            int value = 0;
-            for (int i = 0; i < bufferSize; i++) {
-                sum += audioData [i] * audioData [i];
-            }
-            if (bufferSize > 0) {
-                final double amplitude = sum / bufferSize;
-                value = (int) Math.sqrt(amplitude);
+            if(average > max){
+                max = average;
             }
 
-            int amplitude =  (audioData[0] & 0xff) << 8 | audioData[1];
-            double amplitudeDb = 20 * Math.log10((double)Math.abs(amplitude) / 32768);
+            int val = (int)(average / max) * 100;
+            progressBar.setProgress(val);
 
-            if (value > max){
-                max = value;
-            }
-
-            value = (int) Math.abs(amplitudeDb);
-
-            //Log.d("DEBUGG", "value : " + value + " amplitudeDb : " + amplitudeDb + " max : " + maxAmplitude);
-            progressBar.setProgress(value);
-            */
         }
-
-        /*
-        for(int i=0; i<bufferSize; i++){
-            //Log.d("array", "i " + i + " : value " + audioData[i]);
-        }
-        */
 
         try {
             os.close();
@@ -286,9 +317,7 @@ public class MainActivity extends AppCompatActivity {
 
             audioTrack.play();
 
-            //int maxAmplitude = 0;
             int i=0;
-            //int a = 0;
             while((i = inputStream.read(audioData)) != -1) {
                 audioTrack.write(audioData,0,i);
 
@@ -316,50 +345,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private class myAsyncTask extends AsyncTask<Void, Void, Void> {
-
-        int i;
-
-        @Override
-        protected Void doInBackground(final Void ... params){
-
-            int value = 75 + i;
-            progressBar.setProgress(value);
-            progressBar.setVisibility(View.VISIBLE);
-            i++;
-
-            return null;
-        }
-
-        @Override
-        protected void onPreExecute() {
-        }
-    }
-
     public void showGraph(){
-        /*
-        //int n = 1024;
-        int pont_for_128= n%127;
-        int b=0;
-        Byte[] data={0x22,0x65};
-        setContentView(R.layout.activity_main);
-        plot = (XYPlot) findViewById(R.id.plot);
-        Complex[] x = new Complex[n];
-        Number[] data_imag=new Number[n];
-        Number[] serie1FFT=new Number[1024];
-
-        final Number[] domainLabels = new Number[1024];
-        Number[] series1Numbers = {0.00, 4, 2, 8, 4, 16, 8, 32, 16, 64};
-        Number[] series2Numbers = {5, 2, 10, 5, 20, 10, 40, 20, 80, 40};
-
-
-/*
-        for (int i = 0; i < n; i++) {
-            x[i] = new Complex(i, 0);
-            x[i] = new Complex(-2*Math.random() + 1, 0);
-        }
-*/
-
 
         Log.d("result double array"," START --- DEBBUG ");
         Log.d("result double array"," START --- DEBBUG ");
@@ -371,65 +357,31 @@ public class MainActivity extends AppCompatActivity {
 
             InputStream inputStream = new FileInputStream(filePath);
 
-
-            /*
-            int limit = 256;
-            while(limit < bufferSize / 2){
-                limit *= 2;
-            }
-            */
-
             int limit = 1;
-            while(limit < analogs.size() / 2){
+            while(limit < analogs.size()){
                 limit *= 2;
             }
 
-            //int size = (int) (bufferSize / 2);
-            //int currentSize = (int) (bufferSize / 2);
             int size = limit;
             double[] result = new double[size];
-            //double[] result = new double[analogs.size()];
-            DataInputStream is = new DataInputStream(inputStream);
             values = new Complex[size];
-            //values = new Complex[analogs.size()];
 
-            /*
-            for (int i = 0; i < size; i++) {
-                //result[i] = is.readShort() / 32768.0;
-                if(i < currentSize){
-                    //result[i] = is.readDouble();
-                    //result[i] = is.read();
-
-
-                    Log.d("list float","------ analogs size " + analogs.size() );
-                    int length = inputStream.available();
-                    Log.d("inputstream","------ inputstream size " + length );
-
-                    result[i] = analogs.get(i);
-                    //result[i] = is.readFloat();
-
-
-                    //result[i] = audioDataFloat[i];
-
-
-                    Log.d("result double array","debugg - i " + i + " : " + result[i] + " ; audiodatafloat " + audioDataFloat[i]);
-                    values[i] = new Complex(i, 0);
-                    values[i] = new Complex(-2*result[i]*100+1, 0);
-                    //values[i] = new Complex(-2*result[i] * 10E284, 0);
-                }
-                else {
-                    values[i] = new Complex(i, 0);
-                    values[i] = new Complex(0, 0);
-                }
-            }
-
-            */
+            double maxf = 0;
+            double minf = 0;
 
             for (int i = 0; i < size; i++) {
 
                 if(i < analogs.size()){
                     result[i] = analogs.get(i);
 
+                    if(result[i] > maxf){
+                        maxf = result[i];
+                    }
+
+                    if(result[i] < minf){
+                        minf = result[i];
+                    }
+
                     values[i] = new Complex(i, 0);
                     values[i] = new Complex(-2*result[i]*100+1, 0);
                 }
@@ -439,30 +391,33 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                Log.d("vals","------ debugg - i " + i + " : " + result[i] + " size analogs " + analogs.size() + " ------");
+                Log.d("vals","------ debugg - i " + i + " : " + result[i] + " size analogs " + analogs.size() + " ; current max " + maxf + " ------");
 
             }
 
 
-            setContentView(R.layout.activity_main);
             plot = (XYPlot) findViewById(R.id.plot);
+
+            plot.clear();
+
             final Number[] domainLabels = new Number[size];
 
-
             Complex[] y = fft(values);
-
-            //Complex[] y = fft(x);
-            Number[] data_imag=complexetoNumber(y);
-
-
-
-
+            Number[] data_imag = complexetoNumber(y);
 
 
             XYSeries series1 = new SimpleXYSeries(
-                    Arrays.asList(data_imag), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series1");
-            //XYSeries series2 = new SimpleXYSeries(Arrays.asList(series2Numbers), SimpleXYSeries.ArrayFormat.XY_VALS_INTERLEAVED, "Series2");
+                    Arrays.asList(data_imag), SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "frequencies");
 
+
+
+            LineAndPointFormatter format = new LineAndPointFormatter();
+
+            //format.setInterpolationParams(new CatmullRomInterpolator.Params(20, CatmullRomInterpolator.Type.Centripetal));
+            plot.addSeries(series1, format);
+
+
+/*
             // create formatters to use for drawing a series using LineAndPointRenderer
             // and configure them from xml:
             LineAndPointFormatter series1Format =
@@ -476,37 +431,54 @@ public class MainActivity extends AppCompatActivity {
 
                     // always use DP when specifying pixel sizes, to keep things consistent across devices:
                     PixelUtils.dpToPix(20),
-                    PixelUtils.dpToPix(15)}, 0));
+                    PixelUtils.dpToPix(15)},
+                    0));
 
             // just for fun, add some smoothing to the lines:
             // see: http://androidplot.com/smooth-curves-and-androidplot/
             series1Format.setInterpolationParams(
                     new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
 
-            series2Format.setInterpolationParams(
-                    new CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal));
+*/
+            double rangeStep = 1;
+            double domainStep = 1;
 
+            rangeStep = (maxf - minf) / 10;
 
+            plot.setRangeBoundaries(minf, maxf, BoundaryMode.FIXED);
+            plot.setRangeStep(INCREMENT_BY_VAL, rangeStep);
 
-            // try to change label range
-            plot.setDomainStep(INCREMENT_BY_VAL, 10);
-            plot.setRangeStep(INCREMENT_BY_VAL, 10);
+            domainStep = analogs.size() / 10;
+
+            plot.setDomainBoundaries(0, analogs.size(), BoundaryMode.FIXED);
+            plot.setDomainStep(INCREMENT_BY_VAL, domainStep);
 
             // add a new series' to the xyplot:
-            plot.addSeries(series1, series1Format);
-            //plot.addSeries(series2, series2Format);
+            //plot.addSeries(series1, series1Format);
 
+            plot.getGraph().setLineLabelEdges(
+                    XYGraphWidget.Edge.BOTTOM,
+                    XYGraphWidget.Edge.LEFT
+            );
+
+            /*
             plot.getGraph().getLineLabelStyle(XYGraphWidget.Edge.BOTTOM).setFormat(new Format() {
                 @Override
-                public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
-                    int i = Math.round(((Number) obj).floatValue());
-                    return toAppendTo.append(domainLabels[i]);
+                public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos)
+                {
+                    return toAppendTo;//toAppendTo.append(" TEST ");
                 }
+
                 @Override
                 public Object parseObject(String source, ParsePosition pos) {
+                    // unused
                     return null;
                 }
+
             });
+            */
+
+            plot.redraw();
         }
         catch( IOException e){
             e.printStackTrace();
