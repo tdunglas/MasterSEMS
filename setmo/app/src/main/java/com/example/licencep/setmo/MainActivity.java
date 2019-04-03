@@ -3,7 +3,6 @@ package com.example.licencep.setmo;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.graphics.DashPathEffect;
-import android.media.AudioAttributes;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioRecord;
@@ -30,7 +29,9 @@ import java.io.OutputStream;
 import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static com.androidplot.xy.StepMode.INCREMENT_BY_VAL;
 import static com.example.licencep.setmo.FFT.complexetoNumber;
@@ -70,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
     private XYPlot plot;
     public byte[] dataBytes;
 
+    public float[] audioDataFloat;
+    public List<Float> analogs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +87,13 @@ public class MainActivity extends AppCompatActivity {
         filePath = getExternalCacheDir().getAbsolutePath();
         filePath += "/audiorecordtest.3gp";
 
+        Log.e("PATH", " ------ PATH : " + filePath + " ------");
+        Log.e("PATH", " ------ PATH : " + filePath + " ------");
+        Log.e("PATH", " ------ PATH : " + filePath + " ------");
+
         ActivityCompat.requestPermissions(this, permissions, REQUEST_RECORD_AUDIO_PERMISSION);
+
+        analogs = new ArrayList<Float>();
 
         progressBar.setMax(100);
         progressBar.setProgress(0);
@@ -138,16 +148,14 @@ public class MainActivity extends AppCompatActivity {
                 recording.setFocusable(true);
                 stop.setFocusable(true);
 
+                showGraph();
+
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         playRecording();
                     }
                 }).start();
-
-                showGraph();
-
-
             }
         });
     }
@@ -157,9 +165,11 @@ public class MainActivity extends AppCompatActivity {
         try {
             bufferSize = AudioRecord.getMinBufferSize(sampleRate, AudioFormat.CHANNEL_IN_MONO,
                     AudioFormat.ENCODING_PCM_16BIT);
+                    //AudioFormat.ENCODING_PCM_FLOAT);
             audio = new AudioRecord(MediaRecorder.AudioSource.MIC, sampleRate,
                     AudioFormat.CHANNEL_IN_MONO,
                     AudioFormat.ENCODING_PCM_16BIT, bufferSize);
+                    //AudioFormat.ENCODING_PCM_FLOAT, bufferSize);
 
         } catch (Exception e) {
             android.util.Log.e("TrackingFlow", "Exception", e);
@@ -173,22 +183,40 @@ public class MainActivity extends AppCompatActivity {
         OutputStream os = null;
 
         try {
+            File file = new File(filePath);
+
+            if(!file.exists()){
+                file.createNewFile();
+            }
+
             os = new FileOutputStream(filename);
-        } catch(FileNotFoundException e) {
+        } catch(IOException e) {
             e.printStackTrace();
         }
 
         byte[] audioData = new byte[bufferSize];
         int read = 0;
-        int maxAmplitude = 0;
+        //int maxAmplitude = 0;
+
+        audioDataFloat = new float[bufferSize];
 
         audio.startRecording();
         isRecording = true;
 
         double max = 1;
+        float average = 0;
         while (isRecording) {
 
             read = audio.read(audioData,0,bufferSize);
+            //read = audio.read(audioDataFloat,0,bufferSize, AudioRecord.READ_NON_BLOCKING);
+            //read = audio.read(audioDataFloat,0,bufferSize, AudioRecord.READ_BLOCKING);
+
+            for(int i=0; i<bufferSize; i++){
+                average += audioData[i];
+            }
+            average /= bufferSize;
+            analogs.add(average);
+            Log.e("audioData", "------ audioData average " + average + " ------ buffer size " + bufferSize);
 
             if(AudioRecord.ERROR_INVALID_OPERATION != read){
                 try {
@@ -198,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+            /*
             double sum = 0;
             int value = 0;
             for (int i = 0; i < bufferSize; i++) {
@@ -219,11 +248,14 @@ public class MainActivity extends AppCompatActivity {
 
             //Log.d("DEBUGG", "value : " + value + " amplitudeDb : " + amplitudeDb + " max : " + maxAmplitude);
             progressBar.setProgress(value);
+            */
         }
 
+        /*
         for(int i=0; i<bufferSize; i++){
             //Log.d("array", "i " + i + " : value " + audioData[i]);
         }
+        */
 
         try {
             os.close();
@@ -236,7 +268,6 @@ public class MainActivity extends AppCompatActivity {
     public void playRecording(){
 
         String fileName = filePath;
-        File file = new File(fileName);
 
         byte[] audioData = null;
 
@@ -244,11 +275,13 @@ public class MainActivity extends AppCompatActivity {
             InputStream inputStream = new FileInputStream(fileName);
 
             int minBufferSize = AudioTrack.getMinBufferSize(sampleRate,AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT);
+            //int minBufferSize = AudioTrack.getMinBufferSize(sampleRate,AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_FLOAT);
             audioData = new byte[minBufferSize];
 
 
             AudioTrack audioTrack = new AudioTrack(AudioManager.STREAM_MUSIC, sampleRate,
                     AudioFormat.CHANNEL_CONFIGURATION_MONO, AudioFormat.ENCODING_PCM_16BIT,
+                    //AudioFormat.CHANNEL_CONFIGURATION_MONO, AudioFormat.ENCODING_PCM_FLOAT,
                     minBufferSize, AudioTrack.MODE_STREAM);
 
             audioTrack.play();
@@ -339,32 +372,75 @@ public class MainActivity extends AppCompatActivity {
             InputStream inputStream = new FileInputStream(filePath);
 
 
+            /*
             int limit = 256;
             while(limit < bufferSize / 2){
                 limit *= 2;
             }
+            */
 
+            int limit = 1;
+            while(limit < analogs.size() / 2){
+                limit *= 2;
+            }
 
             //int size = (int) (bufferSize / 2);
-            int currentSize = (int) (bufferSize / 2);
+            //int currentSize = (int) (bufferSize / 2);
             int size = limit;
             double[] result = new double[size];
+            //double[] result = new double[analogs.size()];
             DataInputStream is = new DataInputStream(inputStream);
             values = new Complex[size];
+            //values = new Complex[analogs.size()];
 
+            /*
             for (int i = 0; i < size; i++) {
                 //result[i] = is.readShort() / 32768.0;
                 if(i < currentSize){
-                    result[i] = is.readDouble();
-                    Log.d("result double array","debugg - i " + i + " : " + result[i]);
+                    //result[i] = is.readDouble();
+                    //result[i] = is.read();
+
+
+                    Log.d("list float","------ analogs size " + analogs.size() );
+                    int length = inputStream.available();
+                    Log.d("inputstream","------ inputstream size " + length );
+
+                    result[i] = analogs.get(i);
+                    //result[i] = is.readFloat();
+
+
+                    //result[i] = audioDataFloat[i];
+
+
+                    Log.d("result double array","debugg - i " + i + " : " + result[i] + " ; audiodatafloat " + audioDataFloat[i]);
                     values[i] = new Complex(i, 0);
-                    values[i] = new Complex(-2*result[i], 0);
+                    values[i] = new Complex(-2*result[i]*100+1, 0);
                     //values[i] = new Complex(-2*result[i] * 10E284, 0);
                 }
                 else {
                     values[i] = new Complex(i, 0);
                     values[i] = new Complex(0, 0);
                 }
+            }
+
+            */
+
+            for (int i = 0; i < size; i++) {
+
+                if(i < analogs.size()){
+                    result[i] = analogs.get(i);
+
+                    values[i] = new Complex(i, 0);
+                    values[i] = new Complex(-2*result[i]*100+1, 0);
+                }
+                else {
+                    values[i] = new Complex(i, 0);
+                    values[i] = new Complex(0, 0);
+                }
+
+
+                Log.d("vals","------ debugg - i " + i + " : " + result[i] + " size analogs " + analogs.size() + " ------");
+
             }
 
 
